@@ -93,10 +93,10 @@
             </objects>
             <point key="canvasLocation" x="1065" y="863"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Today-->
         <scene sceneID="xun-Dj-AHb">
             <objects>
-                <tableViewController id="FCW-2h-hNE" sceneMemberID="viewController">
+                <tableViewController id="FCW-2h-hNE" customClass="TodayViewController" customModule="Goals" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="hIB-zk-8eX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -109,7 +109,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Todo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7eP-zz-w2V">
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Todo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7eP-zz-w2V">
                                             <rect key="frame" x="8" y="7" width="584" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
@@ -126,11 +126,11 @@
                             <outlet property="delegate" destination="FCW-2h-hNE" id="Zad-Px-ego"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="GyW-Tq-yrK"/>
+                    <navigationItem key="navigationItem" title="Today" id="GyW-Tq-yrK"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Dv-oh-CuW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1801" y="863"/>
+            <point key="canvasLocation" x="1873" y="863"/>
         </scene>
     </scenes>
 </document>

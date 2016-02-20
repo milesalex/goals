@@ -9,17 +9,20 @@
 import UIKit
 
 
-class TodayViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+class TodayViewController: UITableViewController {
+    
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1 // Create 1 row as an example
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TextInputCell") as! TableViewCell
         
-        cell.configure(text: "", placeholder: "Enter some text!")
+        cell.configure(text: "", placeholder: "What are you doing today?")
         return cell
     }
+    
 }
 
 //class TodayViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
