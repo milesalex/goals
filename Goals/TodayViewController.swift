@@ -10,6 +10,8 @@ import UIKit
 
 
 class TodayViewController: UITableViewController {
+
+    var toDoItems = [ToDoItem]()
     
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -21,7 +23,29 @@ class TodayViewController: UITableViewController {
         
         cell.configure(text: "", placeholder: "What are you doing today?")
         return cell
+        
     }
+    
+    
+    func textFieldShouldReturn(todoTextField: UITextField) -> Bool {
+        
+        //textField code
+        
+        todoTextField.resignFirstResponder()  //if desired
+        performAction()
+        return true
+    }
+    
+    func performAction() {
+        
+        toDoItems.append(ToDoItem(text: todoTextField.text!))
+        print(toDoItems)
+        
+        
+        self.tableView.insertRowsAtIndexPaths(NSIndexPath(item: self.toDoItems.count, section: 0), withRowAnimation: UITableViewRowAnimation)
+        
+    }
+
     
 }
 
