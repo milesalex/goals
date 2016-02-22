@@ -12,6 +12,7 @@ import UIKit
 class TodayViewController: UITableViewController/*, TableViewCellDelegate*/ {
 
     var toDoItems = [ToDoItem]()
+    let prefs = NSUserDefaults.standardUserDefaults()
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return 1 // Create 1 row as an example
@@ -49,7 +50,7 @@ class TodayViewController: UITableViewController/*, TableViewCellDelegate*/ {
     func saveTaskWithTitle(title: String) {
         let newIndexPath = NSIndexPath(forItem: self.toDoItems.count + 1, inSection: 0)
         self.tableView.beginUpdates()
-        toDoItems.append(ToDoItem(text: title))
+        toDoItems.append(ToDoItem!(text: title))
         self.tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
         self.tableView.endUpdates()
     }

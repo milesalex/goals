@@ -8,14 +8,38 @@
 
 import UIKit
 
-class ToDoItem: NSObject {
+// MARK: Types
+
+struct PropertyKey {
+    static let textKey = "text"
+    static let completedKey = "completed"
+}
+
+class ToDoItem: NSObject, NSCoding {
     var text: String!
     
     var completed: Bool!
     
-    init(text: String){
+    init?(text: String){
         self.text = text
         self.completed = false
     }
-
+    
+    // MARK: NSCoding
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(text, forKey: PropertyKey.textKey)
+        aCoder.encodeObject(completed, forKey: PropertyKey.completedKey)
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder) {
+        let text = aDecoder.decodeObjectForKey(PropertyKey.textKey) as! String
+        
+        self.init(text: text)
+    }
+    
 }
+
+
+
+
