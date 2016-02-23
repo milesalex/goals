@@ -21,6 +21,8 @@ class TodayViewController: UITableViewController/*, TableViewCellDelegate*/ {
         } else {
             // empty
         }
+        
+        deleteTodos()
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -46,10 +48,21 @@ class TodayViewController: UITableViewController/*, TableViewCellDelegate*/ {
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
+            self.tableView.beginUpdates()
             toDoItems.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            self.tableView.endUpdates()
         }
     }
+    
+//    override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+//        if indexPath.row == toDoItems.count {
+//            print(toDoItems.count)
+//            return UITableViewCellEditingStyle.None
+//        }
+//
+//        return UITableViewCellEditingStyle.None
+//    }
     
     
     func saveTaskWithTitle(title: String) {
@@ -71,6 +84,15 @@ class TodayViewController: UITableViewController/*, TableViewCellDelegate*/ {
     
     func loadTodos() -> [ToDoItem]? {
         return NSKeyedUnarchiver.unarchiveObjectWithFile(ToDoItem.ArchiveURL.path!) as? [ToDoItem]
+    }
+    
+    func deleteTodos() {
+        let date = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+//        let components = calendar.components(.CalendarUnitHour | .CalendarUnitMinute, fromDate: date)
+//        let hour = components.hour
+//        let minutes = components.minute
+//        print(components)
     }
     
 }
