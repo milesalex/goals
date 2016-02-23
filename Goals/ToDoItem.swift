@@ -10,20 +10,37 @@ import UIKit
 
 // MARK: Types
 
-struct PropertyKey {
-    static let textKey = "text"
-    static let completedKey = "completed"
-}
+
 
 class ToDoItem: NSObject, NSCoding {
+
+    // MARK: Properties
     var text: String!
+    var completed: Bool?
     
-    var completed: Bool!
+    // MARK: Archiving Paths
+    static let DocumentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first
+    static let ArchiveURL = DocumentsDirectory?.URLByAppendingPathComponent("todoitems")
     
+    // MARK: Types
+    struct PropertyKey {
+        static let textKey = "text"
+        static let completedKey = "completed"
+    }
+    
+    // MARK: Initialization
     init?(text: String){
         self.text = text
         self.completed = false
+        
+        super.init()
+        
+        if text.isEmpty {
+            return nil
+        }
     }
+    
+    
     
     // MARK: NSCoding
     
@@ -37,6 +54,8 @@ class ToDoItem: NSObject, NSCoding {
         
         self.init(text: text)
     }
+    
+   
     
 }
 
