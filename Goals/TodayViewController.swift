@@ -77,6 +77,13 @@ class TodayViewController: UITableViewController/*, TableViewCellDelegate*/ {
         }
     }
     
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        if scrollView.contentOffset.y < -150 {
+            print("close")
+            view.endEditing(true)
+        }
+    }
+    
     func saveTaskWithTitle(title: String) {
         let newIndexPath = NSIndexPath(forItem: self.toDoItems.count + 1, inSection: 0)
         self.tableView.beginUpdates()
@@ -99,8 +106,8 @@ class TodayViewController: UITableViewController/*, TableViewCellDelegate*/ {
     }
     
     func deleteTodos() {
-        let date = NSDate()
-        let calendar = NSCalendar.currentCalendar()
+//        let date = NSDate()
+//        let calendar = NSCalendar.currentCalendar()
 //        let components = calendar.components(.CalendarUnitHour | .CalendarUnitMinute, fromDate: date)
 //        let hour = components.hour
 //        let minutes = components.minute
