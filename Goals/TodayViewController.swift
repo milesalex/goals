@@ -24,7 +24,6 @@ class TodayViewController: UITableViewController/*, TableViewCellDelegate*/ {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 1 // Create 1 row as an example
         return self.toDoItems.count + 1
     }
     
@@ -52,20 +51,18 @@ class TodayViewController: UITableViewController/*, TableViewCellDelegate*/ {
         }
     }
     
-    /*func tableViewCell(tableViewCell: TableViewCell, didEnterString string: String) {
-        <#code#>
-    }*/
     
     func saveTaskWithTitle(title: String) {
         let newIndexPath = NSIndexPath(forItem: self.toDoItems.count + 1, inSection: 0)
         self.tableView.beginUpdates()
-        toDoItems.append(ToDoItem(text: title)!)
+        toDoItems.append(ToDoItem(text: title, completed: false)!)
         self.tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
         self.tableView.endUpdates()
+        saveTodos()
     }
     
     func saveTodos() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(toDoItems, toFile: ToDoItem.ArchiveURL!.path!)
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(toDoItems, toFile: ToDoItem.ArchiveURL.path!)
         
         if !isSuccessfulSave {
             print("Failed to save todos...")
@@ -73,7 +70,7 @@ class TodayViewController: UITableViewController/*, TableViewCellDelegate*/ {
     }
     
     func loadTodos() -> [ToDoItem]? {
-        return (NSKeyedUnarchiver.unarchiveObjectWithFile(ToDoItem.ArchiveURL!.path!) as! [ToDoItem])
+        return NSKeyedUnarchiver.unarchiveObjectWithFile(ToDoItem.ArchiveURL.path!) as? [ToDoItem]
     }
     
 }

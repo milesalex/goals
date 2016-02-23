@@ -8,19 +8,15 @@
 
 import UIKit
 
-// MARK: Types
-
-
-
 class ToDoItem: NSObject, NSCoding {
 
     // MARK: Properties
-    var text: String!
+    var text: String
     var completed: Bool?
     
     // MARK: Archiving Paths
     static let DocumentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first
-    static let ArchiveURL = DocumentsDirectory?.URLByAppendingPathComponent("todoitems")
+    static let ArchiveURL = DocumentsDirectory!.URLByAppendingPathComponent("todoitems")
     
     // MARK: Types
     struct PropertyKey {
@@ -29,7 +25,7 @@ class ToDoItem: NSObject, NSCoding {
     }
     
     // MARK: Initialization
-    init?(text: String){
+    init?(text: String, completed: Bool?){
         self.text = text
         self.completed = false
         
@@ -40,10 +36,7 @@ class ToDoItem: NSObject, NSCoding {
         }
     }
     
-    
-    
     // MARK: NSCoding
-    
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(text, forKey: PropertyKey.textKey)
         aCoder.encodeObject(completed, forKey: PropertyKey.completedKey)
@@ -51,12 +44,10 @@ class ToDoItem: NSObject, NSCoding {
     
     required convenience init?(coder aDecoder: NSCoder) {
         let text = aDecoder.decodeObjectForKey(PropertyKey.textKey) as! String
+        let completed = aDecoder.decodeObjectForKey(PropertyKey.completedKey) as? Bool
         
-        self.init(text: text)
+        self.init(text: text, completed: completed)
     }
-    
-   
-    
 }
 
 
