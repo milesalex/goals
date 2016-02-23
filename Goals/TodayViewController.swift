@@ -19,7 +19,7 @@ class TodayViewController: UITableViewController/*, TableViewCellDelegate*/ {
         if let savedTodos = loadTodos() {
             toDoItems += savedTodos
         } else {
-            // empty
+            // empty view
         }
         
         deleteTodos()
@@ -40,8 +40,6 @@ class TodayViewController: UITableViewController/*, TableViewCellDelegate*/ {
             cell.todoTextField.becomeFirstResponder()
         }
         
-        
-        //cell.delegate = self
         cell.viewController = self
         return cell
     }
@@ -55,15 +53,13 @@ class TodayViewController: UITableViewController/*, TableViewCellDelegate*/ {
         }
     }
     
-//    override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
-//        if indexPath.row == toDoItems.count {
-//            print(toDoItems.count)
-//            return UITableViewCellEditingStyle.None
-//        }
-//
-//        return UITableViewCellEditingStyle.None
-//    }
-    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        if indexPath.row == toDoItems.count {
+            return false
+        } else {
+            return true
+        }
+    }
     
     func saveTaskWithTitle(title: String) {
         let newIndexPath = NSIndexPath(forItem: self.toDoItems.count + 1, inSection: 0)
