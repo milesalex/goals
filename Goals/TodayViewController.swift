@@ -10,12 +10,14 @@ import UIKit
 
 
 class TodayViewController: UITableViewController/*, TableViewCellDelegate*/ {
-
+    
+    // Data model
     var toDoItems = [ToDoItem]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Save data to local variable that we can use in this VC
         if let savedTodos = loadTodos() {
             toDoItems += savedTodos
         } else {
@@ -26,18 +28,32 @@ class TodayViewController: UITableViewController/*, TableViewCellDelegate*/ {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // return the number of rows in the table view
+        // Add one row for the entry cell
         return self.toDoItems.count + 1
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TextInputCell") as! TableViewCell
         
+        // Load todoItem data model into the table view
+        // After all data is loaded, add a blank cell for entering a new todo
         if indexPath.row < self.toDoItems.count {
-           let todoItem = toDoItems[indexPath.row]
+           
+            // Get todoItem from toDoItem data model by using indexPath.row
+            let todoItem = toDoItems[indexPath.row]
+            
+            // Populate cell with text and placeholder
             cell.configure(text: todoItem.text, placeholder: "What are you doing today?")
+            
         } else {
+            
+            // In empty cell, populate with only placeholder text
             cell.configure(text: "", placeholder: "What are you doing today?")
+            
+            // Focus text input on empty cell
             cell.todoTextField.becomeFirstResponder()
+            
         }
         
         cell.viewController = self
