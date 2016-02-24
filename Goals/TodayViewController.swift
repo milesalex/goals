@@ -11,14 +11,8 @@ import UIKit
 
 class TodayViewController: UITableViewController/*, TableViewCellDelegate*/ {
     
-    // Data model
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-    
-        deleteTodos()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -73,12 +67,6 @@ class TodayViewController: UITableViewController/*, TableViewCellDelegate*/ {
             return true
         }
     }
-    
-//    override func scrollViewDidScroll(scrollView: UIScrollView) {
-//        if scrollView.contentOffset.y < -150 {
-//            view.endEditing(true)
-//        }
-//    }
     
     func saveTaskWithTitle(title: String) {
         let newIndexPath = NSIndexPath(forItem: toDoItems.count + 1, inSection: 0)
