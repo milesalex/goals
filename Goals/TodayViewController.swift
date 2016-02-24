@@ -24,7 +24,15 @@ class TodayViewController: UITableViewController/*, TableViewCellDelegate*/ {
             // empty view
         }
         
+        
+        
         deleteTodos()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,7 +61,6 @@ class TodayViewController: UITableViewController/*, TableViewCellDelegate*/ {
             
             // Focus text input on empty cell
             cell.todoTextField.becomeFirstResponder()
-            
         }
         
         cell.viewController = self
@@ -79,7 +86,6 @@ class TodayViewController: UITableViewController/*, TableViewCellDelegate*/ {
     
     override func scrollViewDidScroll(scrollView: UIScrollView) {
         if scrollView.contentOffset.y < -150 {
-            print("close")
             view.endEditing(true)
         }
     }
@@ -103,6 +109,13 @@ class TodayViewController: UITableViewController/*, TableViewCellDelegate*/ {
     
     func loadTodos() -> [ToDoItem]? {
         return NSKeyedUnarchiver.unarchiveObjectWithFile(ToDoItem.ArchiveURL.path!) as? [ToDoItem]
+    }
+    
+    func didDayPass() {
+//        let now = NSDate()
+//        if now.compare(whenUserLastClosedApp) == NS
+        
+        
     }
     
     func deleteTodos() {

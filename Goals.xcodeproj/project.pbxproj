@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		DA9347851C763A0F00A9FCF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9347841C763A0F00A9FCF3 /* AppDelegate.swift */; };
-		DA9347871C763A0F00A9FCF3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9347861C763A0F00A9FCF3 /* ViewController.swift */; };
 		DA93478A1C763A0F00A9FCF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA9347881C763A0F00A9FCF3 /* Main.storyboard */; };
 		DA93478C1C763A0F00A9FCF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA93478B1C763A0F00A9FCF3 /* Assets.xcassets */; };
 		DA93478F1C763A0F00A9FCF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA93478D1C763A0F00A9FCF3 /* LaunchScreen.storyboard */; };
@@ -39,7 +38,6 @@
 /* Begin PBXFileReference section */
 		DA9347811C763A0F00A9FCF3 /* Goals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA9347841C763A0F00A9FCF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DA9347861C763A0F00A9FCF3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DA9347891C763A0F00A9FCF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DA93478B1C763A0F00A9FCF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA93478E1C763A0F00A9FCF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -104,7 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				DA9347841C763A0F00A9FCF3 /* AppDelegate.swift */,
-				DA9347861C763A0F00A9FCF3 /* ViewController.swift */,
 				DA9347881C763A0F00A9FCF3 /* Main.storyboard */,
 				DA9347B21C763C9500A9FCF3 /* TodayViewController.swift */,
 				DAB9E6FF1C7903FD00FF321A /* TableViewCell.swift */,
@@ -269,7 +266,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAB9E7001C7903FD00FF321A /* TableViewCell.swift in Sources */,
-				DA9347871C763A0F00A9FCF3 /* ViewController.swift in Sources */,
 				DA9347851C763A0F00A9FCF3 /* AppDelegate.swift in Sources */,
 				DA9347B51C763D0600A9FCF3 /* ToDoItem.swift in Sources */,
 				DA9347B31C763C9500A9FCF3 /* TodayViewController.swift in Sources */,
