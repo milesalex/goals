@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        loadTodos()
         return true
     }
 
@@ -44,7 +45,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         
-        print(prefs.objectForKey("whenUserLastClosedApp") as? NSDate)
+        // Reference time when the user last closed the app
+        whenUserLastClosedApp = prefs.objectForKey("whenUserLastClosedApp") as? NSDate
+        
+        // Get current time
+        let now = NSDate()
+        
+        // For testing purposes
+        // let yesterday = NSDate().dateByAddingTimeInterval(60 * 60 * 24 * -2)
+        
+        // Print how many days since user closed the app
+        print(whenUserLastClosedApp.numberOfDaysUntilDateTime(now))
+        
+        
+        
     }
 
     func applicationWillTerminate(application: UIApplication) {

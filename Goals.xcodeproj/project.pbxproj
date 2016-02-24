@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA6E4B111C7D414500F74CD4 /* NSDate+Goals.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6E4B101C7D414500F74CD4 /* NSDate+Goals.swift */; };
+		DA6E4B131C7D453700F74CD4 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6E4B121C7D453700F74CD4 /* DataModel.swift */; };
 		DA9347851C763A0F00A9FCF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9347841C763A0F00A9FCF3 /* AppDelegate.swift */; };
 		DA93478A1C763A0F00A9FCF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA9347881C763A0F00A9FCF3 /* Main.storyboard */; };
 		DA93478C1C763A0F00A9FCF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA93478B1C763A0F00A9FCF3 /* Assets.xcassets */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA6E4B101C7D414500F74CD4 /* NSDate+Goals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Goals.swift"; sourceTree = "<group>"; };
+		DA6E4B121C7D453700F74CD4 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		DA9347811C763A0F00A9FCF3 /* Goals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA9347841C763A0F00A9FCF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA9347891C763A0F00A9FCF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -104,11 +108,13 @@
 				DA9347841C763A0F00A9FCF3 /* AppDelegate.swift */,
 				DA9347881C763A0F00A9FCF3 /* Main.storyboard */,
 				DA9347B21C763C9500A9FCF3 /* TodayViewController.swift */,
+				DA6E4B101C7D414500F74CD4 /* NSDate+Goals.swift */,
 				DAB9E6FF1C7903FD00FF321A /* TableViewCell.swift */,
 				DA9347B41C763D0600A9FCF3 /* ToDoItem.swift */,
 				DA93478B1C763A0F00A9FCF3 /* Assets.xcassets */,
 				DA93478D1C763A0F00A9FCF3 /* LaunchScreen.storyboard */,
 				DA9347901C763A0F00A9FCF3 /* Info.plist */,
+				DA6E4B121C7D453700F74CD4 /* DataModel.swift */,
 			);
 			path = Goals;
 			sourceTree = "<group>";
@@ -265,10 +271,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA6E4B111C7D414500F74CD4 /* NSDate+Goals.swift in Sources */,
 				DAB9E7001C7903FD00FF321A /* TableViewCell.swift in Sources */,
 				DA9347851C763A0F00A9FCF3 /* AppDelegate.swift in Sources */,
 				DA9347B51C763D0600A9FCF3 /* ToDoItem.swift in Sources */,
 				DA9347B31C763C9500A9FCF3 /* TodayViewController.swift in Sources */,
+				DA6E4B131C7D453700F74CD4 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

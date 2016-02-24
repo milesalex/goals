@@ -12,33 +12,23 @@ import UIKit
 class TodayViewController: UITableViewController/*, TableViewCellDelegate*/ {
     
     // Data model
-    var toDoItems = [ToDoItem]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Save data to local variable that we can use in this VC
-        if let savedTodos = loadTodos() {
-            toDoItems += savedTodos
-        } else {
-            // empty view
-        }
         
-        
-        
+    
         deleteTodos()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // return the number of rows in the table view
         // Add one row for the entry cell
-        return self.toDoItems.count + 1
+        return toDoItems.count + 1
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -46,7 +36,7 @@ class TodayViewController: UITableViewController/*, TableViewCellDelegate*/ {
         
         // Load todoItem data model into the table view
         // After all data is loaded, add a blank cell for entering a new todo
-        if indexPath.row < self.toDoItems.count {
+        if indexPath.row < toDoItems.count {
            
             // Get todoItem from toDoItem data model by using indexPath.row
             let todoItem = toDoItems[indexPath.row]
@@ -91,24 +81,12 @@ class TodayViewController: UITableViewController/*, TableViewCellDelegate*/ {
     }
     
     func saveTaskWithTitle(title: String) {
-        let newIndexPath = NSIndexPath(forItem: self.toDoItems.count + 1, inSection: 0)
+        let newIndexPath = NSIndexPath(forItem: toDoItems.count + 1, inSection: 0)
         self.tableView.beginUpdates()
         toDoItems.append(ToDoItem(text: title, completed: false)!)
         self.tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
         self.tableView.endUpdates()
         saveTodos()
-    }
-    
-    func saveTodos() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(toDoItems, toFile: ToDoItem.ArchiveURL.path!)
-        
-        if !isSuccessfulSave {
-            print("Failed to save todos...")
-        }
-    }
-    
-    func loadTodos() -> [ToDoItem]? {
-        return NSKeyedUnarchiver.unarchiveObjectWithFile(ToDoItem.ArchiveURL.path!) as? [ToDoItem]
     }
     
     func didDayPass() {
