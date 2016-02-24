@@ -74,11 +74,11 @@ class TodayViewController: UITableViewController/*, TableViewCellDelegate*/ {
         }
     }
     
-    override func scrollViewDidScroll(scrollView: UIScrollView) {
-        if scrollView.contentOffset.y < -150 {
-            view.endEditing(true)
-        }
-    }
+//    override func scrollViewDidScroll(scrollView: UIScrollView) {
+//        if scrollView.contentOffset.y < -150 {
+//            view.endEditing(true)
+//        }
+//    }
     
     func saveTaskWithTitle(title: String) {
         let newIndexPath = NSIndexPath(forItem: toDoItems.count + 1, inSection: 0)
