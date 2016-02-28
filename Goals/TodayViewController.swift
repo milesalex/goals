@@ -77,21 +77,5 @@ class TodayViewController: UITableViewController/*, TableViewCellDelegate*/ {
         saveTodos()
     }
     
-    func didDayPass() {
-//        let now = NSDate()
-//        if now.compare(whenUserLastClosedApp) == NS
-        
-        
-    }
-    
-    func deleteTodos() {
-//        let date = NSDate()
-//        let calendar = NSCalendar.currentCalendar()
-//        let components = calendar.components(.CalendarUnitHour | .CalendarUnitMinute, fromDate: date)
-//        let hour = components.hour
-//        let minutes = components.minute
-//        print(components)
-    }
-    
 }
 

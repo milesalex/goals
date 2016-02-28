@@ -52,12 +52,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let now = NSDate()
         
         // For testing purposes
-        // let yesterday = NSDate().dateByAddingTimeInterval(60 * 60 * 24 * -2)
+        // let yesterday = NSDate().dateByAddingTimeInterval(60 * 60 * 24 * -1)
         
-        // Print how many days since user closed the app
-        print(whenUserLastClosedApp.numberOfDaysUntilDateTime(now))
-        
-        
+        if whenUserLastClosedApp.numberOfDaysUntilDateTime(now) < 0 {
+            toDoItems.removeAll()
+            saveTodos()
+            
+            print("app delegate")
+        } else {
+            print("dont delete todos")
+        }
         
     }
 
