@@ -48,6 +48,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Reference time when the user last closed the app
         whenUserLastClosedApp = prefs.objectForKey("whenUserLastClosedApp") as? NSDate
         
+        // Reset application badge number
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
+        
         // Get current time
         let now = NSDate()
         
@@ -85,6 +88,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         notification.alertAction = "Open"
         notification.fireDate = fireTime
         notification.soundName = UILocalNotificationDefaultSoundName
+        notification.applicationIconBadgeNumber = 1
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
         
         return true
