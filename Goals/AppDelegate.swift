@@ -54,6 +54,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // For testing purposes
         // let yesterday = NSDate().dateByAddingTimeInterval(60 * 60 * 24 * -1)
         
+        print(toDoItems)
+        
+
         if whenUserLastClosedApp.numberOfDaysUntilDateTime(now) < 0 {
             toDoItems.removeAll()
             saveTodos()
@@ -62,6 +65,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             print("dont delete todos")
         }
+
+        
+        
         
     }
 
