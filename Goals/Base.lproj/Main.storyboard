@@ -78,7 +78,7 @@
         <!--Today-->
         <scene sceneID="yPa-ZL-kln">
             <objects>
-                <navigationController title="Today" automaticallyAdjustsScrollViewInsets="NO" id="Z2A-4Q-Van" sceneMemberID="viewController">
+                <navigationController title="Today" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Z2A-4Q-Van" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Today" id="ZVG-P4-txZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fi5-Cd-QbE">
@@ -104,7 +104,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextInputCell" id="jdv-Rv-5vf" customClass="TableViewCell" customModule="Goals" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jdv-Rv-5vf" id="5Fm-9K-AwD">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -112,7 +112,7 @@
                                     <subviews>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Todo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7eP-zz-w2V">
                                             <rect key="frame" x="16" y="7" width="576" height="30"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                     </subviews>

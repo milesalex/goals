@@ -52,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let now = NSDate()
         
         // For testing purposes
-         let yesterday = NSDate().dateByAddingTimeInterval(60 * 60 * 24 * -1)
+        // let yesterday = NSDate().dateByAddingTimeInterval(60 * 60 * 24 * -1)
         
         print(toDoItems)
         

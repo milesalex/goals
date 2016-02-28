@@ -55,7 +55,7 @@ class TodayViewController: UITableViewController/*, TableViewCellDelegate*/ {
         if editingStyle == UITableViewCellEditingStyle.Delete {
             self.tableView.beginUpdates()
             toDoItems.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
             self.tableView.endUpdates()
         }
     }
