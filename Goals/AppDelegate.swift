@@ -52,23 +52,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let now = NSDate()
         
         // For testing purposes
-        // let yesterday = NSDate().dateByAddingTimeInterval(60 * 60 * 24 * -1)
+         let yesterday = NSDate().dateByAddingTimeInterval(60 * 60 * 24 * -1)
         
         print(toDoItems)
         
-
-        if whenUserLastClosedApp.numberOfDaysUntilDateTime(now) < 0 {
-            toDoItems.removeAll()
-            saveTodos()
-            
-            print("app delegate")
-        } else {
-            print("dont delete todos")
+        if whenUserLastClosedApp != nil {
+            if whenUserLastClosedApp.numberOfDaysUntilDateTime(now) < 0 {
+                toDoItems.removeAll()
+                saveTodos()
+                
+                print("app delegate")
+            } else {
+                print("dont delete todos")
+            }
         }
-
+    }
+    
+    func application(application: UIApplication, willFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
+        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: .Badge, categories: nil))
         
+        let date = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components([.Day , .Month , .Year], fromDate: date)
         
+        components.hour = 8
+        components.minute = 00
         
+        let fireTime = calendar.dateFromComponents(components)
+        
+        let notification = UILocalNotification()
+        notification.alertBody = "What are you doing today?"
+        notification.alertAction = "Open"
+        notification.fireDate = fireTime
+        notification.soundName = UILocalNotificationDefaultSoundName
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+        
+        return true
     }
 
     func applicationWillTerminate(application: UIApplication) {
