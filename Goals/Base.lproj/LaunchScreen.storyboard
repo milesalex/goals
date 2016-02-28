@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -19,15 +18,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="completed" translatesAutoresizingMaskIntoConstraints="NO" id="hlU-fa-d3m">
-                                <rect key="frame" x="270" y="172" width="60" height="60"/>
+                                <rect key="frame" x="270" y="270" width="60" height="60"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="hlU-fa-d3m" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="250" id="EY8-9Z-35m"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="hlU-fa-d3m" secondAttribute="bottom" constant="368" id="UBr-sq-pVT"/>
-                            <constraint firstItem="hlU-fa-d3m" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="152" id="bF8-7J-Zcm"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hlU-fa-d3m" secondAttribute="trailing" constant="250" id="oxu-Kw-fKC"/>
+                            <constraint firstItem="hlU-fa-d3m" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="0Tz-t9-Nbx"/>
+                            <constraint firstItem="hlU-fa-d3m" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Si3-GZ-7sK"/>
                         </constraints>
                     </view>
                 </viewController>
