@@ -53,10 +53,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if let date = whenUserLastClosedApp {
             if date.isYesterday() {
+                print("dont delete todos")
+            } else {
                 toDoItems.removeAll()
                 saveTodos()
-            } else {
-                print("dont delete todos")
             }
         } else {
             
