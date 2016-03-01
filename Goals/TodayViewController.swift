@@ -28,6 +28,8 @@ class TodayViewController: UITableViewController/*, TableViewCellDelegate*/ {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TextInputCell") as! TableViewCell
         
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        
         // Load todoItem data model into the table view
         // After all data is loaded, add a blank cell for entering a new todo
         if indexPath.row < toDoItems.count {
