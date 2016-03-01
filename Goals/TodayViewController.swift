@@ -53,6 +53,8 @@ class TodayViewController: UITableViewController/*, TableViewCellDelegate*/ {
         return cell
     }
     
+    
+    
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
             self.tableView.beginUpdates()
@@ -81,4 +83,6 @@ class TodayViewController: UITableViewController/*, TableViewCellDelegate*/ {
     }
     
 }
+
+//hello
 
