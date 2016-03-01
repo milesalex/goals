@@ -110,13 +110,15 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Todo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7eP-zz-w2V">
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Todo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7eP-zz-w2V">
                                             <rect key="frame" x="16" y="7" width="576" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="7eP-zz-w2V" firstAttribute="centerY" secondItem="5Fm-9K-AwD" secondAttribute="centerY" id="010-nb-ndE"/>
+                                        <constraint firstItem="7eP-zz-w2V" firstAttribute="top" secondItem="5Fm-9K-AwD" secondAttribute="topMargin" constant="-1" id="4VW-fz-SrC"/>
                                         <constraint firstItem="7eP-zz-w2V" firstAttribute="leading" secondItem="5Fm-9K-AwD" secondAttribute="leadingMargin" constant="8" id="q20-Pc-ai4"/>
                                         <constraint firstItem="7eP-zz-w2V" firstAttribute="trailing" secondItem="5Fm-9K-AwD" secondAttribute="trailingMargin" id="vWL-NE-EpS"/>
                                     </constraints>

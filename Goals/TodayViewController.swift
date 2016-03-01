@@ -57,6 +57,7 @@ class TodayViewController: UITableViewController/*, TableViewCellDelegate*/ {
             toDoItems.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
             self.tableView.endUpdates()
+            saveTodos()
         }
     }
     

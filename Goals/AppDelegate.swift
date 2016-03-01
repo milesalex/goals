@@ -12,7 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var whenUserLastClosedApp: NSDate!
+    var whenUserLastClosedApp: NSDate?
     
     var prefs = NSUserDefaults.standardUserDefaults()
 
@@ -51,37 +51,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Reset application badge number
         UIApplication.sharedApplication().applicationIconBadgeNumber = 0
         
-        // Get current time
-        let now = NSDate()
-        
-        // For testing purposes
-        // let yesterday = NSDate().dateByAddingTimeInterval(60 * 60 * 24 * -1)
-        
-        print(toDoItems)
-        
-        if whenUserLastClosedApp != nil {
-            if whenUserLastClosedApp.numberOfDaysUntilDateTime(now) < 0 {
+        if let date = whenUserLastClosedApp {
+            if date.isYesterday() {
                 toDoItems.removeAll()
                 saveTodos()
-                
-                print("app delegate")
             } else {
                 print("dont delete todos")
             }
+        } else {
+            
         }
     }
     
     func application(application: UIApplication, willFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: .Badge, categories: nil))
         
-        let date = NSDate()
-        let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components([.Day , .Month , .Year], fromDate: date)
-        
-        components.hour = 8
-        components.minute = 00
-        
-        let fireTime = calendar.dateFromComponents(components)
+        let fireTime = NSDate.nextDayAtHour(8)
         
         let notification = UILocalNotification()
         notification.alertBody = "What are you doing today?"
@@ -97,6 +82,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    
 
 
 }
