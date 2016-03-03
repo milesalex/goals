@@ -13,7 +13,7 @@ class TodosViewController: UITableViewController/*, TableViewCellDelegate*/ {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: 40, left: 0, bottom: 0, right: 0)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -55,8 +55,6 @@ class TodosViewController: UITableViewController/*, TableViewCellDelegate*/ {
         return cell
     }
     
-    
-    
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
             self.tableView.beginUpdates()
@@ -83,10 +81,4 @@ class TodosViewController: UITableViewController/*, TableViewCellDelegate*/ {
         self.tableView.endUpdates()
         saveTodos()
     }
-    
 }
-
-
-// comment
-
-
