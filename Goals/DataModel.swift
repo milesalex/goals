@@ -9,6 +9,8 @@
 import Foundation
 
 var toDoItems = [ToDoItem]()
+var yearItems = [ToDoItem]()
+//var lifeItems
 
 func loadTodos() {
     // Save data to local variable that we can use in this VC

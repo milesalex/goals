@@ -9,10 +9,11 @@
 import UIKit
 
 
-class TodayViewController: UITableViewController/*, TableViewCellDelegate*/ {
+class TodosViewController: UITableViewController/*, TableViewCellDelegate*/ {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -29,6 +30,7 @@ class TodayViewController: UITableViewController/*, TableViewCellDelegate*/ {
         let cell = tableView.dequeueReusableCellWithIdentifier("TextInputCell") as! TableViewCell
         
         cell.selectionStyle = UITableViewCellSelectionStyle.None
+        
         
         // Load todoItem data model into the table view
         // After all data is loaded, add a blank cell for entering a new todo

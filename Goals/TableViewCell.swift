@@ -17,7 +17,7 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
     
     @IBOutlet weak var todoTextField: UITextField!
     
-    weak var viewController: TodayViewController?
+    weak var viewController: TodosViewController?
     
     func configure(text text: String?, placeholder: String) {
         self.todoTextField.delegate = self

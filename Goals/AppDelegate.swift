@@ -20,6 +20,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         loadTodos()
+        
+        let tabBarController = UITabBarController()
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let todayNavigationController = storyboard.instantiateViewControllerWithIdentifier("TodosNavigationController") as! UINavigationController
+        let yearNavigationController = storyboard.instantiateViewControllerWithIdentifier("TodosNavigationController") as! UINavigationController
+        let lifeNavigationController = storyboard.instantiateViewControllerWithIdentifier("TodosNavigationController") as! UINavigationController
+        
+        
+        tabBarController.viewControllers = [todayNavigationController, yearNavigationController, lifeNavigationController]
+        
+        window!.rootViewController = tabBarController
+        
+        let todayViewController = todayNavigationController.topViewController as! TodosViewController
+        let yearViewController = yearNavigationController.topViewController as! TodosViewController
+        let lifeViewController = lifeNavigationController.topViewController as! TodosViewController
+        
         return true
     }
 
