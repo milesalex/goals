@@ -8,8 +8,25 @@
 
 import UIKit
 
+enum ToDoType{
+    case Today, Year, Life
+}
 
 class TodosViewController: UITableViewController/*, TableViewCellDelegate*/ {
+    
+//    var type: ToDoType?
+    
+    var dataModel: DataModel? {
+        didSet {
+            if let dataModel = self.dataModel {
+                self.tabBarItem.title = dataModel.tabName()
+                self.title = dataModel.tabName()
+
+                dataModel.loadTodos()
+            }
+            self.tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +40,12 @@ class TodosViewController: UITableViewController/*, TableViewCellDelegate*/ {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // return the number of rows in the table view
         // Add one row for the entry cell
-        return toDoItems.count + 1
+        if let dataModel = self.dataModel {
+            return dataModel.toDoItems.count + 1
+        } else {
+            return 0
+        }
+        
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -31,24 +53,25 @@ class TodosViewController: UITableViewController/*, TableViewCellDelegate*/ {
         
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         
-        
-        // Load todoItem data model into the table view
-        // After all data is loaded, add a blank cell for entering a new todo
-        if indexPath.row < toDoItems.count {
-           
-            // Get todoItem from toDoItem data model by using indexPath.row
-            let todoItem = toDoItems[indexPath.row]
-            
-            // Populate cell with text and placeholder
-            cell.configure(text: todoItem.text, placeholder: "What are you doing today?")
-            
-        } else {
-            
-            // In empty cell, populate with only placeholder text
-            cell.configure(text: "", placeholder: "What are you doing today?")
-            
-            // Focus text input on empty cell
-            cell.todoTextField.becomeFirstResponder()
+        if let dataModel = self.dataModel {
+            // Load todoItem data model into the table view
+            // After all data is loaded, add a blank cell for entering a new todo
+            if indexPath.row < dataModel.toDoItems.count {
+                
+                // Get todoItem from toDoItem data model by using indexPath.row
+                let todoItem = dataModel.toDoItems[indexPath.row]
+                
+                // Populate cell with text and placeholder
+                cell.configure(text: todoItem.text, placeholder: dataModel.placeholder())
+                
+            } else {
+                
+                // In empty cell, populate with only placeholder text
+                cell.configure(text: "", placeholder: dataModel.placeholder())
+                
+                // Focus text input on empty cell
+                cell.todoTextField.becomeFirstResponder()
+            }
         }
         
         cell.viewController = self
@@ -56,17 +79,29 @@ class TodosViewController: UITableViewController/*, TableViewCellDelegate*/ {
     }
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        guard let dataModel = self.dataModel else {
+            print("cant get data model")
+            return
+        }
+        
         if editingStyle == UITableViewCellEditingStyle.Delete {
             self.tableView.beginUpdates()
-            toDoItems.removeAtIndex(indexPath.row)
+            dataModel.toDoItems.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
             self.tableView.endUpdates()
-            saveTodos()
+            dataModel.saveTodos()
         }
     }
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        if indexPath.row == toDoItems.count {
+        
+        guard let dataModel = self.dataModel else {
+            print("cant get data model")
+            return false
+        }
+        
+        if indexPath.row == dataModel.toDoItems.count {
             return false
         } else {
             return true
@@ -74,11 +109,17 @@ class TodosViewController: UITableViewController/*, TableViewCellDelegate*/ {
     }
     
     func saveTaskWithTitle(title: String) {
-        let newIndexPath = NSIndexPath(forItem: toDoItems.count + 1, inSection: 0)
+        
+        guard let dataModel = self.dataModel else {
+            print("cant save task with title")
+            return
+        }
+        
+        let newIndexPath = NSIndexPath(forItem: dataModel.toDoItems.count + 1, inSection: 0)
         self.tableView.beginUpdates()
-        toDoItems.append(ToDoItem(text: title, completed: false)!)
+        dataModel.toDoItems.append(ToDoItem(text: title, completed: false)!)
         self.tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
         self.tableView.endUpdates()
-        saveTodos()
+        dataModel.saveTodos()
     }
 }

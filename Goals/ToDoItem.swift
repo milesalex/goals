@@ -15,8 +15,7 @@ class ToDoItem: NSObject, NSCoding {
     var completed: Bool?
     
     // MARK: Archiving Paths
-    static let DocumentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first
-    static let ArchiveURL = DocumentsDirectory!.URLByAppendingPathComponent("todoitems")
+    
     
     // MARK: Types
     struct PropertyKey {

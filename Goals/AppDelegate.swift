@@ -12,14 +12,13 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var whenUserLastClosedApp: NSDate?
     
-    var prefs = NSUserDefaults.standardUserDefaults()
-
+    let todayDataModel = DataModel(aType: .Today)
+    let yearDataModel = DataModel(aType: .Year)
+    let lifeDataModel = DataModel(aType: .Life)
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        loadTodos()
         
         let tabBarController = UITabBarController()
         
@@ -37,14 +36,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let yearViewController = yearNavigationController.topViewController as! TodosViewController
         let lifeViewController = lifeNavigationController.topViewController as! TodosViewController
         
+        todayViewController.dataModel = todayDataModel
+        yearViewController.dataModel = yearDataModel
+        lifeViewController.dataModel = lifeDataModel
+        
         return true
     }
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+        let prefs = NSUserDefaults.standardUserDefaults()
         
-        whenUserLastClosedApp = NSDate()
+        let whenUserLastClosedApp = NSDate()
         prefs.setValue(whenUserLastClosedApp, forKey: "whenUserLastClosedApp")
         prefs.synchronize()
         
@@ -63,21 +67,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         
         // Reference time when the user last closed the app
-        whenUserLastClosedApp = prefs.objectForKey("whenUserLastClosedApp") as? NSDate
+        
         
         // Reset application badge number
         UIApplication.sharedApplication().applicationIconBadgeNumber = 0
         
-        if let date = whenUserLastClosedApp {
-            if date.isYesterday() {
-                print("dont delete todos")
-            } else {
-                toDoItems.removeAll()
-                saveTodos()
-            }
-        } else {
-            
-        }
+        self.todayDataModel.deleteAllPastTodosForCurrentDate()
+        
     }
     
     func application(application: UIApplication, willFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
