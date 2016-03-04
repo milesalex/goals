@@ -27,6 +27,8 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
         
         todoTextField.accessibilityValue = text
         todoTextField.accessibilityLabel = placeholder
+        
+        todoTextField.autocapitalizationType = UITextAutocapitalizationType.Sentences
     }
     
     
