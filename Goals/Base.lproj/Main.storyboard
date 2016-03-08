@@ -41,20 +41,31 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Todo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7eP-zz-w2V">
-                                            <rect key="frame" x="16" y="7" width="576" height="30"/>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Todo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7eP-zz-w2V">
+                                            <rect key="frame" x="48" y="7" width="541" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYL-zA-LTk">
+                                            <rect key="frame" x="12" y="7" width="30" height="30"/>
+                                            <state key="normal" image="check1"/>
+                                            <state key="selected" image="check20"/>
+                                            <connections>
+                                                <action selector="didCheck:" destination="jdv-Rv-5vf" eventType="touchUpInside" id="gb0-Hb-w6Z"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="7eP-zz-w2V" firstAttribute="centerY" secondItem="5Fm-9K-AwD" secondAttribute="centerY" id="010-nb-ndE"/>
                                         <constraint firstItem="7eP-zz-w2V" firstAttribute="top" secondItem="5Fm-9K-AwD" secondAttribute="topMargin" constant="-1" id="4VW-fz-SrC"/>
-                                        <constraint firstItem="7eP-zz-w2V" firstAttribute="leading" secondItem="5Fm-9K-AwD" secondAttribute="leadingMargin" constant="8" id="q20-Pc-ai4"/>
+                                        <constraint firstItem="7eP-zz-w2V" firstAttribute="leading" secondItem="5Fm-9K-AwD" secondAttribute="leadingMargin" constant="40" id="q20-Pc-ai4"/>
                                         <constraint firstItem="7eP-zz-w2V" firstAttribute="trailing" secondItem="5Fm-9K-AwD" secondAttribute="trailingMargin" id="vWL-NE-EpS"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="contentView" destination="5Fm-9K-AwD" id="iIF-O3-9VO"/>
+                                    <outlet property="todoCheckBox" destination="dYL-zA-LTk" id="bjT-5n-dzb"/>
+                                    <outlet property="todoContentHolder" destination="5Fm-9K-AwD" id="Vih-Ar-BL1"/>
                                     <outlet property="todoTextField" destination="7eP-zz-w2V" id="NNV-X0-Mfl"/>
                                 </connections>
                             </tableViewCell>
@@ -71,4 +82,8 @@
             <point key="canvasLocation" x="1773" y="863"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="check1" width="30" height="30"/>
+        <image name="check20" width="30" height="30"/>
+    </resources>
 </document>
