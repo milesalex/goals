@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         tabBarController.viewControllers = [todayNavigationController, yearNavigationController, lifeNavigationController]
         
-        window!.rootViewController = tabBarController
+        //window!.rootViewController = tabBarController
         
         let todayViewController = todayNavigationController.topViewController as! TodosViewController
         let yearViewController = yearNavigationController.topViewController as! TodosViewController

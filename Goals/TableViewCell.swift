@@ -108,9 +108,9 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
         strikeThruLine.frame.origin.y = 15
         strikeThruLine.backgroundColor = UIColor(white: 0.7, alpha: 0.7)
         todoTextField.addSubview(strikeThruLine)
-        todoTextField.textColor = UIColor(white: 0.7, alpha: 0.7)
         UIView.animateWithDuration(0.3, delay: 0, options: [.CurveEaseInOut], animations: {
             self.strikeThruLine.frame.size.width = todoTextSize.width
+            self.todoTextField.textColor = UIColor(white: 0.7, alpha: 0.7)
             }, completion: nil)
         
 
@@ -136,7 +136,10 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
         UIView.animateWithDuration(0.3, delay: 0, options: [.CurveEaseInOut], animations: {
             self.strikeThruLine.frame.size.width = 0
             }, completion: { finished in
-                self.todoTextField.textColor = UIColor(white: 0, alpha: 1)
+                
+                UIView.animateWithDuration(0.7, animations: {
+                    self.todoTextField.textColor = UIColor(white: 0, alpha: 1)
+                })
         })    }
 
 
