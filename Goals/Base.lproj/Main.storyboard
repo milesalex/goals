@@ -37,7 +37,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OFj-iY-qsG">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XeQ-if-6Vy">
+                                <rect key="frame" x="0.0" y="13" width="600" height="530"/>
+                                <color key="backgroundColor" red="0.46925951090000001" green="0.67498867750000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OFj-iY-qsG" userLabel="Custom Tab Bar">
                                 <rect key="frame" x="0.0" y="551" width="600" height="49"/>
                                 <subviews>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="1000" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DV0-de-f9D">
@@ -66,26 +70,24 @@
                                 <constraints>
                                     <constraint firstItem="fHG-ZX-g4h" firstAttribute="leading" secondItem="OFj-iY-qsG" secondAttribute="leadingMargin" constant="30" id="0tL-Nh-0bW"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="DV0-de-f9D" secondAttribute="trailing" constant="30" id="CF4-er-p4j"/>
+                                    <constraint firstAttribute="height" constant="50" id="Ksd-K7-LBZ"/>
                                     <constraint firstItem="XWE-gZ-845" firstAttribute="centerX" secondItem="OFj-iY-qsG" secondAttribute="centerX" id="Zok-Rg-ZVL"/>
                                 </constraints>
-                                <string key="userLabel">                self.todoTextField.textColor = UIColor(white: 0, alpha: 1)
-</string>
-                            </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XeQ-if-6Vy">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="510"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="OFj-iY-qsG" firstAttribute="bottom" secondItem="rCV-vb-0qS" secondAttribute="top" id="7md-jb-OnE"/>
+                            <constraint firstItem="OFj-iY-qsG" firstAttribute="top" secondItem="XeQ-if-6Vy" secondAttribute="bottom" constant="20" id="7xy-aA-8bB"/>
                             <constraint firstAttribute="trailing" secondItem="OFj-iY-qsG" secondAttribute="trailing" id="8NS-e6-4Sd"/>
-                            <constraint firstItem="XeQ-if-6Vy" firstAttribute="width" secondItem="TRj-Ps-rgm" secondAttribute="width" id="Yn4-0J-cgT"/>
+                            <constraint firstItem="XeQ-if-6Vy" firstAttribute="top" secondItem="TRj-Ps-rgm" secondAttribute="topMargin" constant="20" id="MAY-uw-kuA"/>
+                            <constraint firstItem="OFj-iY-qsG" firstAttribute="bottom" secondItem="TRj-Ps-rgm" secondAttribute="bottomMargin" id="YGY-Zp-1dk"/>
                             <constraint firstItem="OFj-iY-qsG" firstAttribute="leading" secondItem="TRj-Ps-rgm" secondAttribute="leading" id="ZEI-EJ-4We"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomMargin" destination="YGY-Zp-1dk" id="HvQ-vl-Z1X"/>
                         <outlet property="contentView" destination="XeQ-if-6Vy" id="uC5-cc-UkT"/>
+                        <outlet property="customTabBar" destination="OFj-iY-qsG" id="zmf-S2-n3w"/>
                         <outletCollection property="buttons" destination="fHG-ZX-g4h" collectionClass="NSMutableArray" id="C4q-9b-QLj"/>
                         <outletCollection property="buttons" destination="XWE-gZ-845" collectionClass="NSMutableArray" id="JqA-Hi-evU"/>
                         <outletCollection property="buttons" destination="DV0-de-f9D" collectionClass="NSMutableArray" id="78S-Tl-3Qp"/>
