@@ -47,8 +47,8 @@ class CustomTabBarViewController: UIViewController {
         didPressTab(buttons[selectedIndex])
         
         //Check if keyboard is visible
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardVisible:", name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardHidden:", name: UIKeyboardWillHideNotification, object: nil)
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardVisible:", name: UIKeyboardWillShowNotification, object: nil)
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardHidden:", name: UIKeyboardWillHideNotification, object: nil)
         
         // Do any additional setup after loading the view.
     }
@@ -80,50 +80,45 @@ class CustomTabBarViewController: UIViewController {
         vc.didMoveToParentViewController(self)
         
 
-        if keyboardShowing == true{
-            //keyboard should still be visible
-            print("keyboard is visible")
-        }else{
-            //keyboard should not be visible
-            print("keyboard is not visible")
-        }
+//        if keyboardShowing == true{
+//            //keyboard should still be visible
+//            print("keyboard is visible")
+//        }else{
+//            //keyboard should not be visible
+//            print("keyboard is not visible")
+//        }
         
 //        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillChangeFrame:", name: UIKeyboardWillChangeFrameNotification, object: nil)
-        
+//    }
+//    
+//        func keyboardWillChangeFrame(notification: NSNotification) {
+//            var info = notification.userInfo!
+//            let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+//            UIView.animateWithDuration(0.1, animations: { () -> Void in
+//                self.customTabBar.frame.origin.y = keyboardFrame.origin.y-50
+//                })
+//            print(keyboardFrame.origin.y)
+            }
 
-        
-        
-    }
-    
-//    func keyboardWillChangeFrame(notification: NSNotification) {
+//    func keyboardVisible(notification: NSNotification) {
+//        keyboardShowing = true
 //        var info = notification.userInfo!
 //        let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
 //        UIView.animateWithDuration(0.1, animations: { () -> Void in
 //            self.customTabBar.frame.origin.y = keyboardFrame.origin.y-50
-//            })
-//        print(keyboardFrame.origin.y)
-//        }
-
-    
-    func keyboardVisible(notification: NSNotification) {
-        keyboardShowing = true
-        var info = notification.userInfo!
-        let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
-        UIView.animateWithDuration(0.1, animations: { () -> Void in
-            self.customTabBar.frame.origin.y = keyboardFrame.origin.y-50
-        })
-        print("eee", keyboardFrame.origin.y)
-    }
-    
-    func keyboardHidden(notification: NSNotification) {
-        keyboardShowing = false
-        var info = notification.userInfo!
-        let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
-        UIView.animateWithDuration(0.1, animations: { () -> Void in
-            self.customTabBar.frame.origin.y = keyboardFrame.origin.y-50
-        })
-        print("oooo", keyboardFrame.origin.y)
-    }
+//        })
+//        print("eee", keyboardFrame.origin.y)
+//    }
+//    
+//    func keyboardHidden(notification: NSNotification) {
+//        keyboardShowing = false
+//        var info = notification.userInfo!
+//        let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+//        UIView.animateWithDuration(0.1, animations: { () -> Void in
+//            self.customTabBar.frame.origin.y = keyboardFrame.origin.y-50
+//        })
+//        print("oooo", keyboardFrame.origin.y)
+//    }
     
     
     /*
