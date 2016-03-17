@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 enum ToDoType{
     case Today, Year, Life
@@ -44,6 +45,15 @@ class TodosViewController: UITableViewController/*, TableViewCellDelegate*/ {
             whichTab = "Life"
         }
     }
+    
+    var beepPlayer:AVAudioPlayer = AVAudioPlayer()
+    func playUncheckMySound(){
+        let beepSoundURL =  NSBundle.mainBundle().URLForResource("Flick", withExtension: "wav")!
+        beepPlayer = try! AVAudioPlayer(contentsOfURL: beepSoundURL)
+        beepPlayer.prepareToPlay()
+        beepPlayer.play()
+    }
+    
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // return the number of rows in the table view
@@ -119,6 +129,8 @@ class TodosViewController: UITableViewController/*, TableViewCellDelegate*/ {
     
     
     func saveTaskWithTitle(title: String) {
+        print("test")
+        playUncheckMySound()
         
         guard let dataModel = self.dataModel else {
             print("cant save task with title")
