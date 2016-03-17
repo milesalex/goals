@@ -81,6 +81,8 @@ class TodosViewController: UITableViewController/*, TableViewCellDelegate*/ {
                 
                 // Populate cell with text and placeholder
                 cell.configure(text: todoItem.text, placeholder: dataModel.placeholder())
+                cell.todoCheckBox.enabled = true
+
                 
             } else {
                 
@@ -89,6 +91,7 @@ class TodosViewController: UITableViewController/*, TableViewCellDelegate*/ {
                 
                 // Focus text input on empty cell
                 cell.todoTextField.becomeFirstResponder()
+                cell.todoCheckBox.enabled = false
             }
         }
         
@@ -129,9 +132,7 @@ class TodosViewController: UITableViewController/*, TableViewCellDelegate*/ {
     
     
     func saveTaskWithTitle(title: String) {
-        print("test")
         playUncheckMySound()
-        
         guard let dataModel = self.dataModel else {
             print("cant save task with title")
             return

@@ -276,6 +276,7 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
     
     func performAction() {
         viewController?.saveTaskWithTitle(self.todoTextField.text!)
+        todoCheckBox.enabled = true
 //        self.todoTextField.text = ""
 //        self.todoTextField.becomeFirstResponder()
         

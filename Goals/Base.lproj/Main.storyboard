@@ -130,6 +130,7 @@
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYL-zA-LTk">
                                             <rect key="frame" x="12" y="7" width="30" height="30"/>
                                             <state key="normal" image="check1"/>
+                                            <state key="disabled" image="disabledcheck"/>
                                             <state key="selected" image="check20"/>
                                             <connections>
                                                 <action selector="didCheck:" destination="jdv-Rv-5vf" eventType="touchUpInside" id="gb0-Hb-w6Z"/>
@@ -166,5 +167,6 @@
     <resources>
         <image name="check1" width="30" height="30"/>
         <image name="check20" width="30" height="30"/>
+        <image name="disabledcheck" width="30" height="30"/>
     </resources>
 </document>
