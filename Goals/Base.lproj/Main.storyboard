@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="saZ-T6-oBa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7ZW-co-0ix">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -23,7 +23,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="138-iJ-V8A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1065" y="863"/>
+            <point key="canvasLocation" x="909" y="863"/>
         </scene>
         <!--Custom Tab Bar View Controller-->
         <scene sceneID="bik-bw-J0w">
@@ -98,20 +98,20 @@
         <!--Today-->
         <scene sceneID="xun-Dj-AHb">
             <objects>
-                <tableViewController id="FCW-2h-hNE" customClass="TodosViewController" customModule="Goals" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TodosViewController" id="FCW-2h-hNE" customClass="TodosViewController" customModule="Goals" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="hIB-zk-8eX">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="431" height="451"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextInputCell" id="jdv-Rv-5vf" customClass="TableViewCell" customModule="Goals" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="431" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jdv-Rv-5vf" id="5Fm-9K-AwD">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="431" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Todo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7eP-zz-w2V">
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Todo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7eP-zz-w2V">
                                             <rect key="frame" x="48" y="7" width="544" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <textInputTraits key="textInputTraits"/>
@@ -151,9 +151,48 @@
             </objects>
             <point key="canvasLocation" x="1773" y="863"/>
         </scene>
+        <!--Nux Step View Controller-->
+        <scene sceneID="Lq0-Ug-hqj">
+            <objects>
+                <viewController storyboardIdentifier="NuxStepViewController" id="7ZW-co-0ix" customClass="NuxStepViewController" customModule="Goals" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WDU-11-x2w"/>
+                        <viewControllerLayoutGuide type="bottom" id="y9b-8i-rHT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9wE-ry-Q9E">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="nextbuttongreen" translatesAutoresizingMaskIntoConstraints="NO" id="LJ9-NJ-crE">
+                                <rect key="frame" x="205" y="509" width="210" height="47"/>
+                            </imageView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ot4-K2-puY">
+                                <rect key="frame" x="95" y="34" width="431" height="451"/>
+                                <connections>
+                                    <segue destination="FCW-2h-hNE" kind="embed" id="QFn-j3-hH5"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XIs-R0-Gy4">
+                                <rect key="frame" x="212" y="518" width="197" height="30"/>
+                                <connections>
+                                    <action selector="nextActionButton:" destination="7ZW-co-0ix" eventType="touchUpInside" id="rZA-PK-hwY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tnf-40-2CG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-266" y="1544"/>
+        </scene>
     </scenes>
     <resources>
         <image name="check1" width="30" height="30"/>
         <image name="check20" width="30" height="30"/>
+        <image name="nextbuttongreen" width="210" height="47"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="QFn-j3-hH5"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -20,9 +20,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        let tabBarController = UITabBarController()
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let initialViewController = storyboard.instantiateViewControllerWithIdentifier("NuxStepViewController") as! NuxStepViewController
+        
+        initialViewController.steps = [
+            NuxStep(text: "today", model: todayDataModel)!,
+            NuxStep(text: "year", model: yearDataModel)!,
+            NuxStep(text: "life", model: lifeDataModel)!];
+        
+        
+        // NuxStepViewController
+        
+            // PROTOCOL:
+            // type (TODAY, YEAR, LIFE)
+            // message "stuff i wanna do today/year/life")
+        
+    
+        
+        self.window?.rootViewController = initialViewController
+        
+        // check if user is in nux if so then load today view
+        
+        // else do this shit
+        
+        
+        let tabBarController = UITabBarController()
         let todayNavigationController = storyboard.instantiateViewControllerWithIdentifier("TodosNavigationController") as! UINavigationController
         let yearNavigationController = storyboard.instantiateViewControllerWithIdentifier("TodosNavigationController") as! UINavigationController
         let lifeNavigationController = storyboard.instantiateViewControllerWithIdentifier("TodosNavigationController") as! UINavigationController
