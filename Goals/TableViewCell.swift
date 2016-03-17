@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 /*protocol TableViewCellDelegate {
     func tableViewCell(tableViewCell: TableViewCell, didEnterString string: String)
@@ -25,6 +26,21 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
     let todayChecked = UIImage(named: "check20") as UIImage?
     let yearChecked = UIImage(named: "bluecheck20") as UIImage?
     let lifeChecked = UIImage(named: "redcheck20") as UIImage?
+    
+    var beepPlayer:AVAudioPlayer = AVAudioPlayer()
+    func playCheckMySound(){
+        let beepSoundURL =  NSBundle.mainBundle().URLForResource("Pong", withExtension: "wav")!
+        beepPlayer = try! AVAudioPlayer(contentsOfURL: beepSoundURL)
+        beepPlayer.prepareToPlay()
+        beepPlayer.play()
+    }
+    func playUncheckMySound(){
+        let beepSoundURL =  NSBundle.mainBundle().URLForResource("Flick", withExtension: "wav")!
+        beepPlayer = try! AVAudioPlayer(contentsOfURL: beepSoundURL)
+        beepPlayer.prepareToPlay()
+        beepPlayer.play()
+    }
+    
     
     weak var viewController: TodosViewController?
     
@@ -58,6 +74,7 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
         if (sender.selected == true)
         {
             unDoCheckBox()
+            playUncheckMySound()
             sender.selected = false
         }else{
             if tabTitle == "Today"{
@@ -72,7 +89,7 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
 
             }
             sender.selected = true
-            
+            playCheckMySound()
             }}
     }
     

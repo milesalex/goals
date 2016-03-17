@@ -75,7 +75,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="fHG-ZX-g4h" firstAttribute="leading" secondItem="OFj-iY-qsG" secondAttribute="leadingMargin" constant="15" id="0tL-Nh-0bW"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="DV0-de-f9D" secondAttribute="trailing" constant="15" id="CF4-er-p4j"/>
@@ -87,6 +87,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="OFj-iY-qsG" secondAttribute="trailing" constant="-20" id="2XN-5A-rJU"/>
+                            <constraint firstItem="rCV-vb-0qS" firstAttribute="top" secondItem="XeQ-if-6Vy" secondAttribute="bottom" id="7VA-LP-4ny"/>
                             <constraint firstAttribute="trailing" secondItem="OFj-iY-qsG" secondAttribute="trailing" id="8NS-e6-4Sd"/>
                             <constraint firstItem="XeQ-if-6Vy" firstAttribute="top" secondItem="TRj-Ps-rgm" secondAttribute="topMargin" constant="40" id="MAY-uw-kuA"/>
                             <constraint firstItem="OFj-iY-qsG" firstAttribute="leading" secondItem="TRj-Ps-rgm" secondAttribute="leadingMargin" constant="-20" id="Sgz-Ra-63v"/>
