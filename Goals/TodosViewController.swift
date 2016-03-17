@@ -15,7 +15,7 @@ enum ToDoType{
 class TodosViewController: UITableViewController/*, TableViewCellDelegate*/ {
     
 //    var type: ToDoType?
-    
+    var whichTab: String!
     var dataModel: DataModel? {
         didSet {
             if let dataModel = self.dataModel {
@@ -31,10 +31,18 @@ class TodosViewController: UITableViewController/*, TableViewCellDelegate*/ {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.contentInset = UIEdgeInsets(top: 40, left: 0, bottom: 0, right: 0)
+        
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        if self.title == "Today"{
+            whichTab = "Today"
+        } else if self.title == "Year"{
+            whichTab = "Year"
+        } else if self.title == "Life"{
+            whichTab = "Life"
+        }
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,7 +60,7 @@ class TodosViewController: UITableViewController/*, TableViewCellDelegate*/ {
         let cell = tableView.dequeueReusableCellWithIdentifier("TextInputCell") as! TableViewCell
         
         cell.selectionStyle = UITableViewCellSelectionStyle.None
-        
+        cell.tabTitle = whichTab
         if let dataModel = self.dataModel {
             // Load todoItem data model into the table view
             // After all data is loaded, add a blank cell for entering a new todo
