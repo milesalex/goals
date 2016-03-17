@@ -28,12 +28,19 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
     let lifeChecked = UIImage(named: "redcheck20") as UIImage?
     
     var beepPlayer:AVAudioPlayer = AVAudioPlayer()
-    func playMySound(){
-        let beepSoundURL =  NSBundle.mainBundle().URLForResource("Bat", withExtension: "wav")!
+    func playCheckMySound(){
+        let beepSoundURL =  NSBundle.mainBundle().URLForResource("Pong", withExtension: "wav")!
         beepPlayer = try! AVAudioPlayer(contentsOfURL: beepSoundURL)
         beepPlayer.prepareToPlay()
         beepPlayer.play()
     }
+    func playUncheckMySound(){
+        let beepSoundURL =  NSBundle.mainBundle().URLForResource("Flick", withExtension: "wav")!
+        beepPlayer = try! AVAudioPlayer(contentsOfURL: beepSoundURL)
+        beepPlayer.prepareToPlay()
+        beepPlayer.play()
+    }
+    
     
     weak var viewController: TodosViewController?
     
@@ -67,6 +74,7 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
         if (sender.selected == true)
         {
             unDoCheckBox()
+            playUncheckMySound()
             sender.selected = false
         }else{
             if tabTitle == "Today"{
@@ -81,7 +89,7 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
 
             }
             sender.selected = true
-            playMySound()
+            playCheckMySound()
             }}
     }
     
