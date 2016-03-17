@@ -59,6 +59,7 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
     
     func textFieldShouldReturn(todoTextField: UITextField) -> Bool {
         //textField code
+        print("uouou")
         if todoTextField.text?.characters.count == 0 {
             return false
         }
@@ -69,6 +70,15 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
     }
     
     
+    @IBAction func didFocusTextField(sender: AnyObject) {
+        if todoTextField.text != ""{
+        unDoCheckBox()
+        todoCheckBox.selected = false
+        }
+        
+        
+        
+    }
     @IBAction func didCheck(sender: UIButton) {
         if todoTextField.text != ""{
         if (sender.selected == true)
@@ -90,6 +100,7 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
             }
             sender.selected = true
             playCheckMySound()
+            todoTextField.resignFirstResponder()
             }}
     }
     
@@ -273,6 +284,8 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
         })    }
 
 
+    
+    
     
     func performAction() {
         viewController?.saveTaskWithTitle(self.todoTextField.text!)

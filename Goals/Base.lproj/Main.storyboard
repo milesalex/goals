@@ -126,6 +126,9 @@
                                             <rect key="frame" x="48" y="7" width="544" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <action selector="didFocusTextField:" destination="jdv-Rv-5vf" eventType="editingDidBegin" id="11D-0a-n9T"/>
+                                            </connections>
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYL-zA-LTk">
                                             <rect key="frame" x="12" y="7" width="30" height="30"/>
