@@ -23,23 +23,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let initialViewController = storyboard.instantiateViewControllerWithIdentifier("NuxStepViewController") as! NuxStepViewController
+        let nuxViewController = storyboard.instantiateViewControllerWithIdentifier("NuxStepViewController") as! NuxStepViewController
         
-        initialViewController.steps = [
-            NuxStep(text: "today", model: todayDataModel)!,
-            NuxStep(text: "year", model: yearDataModel)!,
-            NuxStep(text: "life", model: lifeDataModel)!];
-        
-        
-        // NuxStepViewController
-        
+        nuxViewController.steps = [
+            NuxStep(text: "Today", description: "test", model: todayDataModel)!,
+            NuxStep(text: "Year", description: "test2", model: yearDataModel)!,
+            NuxStep(text: "Life", description: "test3", model: lifeDataModel)!];
+
+        let prefs = NSUserDefaults.standardUserDefaults()
+        if (!prefs.boolForKey("hasOpened")) {
+            
+            // NuxStepViewController
+            
             // PROTOCOL:
             // type (TODAY, YEAR, LIFE)
             // message "stuff i wanna do today/year/life")
+            
+            
+            
+            self.window?.rootViewController = nuxViewController
+        } else {
+            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("CustomTabBarViewController") as! CustomTabBarViewController
+
+            //let step = self.steps[0]
+            
+           // initialViewController.todayDataModel = todayDataModel
+
+            self.window?.rootViewController = initialViewController
+        }
         
-    
-        
-        self.window?.rootViewController = initialViewController
         
         // check if user is in nux if so then load today view
         

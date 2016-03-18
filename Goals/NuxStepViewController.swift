@@ -11,6 +11,11 @@ import UIKit
 
 public class NuxStepViewController: UIViewController {
     
+    @IBOutlet weak var header: UILabel!
+    @IBOutlet weak var subHead: UITextView!
+    @IBOutlet weak var nuxButton: UIButton!
+    
+    
     var tableView = TodosViewController()
     public var steps = Array<NuxStep>()
     
@@ -20,6 +25,16 @@ public class NuxStepViewController: UIViewController {
         if (!self.steps.isEmpty) {
             self.currentStep = self.steps[0];
             self.steps.removeFirst()
+            
+            if let label = self.currentStep?.titleText{
+                
+                //this is where the bug is :/
+                self.header.text = label
+            }
+
+            if let label = self.currentStep?.stepDescription{
+                self.subHead.text = label
+            }
         }
     }
     
@@ -40,7 +55,7 @@ public class NuxStepViewController: UIViewController {
             
             //let step = self.steps[0]
             
-            destinationController.todayDataModel = self.currentStep!.model
+            //destinationController.todayDataModel = self.currentStep!.model
             
             //destinationController.dataModel = (self.currentStep?.model)!
             
@@ -64,12 +79,18 @@ public class NuxStepViewController: UIViewController {
         if (!self.steps.isEmpty) {
             self.advanceToNextStep()
             
+            
+            
+            
             if (self.currentStep?.model != nil) {
                 self.tableView.dataModel = self.currentStep!.model
             } else {
                 "ending NUX"
             }
         } else {
+            let prefs = NSUserDefaults.standardUserDefaults()
+            prefs.setBool(true, forKey: "hasOpened")
+            
             performSegueWithIdentifier("endingNux", sender: nil)
 
             

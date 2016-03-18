@@ -21,7 +21,7 @@ class CustomTabBarViewController: UIViewController {
     
     var dataModel : DataModel!
 
-    var todayDataModel : DataModel!
+    let todayDataModel = DataModel(aType: .Today)
     let yearDataModel = DataModel(aType: .Year)
     let lifeDataModel = DataModel(aType: .Life)
     

@@ -15,15 +15,17 @@ import UIKit
 public class NuxStep: NSObject {
     
     // MARK: Properties
-    var titleText: String
+    var titleText: String!
+    var stepDescription: String!
     var model : DataModel
     var type : ToDoType
     
     
-    init?(text: String, model: DataModel){
+    init?(text: String, description: String, model: DataModel){
         self.titleText = text
         self.model = model
         self.type = model.type
+        self.stepDescription = description
         
         super.init()
     }
