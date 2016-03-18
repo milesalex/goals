@@ -19,7 +19,9 @@ class CustomTabBarViewController: UIViewController {
     var tabs: [UIViewController]!
     var selectedIndex: Int = 0
     
-    let todayDataModel = DataModel(aType: .Today)
+    var dataModel : DataModel!
+
+    var todayDataModel : DataModel!
     let yearDataModel = DataModel(aType: .Year)
     let lifeDataModel = DataModel(aType: .Life)
     

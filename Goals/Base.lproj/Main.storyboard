@@ -84,6 +84,7 @@
                             <constraint firstItem="OFj-iY-qsG" firstAttribute="leading" secondItem="TRj-Ps-rgm" secondAttribute="leading" id="ZEI-EJ-4We"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="isQ-xx-J9z"/>
                     <connections>
                         <outlet property="contentView" destination="XeQ-if-6Vy" id="uC5-cc-UkT"/>
                         <outletCollection property="buttons" destination="fHG-ZX-g4h" collectionClass="NSMutableArray" id="C4q-9b-QLj"/>
@@ -163,17 +164,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="nextbuttongreen" translatesAutoresizingMaskIntoConstraints="NO" id="LJ9-NJ-crE">
-                                <rect key="frame" x="205" y="509" width="210" height="47"/>
-                            </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ot4-K2-puY">
-                                <rect key="frame" x="95" y="34" width="431" height="451"/>
+                                <rect key="frame" x="0.0" y="0.0" width="431" height="451"/>
                                 <connections>
                                     <segue destination="FCW-2h-hNE" kind="embed" id="QFn-j3-hH5"/>
                                 </connections>
                             </containerView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="nextbuttongreen" translatesAutoresizingMaskIntoConstraints="NO" id="LJ9-NJ-crE">
+                                <rect key="frame" x="121" y="486" width="210" height="47"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XIs-R0-Gy4">
-                                <rect key="frame" x="212" y="518" width="197" height="30"/>
+                                <rect key="frame" x="128" y="495" width="197" height="30"/>
                                 <connections>
                                     <action selector="nextActionButton:" destination="7ZW-co-0ix" eventType="touchUpInside" id="rZA-PK-hwY"/>
                                 </connections>
@@ -181,10 +182,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="saZ-T6-oBa" kind="presentation" identifier="endingNux" id="Zst-ys-rhK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tnf-40-2CG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-266" y="1544"/>
+            <point key="canvasLocation" x="-204" y="1572"/>
         </scene>
     </scenes>
     <resources>

@@ -35,27 +35,47 @@ public class NuxStepViewController: UIViewController {
     
     public override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // check nux
-        let destinationController = segue.destinationViewController as! TodosViewController
-        
-        if (self.currentStep == nil) {
-            self.advanceToNextStep()
+        if (segue.identifier == "endingNux") {
+            let destinationController = segue.destinationViewController as! CustomTabBarViewController
+            
+            //let step = self.steps[0]
+            
+            destinationController.todayDataModel = self.currentStep!.model
+            
+            //destinationController.dataModel = (self.currentStep?.model)!
+            
+        } else {
+            let destinationController = segue.destinationViewController as! TodosViewController
+            
+            if (self.currentStep == nil) {
+                self.advanceToNextStep()
+            }
+            destinationController.dataModel = self.currentStep?.model
+            
+            self.tableView = destinationController; 
         }
-        destinationController.dataModel = self.currentStep?.model
-        
-        self.tableView = destinationController;
     }
 
     @IBAction func nextActionButton(sender: UIButton) {
         
+        self.currentStep?.model.loadTodos()
         self.currentStep?.model.saveTodos()
 
-        self.advanceToNextStep()
-        if (self.currentStep?.model != nil) {
-            self.tableView.dataModel = self.currentStep!.model
+        if (!self.steps.isEmpty) {
+            self.advanceToNextStep()
+            
+            if (self.currentStep?.model != nil) {
+                self.tableView.dataModel = self.currentStep!.model
+            } else {
+                "ending NUX"
+            }
         } else {
-            "ending NUX"
+            performSegueWithIdentifier("endingNux", sender: nil)
+
+            
+            NSLog("should end nux")
         }
-    
+        
         
         
     }
