@@ -41,11 +41,11 @@
                                 <rect key="frame" x="0.0" y="77" width="600" height="523"/>
                                 <color key="backgroundColor" red="0.46925951090000001" green="0.67498867750000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OFj-iY-qsG" userLabel="Custom Tab Bar">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OFj-iY-qsG" userLabel="Custom Tab Bar">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
                                 <subviews>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="1000" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DV0-de-f9D">
-                                        <rect key="frame" x="510" y="28" width="30" height="30"/>
+                                        <rect key="frame" x="514" y="28" width="28" height="30"/>
                                         <color key="tintColor" red="0.94509803920000002" green="0.34901960780000002" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Life">
                                             <color key="titleColor" red="0.41568627450980389" green="0.44705882352941173" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
@@ -54,24 +54,24 @@
                                             <action selector="didPressTab:" destination="saZ-T6-oBa" eventType="touchUpInside" id="1kl-Wv-Vhq"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XWE-gZ-845">
-                                        <rect key="frame" x="285" y="28" width="31" height="30"/>
-                                        <color key="tintColor" red="0.2901960784" green="0.72941176470000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Year">
-                                            <color key="titleColor" red="0.41568627450980389" green="0.44705882352941173" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="didPressTab:" destination="saZ-T6-oBa" eventType="touchUpInside" id="p83-F1-cl9"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHG-ZX-g4h">
-                                        <rect key="frame" x="60" y="28" width="42" height="30"/>
+                                        <rect key="frame" x="60" y="28" width="43" height="30"/>
                                         <color key="tintColor" red="0.43529411759999997" green="0.82352941180000006" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Today">
                                             <color key="titleColor" red="0.41568627450980389" green="0.44705882352941173" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="didPressTab:" destination="saZ-T6-oBa" eventType="touchUpInside" id="3v9-1P-D4v"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XWE-gZ-845">
+                                        <rect key="frame" x="284" y="28" width="33" height="30"/>
+                                        <color key="tintColor" red="0.2901960784" green="0.72941176470000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Year">
+                                            <color key="titleColor" red="0.41568627450980389" green="0.44705882352941173" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didPressTab:" destination="saZ-T6-oBa" eventType="touchUpInside" id="p83-F1-cl9"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -86,7 +86,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="OFj-iY-qsG" secondAttribute="trailing" constant="-20" id="2XN-5A-rJU"/>
                             <constraint firstItem="rCV-vb-0qS" firstAttribute="top" secondItem="XeQ-if-6Vy" secondAttribute="bottom" id="7VA-LP-4ny"/>
                             <constraint firstAttribute="trailing" secondItem="OFj-iY-qsG" secondAttribute="trailing" id="8NS-e6-4Sd"/>
                             <constraint firstItem="XeQ-if-6Vy" firstAttribute="top" secondItem="TRj-Ps-rgm" secondAttribute="topMargin" constant="40" id="MAY-uw-kuA"/>
@@ -105,6 +104,91 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H9y-ln-XuC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1045" y="1652"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="FR8-Fb-Gw8">
+            <objects>
+                <viewController id="gvF-f3-tnr" customClass="SettingsViewController" customModule="Goals" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="asV-EA-gfg"/>
+                        <viewControllerLayoutGuide type="bottom" id="7h6-Cm-iQl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="j8Z-s8-7zm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="8" minValue="0.0" maxValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="boQ-v5-CZM">
+                                <rect key="frame" x="18" y="178" width="564" height="31"/>
+                                <color key="tintColor" red="0.43529411759999997" green="0.82352941180000006" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </slider>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k3B-Hn-zpe">
+                                <rect key="frame" x="531" y="69" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Remind me on weekends" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdf-na-9fI">
+                                <rect key="frame" x="20" y="258" width="191" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n7E-Q8-4kX">
+                                <rect key="frame" x="531" y="253" width="51" height="31"/>
+                            </switch>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f6p-xu-HAI">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zDP-gq-k0s">
+                                        <rect key="frame" x="8" y="10" width="30" height="30"/>
+                                        <state key="normal" image="exit"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.43529411759999997" green="0.82352941180000006" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Daily reminder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cnU-L0-ptc">
+                                <rect key="frame" x="20" y="74" width="111" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XnX-Jl-zkn">
+                                <rect key="frame" x="0.0" y="230" width="600" height="1"/>
+                                <color key="backgroundColor" red="0.87655683880000002" green="0.86396059780000001" blue="0.8362771739" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tNr-Kz-Uh2">
+                                <rect key="frame" x="0.0" y="305" width="600" height="1"/>
+                                <color key="backgroundColor" red="0.87655683880000002" green="0.86396059780000001" blue="0.8362771739" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ax1-tl-oU1">
+                                <rect key="frame" x="20" y="143" width="38" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="8am" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twx-Jd-qnX">
+                                <rect key="frame" x="546" y="143" width="34" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sfK-Sw-N5Q">
+                                <rect key="frame" x="0.0" y="119" width="600" height="1"/>
+                                <color key="backgroundColor" red="0.87655683876811596" green="0.86396059782608692" blue="0.83627717391304346" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="twx-Jd-qnX" firstAttribute="trailing" secondItem="j8Z-s8-7zm" secondAttribute="trailingMargin" id="0eU-qn-74T"/>
+                            <constraint firstItem="ax1-tl-oU1" firstAttribute="leading" secondItem="j8Z-s8-7zm" secondAttribute="leadingMargin" id="0g1-Wz-n0I"/>
+                            <constraint firstItem="zdf-na-9fI" firstAttribute="leading" secondItem="j8Z-s8-7zm" secondAttribute="leadingMargin" id="6QG-qA-2f0"/>
+                            <constraint firstItem="boQ-v5-CZM" firstAttribute="leading" secondItem="j8Z-s8-7zm" secondAttribute="leadingMargin" id="L0l-RE-rMr"/>
+                            <constraint firstItem="boQ-v5-CZM" firstAttribute="trailing" secondItem="j8Z-s8-7zm" secondAttribute="trailingMargin" id="V3J-OL-dgL"/>
+                            <constraint firstItem="n7E-Q8-4kX" firstAttribute="trailing" secondItem="j8Z-s8-7zm" secondAttribute="trailingMargin" id="epq-54-sXf"/>
+                            <constraint firstItem="k3B-Hn-zpe" firstAttribute="trailing" secondItem="j8Z-s8-7zm" secondAttribute="trailingMargin" id="pdE-zD-zfJ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cf3-ma-1iJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1779" y="1834"/>
         </scene>
         <!--Today-->
         <scene sceneID="xun-Dj-AHb">
@@ -171,5 +255,6 @@
         <image name="check1" width="30" height="30"/>
         <image name="check20" width="30" height="30"/>
         <image name="disabledcheck" width="30" height="30"/>
+        <image name="exit" width="30" height="30"/>
     </resources>
 </document>
