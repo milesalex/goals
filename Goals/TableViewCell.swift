@@ -23,6 +23,7 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var todoContentHolder: UIView!
     var tabTitle: String!
     var strikeThruLine: UIView!
+    
     let todayChecked = UIImage(named: "check20") as UIImage?
     let yearChecked = UIImage(named: "bluecheck20") as UIImage?
     let lifeChecked = UIImage(named: "redcheck20") as UIImage?
@@ -54,12 +55,12 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
         todoTextField.accessibilityLabel = placeholder
         
         todoTextField.autocapitalizationType = UITextAutocapitalizationType.Sentences
+        
     }
     
     
     func textFieldShouldReturn(todoTextField: UITextField) -> Bool {
         //textField code
-        print("uouou")
         if todoTextField.text?.characters.count == 0 {
             return false
         }
@@ -71,7 +72,7 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
     
     
     @IBAction func didFocusTextField(sender: AnyObject) {
-        if todoTextField.text != ""{
+        if todoTextField.text != "" && strikeThruLine != nil{
         unDoCheckBox()
         todoCheckBox.selected = false
         }
@@ -141,7 +142,6 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
         let toDoStringChanged: NSString = toDoString as NSString
         let todoTextSize: CGSize = toDoStringChanged.sizeWithAttributes([NSFontAttributeName: UIFont.systemFontOfSize(17.0)])
         
-        
         strikeThruLine = UIView()
         strikeThruLine.frame.size.width = 0
         strikeThruLine.frame.size.height = 1.5
@@ -192,7 +192,6 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
         let toDoStringChanged: NSString = toDoString as NSString
         let todoTextSize: CGSize = toDoStringChanged.sizeWithAttributes([NSFontAttributeName: UIFont.systemFontOfSize(17.0)])
         
-        
         strikeThruLine = UIView()
         strikeThruLine.frame.size.width = 0
         strikeThruLine.frame.size.height = 1.5
@@ -242,7 +241,6 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
         let toDoString: String = todoTextField.text!
         let toDoStringChanged: NSString = toDoString as NSString
         let todoTextSize: CGSize = toDoStringChanged.sizeWithAttributes([NSFontAttributeName: UIFont.systemFontOfSize(17.0)])
-        
         
         strikeThruLine = UIView()
         strikeThruLine.frame.size.width = 0
