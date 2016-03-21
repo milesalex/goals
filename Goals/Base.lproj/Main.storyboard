@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gvF-f3-tnr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="saZ-T6-oBa">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -74,6 +74,13 @@
                                             <action selector="didPressTab:" destination="saZ-T6-oBa" eventType="touchUpInside" id="p83-F1-cl9"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Obb-JR-LMU">
+                                        <rect key="frame" x="130" y="40" width="57" height="30"/>
+                                        <state key="normal" title="Settings"/>
+                                        <connections>
+                                            <segue destination="gvF-f3-tnr" kind="presentation" id="2Sv-sw-abY"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -105,10 +112,10 @@
             </objects>
             <point key="canvasLocation" x="1045" y="1652"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--New Settings View Controller-->
         <scene sceneID="FR8-Fb-Gw8">
             <objects>
-                <viewController id="gvF-f3-tnr" customClass="SettingsViewController" customModule="Goals" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gvF-f3-tnr" customClass="NewSettingsViewController" customModule="Goals" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="asV-EA-gfg"/>
                         <viewControllerLayoutGuide type="bottom" id="7h6-Cm-iQl"/>
@@ -126,23 +133,26 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Daily reminder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cnU-L0-ptc">
                                         <rect key="frame" x="20" y="18" width="111" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sfK-Sw-N5Q">
                                         <rect key="frame" x="0.0" y="56" width="600" height="1"/>
                                         <color key="backgroundColor" red="0.87655683876811596" green="0.86396059782608692" blue="0.83627717391304346" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
-                                    <datePicker contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FQ-1J-hnN">
+                                    <datePicker contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FQ-1J-hnN">
                                         <rect key="frame" x="0.0" y="56" width="600" height="216"/>
                                         <date key="date" timeIntervalSinceReferenceDate="480178800.00322199">
                                             <!--2016-03-20 15:00:00 +0000-->
                                         </date>
+                                        <connections>
+                                            <action selector="timeAction:" destination="gvF-f3-tnr" eventType="valueChanged" id="d11-tb-EvI"/>
+                                        </connections>
                                     </datePicker>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remind me on weekends" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdf-na-9fI">
                                         <rect key="frame" x="20" y="290" width="191" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n7E-Q8-4kX">
@@ -174,6 +184,9 @@
                                     <navigationItem title="Reminders" id="dgn-Cl-fQg">
                                         <barButtonItem key="rightBarButtonItem" title="Done  " style="done" id="hYf-Ml-26Z">
                                             <inset key="imageInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
+                                            <connections>
+                                                <action selector="didPressDone:" destination="gvF-f3-tnr" id="5eo-51-E2B"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -187,6 +200,13 @@
                             <constraint firstItem="enk-jB-sDl" firstAttribute="leading" secondItem="j8Z-s8-7zm" secondAttribute="leadingMargin" constant="-20" id="k3M-9q-41u"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dailySwitch" destination="k3B-Hn-zpe" id="5wi-DW-MhR"/>
+                        <outlet property="didPickTime" destination="6FQ-1J-hnN" id="5yr-9T-R9H"/>
+                        <outlet property="reminderTime" destination="6FQ-1J-hnN" id="tCV-zi-4y0"/>
+                        <outlet property="weekendSwitch" destination="n7E-Q8-4kX" id="29t-kG-wmd"/>
+                        <outlet property="weekendText" destination="zdf-na-9fI" id="K94-jX-KqL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cf3-ma-1iJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
