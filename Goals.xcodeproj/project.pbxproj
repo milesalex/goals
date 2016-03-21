@@ -46,7 +46,7 @@
 		7C190B561C9A584A00B322D9 /* Bat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Bat.wav; sourceTree = "<group>"; };
 		7C190B581C9A6F2E00B322D9 /* Pong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Pong.wav; sourceTree = "<group>"; };
 		7C190B5A1C9A6F9900B322D9 /* Popped.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Popped.wav; sourceTree = "<group>"; };
-		7C190B5C1C9A705100B322D9 /* Flick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Flick.wav; sourceTree = "<group>"; };
+		7C190B5C1C9A705100B322D9 /* Flick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Flick.wav; path = ../Flick.wav; sourceTree = "<group>"; };
 		7C5FFD3D1C8E8C2B002599A0 /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
 		DA6E4B101C7D414500F74CD4 /* NSDate+Goals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Goals.swift"; sourceTree = "<group>"; };
 		DA6E4B121C7D453700F74CD4 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
@@ -99,7 +99,6 @@
 				DA9347981C763A0F00A9FCF3 /* GoalsTests */,
 				DA9347A31C763A0F00A9FCF3 /* GoalsUITests */,
 				DA9347821C763A0F00A9FCF3 /* Products */,
-				7C190B5C1C9A705100B322D9 /* Flick.wav */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,6 +125,7 @@
 				DA93478B1C763A0F00A9FCF3 /* Assets.xcassets */,
 				DA93478D1C763A0F00A9FCF3 /* LaunchScreen.storyboard */,
 				7C190B581C9A6F2E00B322D9 /* Pong.wav */,
+				7C190B5C1C9A705100B322D9 /* Flick.wav */,
 				7C190B561C9A584A00B322D9 /* Bat.wav */,
 				7C190B5A1C9A6F9900B322D9 /* Popped.wav */,
 				DA9347901C763A0F00A9FCF3 /* Info.plist */,
