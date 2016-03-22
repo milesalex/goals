@@ -31,7 +31,6 @@ class TodosViewController: UITableViewController/*, TableViewCellDelegate*/ {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.contentInset = UIEdgeInsets(top: 40, left: 0, bottom: 0, right: 0)
         
     }
     

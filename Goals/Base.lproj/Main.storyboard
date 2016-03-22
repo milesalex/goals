@@ -28,7 +28,7 @@
         <!--Custom Tab Bar View Controller-->
         <scene sceneID="bik-bw-J0w">
             <objects>
-                <viewController id="saZ-T6-oBa" customClass="CustomTabBarViewController" customModule="Goals" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="saZ-T6-oBa" customClass="CustomTabBarViewController" customModule="Perspective" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vWj-8T-JKM"/>
                         <viewControllerLayoutGuide type="bottom" id="rCV-vb-0qS"/>
@@ -37,24 +37,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XeQ-if-6Vy">
-                                <rect key="frame" x="0.0" y="77" width="600" height="523"/>
-                                <color key="backgroundColor" red="0.46925951090000001" green="0.67498867750000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OFj-iY-qsG" userLabel="Custom Tab Bar">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OFj-iY-qsG" userLabel="Custom Tab Bar">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="78"/>
                                 <subviews>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="1000" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DV0-de-f9D">
-                                        <rect key="frame" x="510" y="28" width="30" height="30"/>
-                                        <color key="tintColor" red="0.94509803920000002" green="0.34901960780000002" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Life">
-                                            <color key="titleColor" red="0.41568627450980389" green="0.44705882352941173" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="didPressTab:" destination="saZ-T6-oBa" eventType="touchUpInside" id="1kl-Wv-Vhq"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XWE-gZ-845">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XWE-gZ-845">
                                         <rect key="frame" x="285" y="28" width="31" height="30"/>
                                         <color key="tintColor" red="0.2901960784" green="0.72941176470000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Year">
@@ -64,8 +50,8 @@
                                             <action selector="didPressTab:" destination="saZ-T6-oBa" eventType="touchUpInside" id="p83-F1-cl9"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHG-ZX-g4h">
-                                        <rect key="frame" x="60" y="28" width="42" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHG-ZX-g4h">
+                                        <rect key="frame" x="23" y="28" width="42" height="30"/>
                                         <color key="tintColor" red="0.43529411759999997" green="0.82352941180000006" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Today">
                                             <color key="titleColor" red="0.41568627450980389" green="0.44705882352941173" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
@@ -74,24 +60,42 @@
                                             <action selector="didPressTab:" destination="saZ-T6-oBa" eventType="touchUpInside" id="3v9-1P-D4v"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DV0-de-f9D">
+                                        <rect key="frame" x="547" y="28" width="30" height="30"/>
+                                        <color key="tintColor" red="0.94509803920000002" green="0.34901960780000002" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Life">
+                                            <color key="titleColor" red="0.41568627450980389" green="0.44705882352941173" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didPressTab:" destination="saZ-T6-oBa" eventType="touchUpInside" id="1kl-Wv-Vhq"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="fHG-ZX-g4h" firstAttribute="leading" secondItem="OFj-iY-qsG" secondAttribute="leadingMargin" constant="15" id="0tL-Nh-0bW"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="DV0-de-f9D" secondAttribute="trailing" constant="15" id="CF4-er-p4j"/>
-                                    <constraint firstAttribute="height" constant="70" id="Ksd-K7-LBZ"/>
+                                    <constraint firstItem="fHG-ZX-g4h" firstAttribute="top" secondItem="OFj-iY-qsG" secondAttribute="top" constant="28" id="ERP-EZ-ppS"/>
+                                    <constraint firstItem="DV0-de-f9D" firstAttribute="top" secondItem="OFj-iY-qsG" secondAttribute="top" constant="28" id="HeB-fN-NGZ"/>
+                                    <constraint firstAttribute="height" constant="78" id="Ksd-K7-LBZ"/>
                                     <constraint firstItem="XWE-gZ-845" firstAttribute="centerX" secondItem="OFj-iY-qsG" secondAttribute="centerX" id="Zok-Rg-ZVL"/>
+                                    <constraint firstItem="XWE-gZ-845" firstAttribute="top" secondItem="OFj-iY-qsG" secondAttribute="top" constant="28" id="z1s-ZF-uQe"/>
                                 </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XeQ-if-6Vy">
+                                <rect key="frame" x="0.0" y="77" width="600" height="523"/>
+                                <color key="backgroundColor" red="0.46925951090000001" green="0.67498867750000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="OFj-iY-qsG" secondAttribute="trailing" constant="-20" id="2XN-5A-rJU"/>
-                            <constraint firstItem="rCV-vb-0qS" firstAttribute="top" secondItem="XeQ-if-6Vy" secondAttribute="bottom" id="7VA-LP-4ny"/>
                             <constraint firstAttribute="trailing" secondItem="OFj-iY-qsG" secondAttribute="trailing" id="8NS-e6-4Sd"/>
-                            <constraint firstItem="XeQ-if-6Vy" firstAttribute="top" secondItem="TRj-Ps-rgm" secondAttribute="topMargin" constant="40" id="MAY-uw-kuA"/>
-                            <constraint firstItem="OFj-iY-qsG" firstAttribute="leading" secondItem="TRj-Ps-rgm" secondAttribute="leadingMargin" constant="-20" id="Sgz-Ra-63v"/>
+                            <constraint firstItem="XeQ-if-6Vy" firstAttribute="top" secondItem="OFj-iY-qsG" secondAttribute="bottom" constant="-1" id="Q1r-vc-GcP"/>
                             <constraint firstItem="OFj-iY-qsG" firstAttribute="leading" secondItem="TRj-Ps-rgm" secondAttribute="leading" id="ZEI-EJ-4We"/>
+                            <constraint firstItem="XeQ-if-6Vy" firstAttribute="leading" secondItem="TRj-Ps-rgm" secondAttribute="leading" id="hXh-FE-lpz"/>
+                            <constraint firstItem="OFj-iY-qsG" firstAttribute="top" secondItem="TRj-Ps-rgm" secondAttribute="top" id="m8a-2c-1Xc"/>
+                            <constraint firstItem="rCV-vb-0qS" firstAttribute="top" secondItem="XeQ-if-6Vy" secondAttribute="bottom" id="vQf-1S-UXO"/>
+                            <constraint firstAttribute="trailing" secondItem="XeQ-if-6Vy" secondAttribute="trailing" id="xid-QY-gB8"/>
                         </constraints>
                     </view>
                     <connections>
@@ -109,13 +113,13 @@
         <!--Today-->
         <scene sceneID="xun-Dj-AHb">
             <objects>
-                <tableViewController id="FCW-2h-hNE" customClass="TodosViewController" customModule="Goals" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="FCW-2h-hNE" customClass="TodosViewController" customModule="Perspective" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="hIB-zk-8eX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextInputCell" id="jdv-Rv-5vf" customClass="TableViewCell" customModule="Goals" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextInputCell" id="jdv-Rv-5vf" customClass="TableViewCell" customModule="Perspective" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jdv-Rv-5vf" id="5Fm-9K-AwD">
@@ -143,8 +147,8 @@
                                     <constraints>
                                         <constraint firstItem="7eP-zz-w2V" firstAttribute="centerY" secondItem="5Fm-9K-AwD" secondAttribute="centerY" id="010-nb-ndE"/>
                                         <constraint firstItem="7eP-zz-w2V" firstAttribute="top" secondItem="5Fm-9K-AwD" secondAttribute="topMargin" constant="-1" id="4VW-fz-SrC"/>
+                                        <constraint firstItem="7eP-zz-w2V" firstAttribute="trailing" secondItem="5Fm-9K-AwD" secondAttribute="trailingMargin" id="Nsi-jV-OLN"/>
                                         <constraint firstItem="7eP-zz-w2V" firstAttribute="leading" secondItem="5Fm-9K-AwD" secondAttribute="leadingMargin" constant="40" id="q20-Pc-ai4"/>
-                                        <constraint firstItem="7eP-zz-w2V" firstAttribute="trailing" secondItem="5Fm-9K-AwD" secondAttribute="trailingMargin" id="vWL-NE-EpS"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
