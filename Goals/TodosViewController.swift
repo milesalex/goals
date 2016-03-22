@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 enum ToDoType{
     case Today, Year, Life
@@ -15,7 +16,7 @@ enum ToDoType{
 class TodosViewController: UITableViewController/*, TableViewCellDelegate*/ {
     
 //    var type: ToDoType?
-    
+    var whichTab: String!
     var dataModel: DataModel? {
         didSet {
             if let dataModel = self.dataModel {
@@ -30,12 +31,28 @@ class TodosViewController: UITableViewController/*, TableViewCellDelegate*/ {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.contentInset = UIEdgeInsets(top: 40, left: 0, bottom: 0, right: 0)
+        
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        if self.title == "Today"{
+            whichTab = "Today"
+        } else if self.title == "Year"{
+            whichTab = "Year"
+        } else if self.title == "Life"{
+            whichTab = "Life"
+        }
     }
+    
+    var beepPlayer:AVAudioPlayer = AVAudioPlayer()
+    func playUncheckMySound(){
+        let beepSoundURL =  NSBundle.mainBundle().URLForResource("Flick", withExtension: "wav")!
+        beepPlayer = try! AVAudioPlayer(contentsOfURL: beepSoundURL)
+        beepPlayer.prepareToPlay()
+        beepPlayer.play()
+    }
+    
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // return the number of rows in the table view
@@ -52,7 +69,7 @@ class TodosViewController: UITableViewController/*, TableViewCellDelegate*/ {
         let cell = tableView.dequeueReusableCellWithIdentifier("TextInputCell") as! TableViewCell
         
         cell.selectionStyle = UITableViewCellSelectionStyle.None
-        
+        cell.tabTitle = whichTab
         if let dataModel = self.dataModel {
             // Load todoItem data model into the table view
             // After all data is loaded, add a blank cell for entering a new todo
@@ -62,15 +79,18 @@ class TodosViewController: UITableViewController/*, TableViewCellDelegate*/ {
                 let todoItem = dataModel.toDoItems[indexPath.row]
                 
                 // Populate cell with text and placeholder
-                cell.configure(text: todoItem.text, placeholder: dataModel.placeholder())
+                cell.configure(text: todoItem.text, placeholder: dataModel.placeholder(), completed: todoItem.completed)
+                cell.todoCheckBox.enabled = true
+
                 
             } else {
                 
                 // In empty cell, populate with only placeholder text
-                cell.configure(text: "", placeholder: dataModel.placeholder())
+                cell.configure(text: "", placeholder: dataModel.placeholder(), completed: false)
                 
                 // Focus text input on empty cell
                 cell.todoTextField.becomeFirstResponder()
+                cell.todoCheckBox.enabled = false
             }
         }
         
@@ -108,10 +128,8 @@ class TodosViewController: UITableViewController/*, TableViewCellDelegate*/ {
         }
     }
     
-    
-    
     func saveTaskWithTitle(title: String) {
-        
+        playUncheckMySound()
         guard let dataModel = self.dataModel else {
             print("cant save task with title")
             return
@@ -123,5 +141,28 @@ class TodosViewController: UITableViewController/*, TableViewCellDelegate*/ {
         self.tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
         self.tableView.endUpdates()
         dataModel.saveTodos()
+    }
+    
+    func updateTask(title: String, completed: Bool, cell: TableViewCell) {
+        guard let dataModel = self.dataModel else {
+            print("can't save tasks")
+            return
+        }
+        
+        guard let indexPath = self.tableView.indexPathForCell(cell) else {
+            print("dont have index path")
+            return
+        }
+        
+        self.tableView.beginUpdates()
+        let task = dataModel.toDoItems[indexPath.row]
+        task.completed = completed
+        task.text = title
+        dataModel.toDoItems[indexPath.row] = task
+        self.tableView.endUpdates()
+        dataModel.saveTodos()
+        
+        
+        
     }
 }

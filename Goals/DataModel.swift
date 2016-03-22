@@ -56,7 +56,7 @@ public class DataModel {
         if self.type == .Today {
             if let date = whenUserLastClosedApp {
                 if date.isYesterday() {
-                    print("dont delete todos")
+                    // print("dont delete todos")
                 } else {
                     toDoItems.removeAll()
                     saveTodos()

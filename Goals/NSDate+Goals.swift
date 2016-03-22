@@ -24,21 +24,23 @@ extension NSDate {
         return difference.day
     }
     
-    class func nextDayAtHour(hour: Int) -> NSDate {
+    class func nextDayAtHour(hour: Int, minute: Int) -> NSDate {
         let date = NSDate()
         let calendar = NSCalendar.currentCalendar()
         
         // Add +1 day to existing date
         let addComponents = NSDateComponents()
-        addComponents.day = 1
+        addComponents.day = 0
         let newDate = calendar.dateByAddingComponents(addComponents, toDate: date, options: [])
         
         // Set the time of the new date to 8
         let components = calendar.components([.Day , .Month , .Year], fromDate: newDate!)
         components.hour = hour
+        components.minute = minute
         
         return calendar.dateFromComponents(components)!
     }
+    
     
     func yesterday() -> NSDate {
         let addComponents = NSDateComponents()
