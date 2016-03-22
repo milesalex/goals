@@ -82,14 +82,31 @@
                                             <action selector="didPressTab:" destination="saZ-T6-oBa" eventType="touchUpInside" id="p83-F1-cl9"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DV0-de-f9D">
+                                        <rect key="frame" x="547" y="28" width="30" height="30"/>
+                                        <color key="tintColor" red="0.94509803920000002" green="0.34901960780000002" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Life">
+                                            <color key="titleColor" red="0.41568627450980389" green="0.44705882352941173" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didPressTab:" destination="saZ-T6-oBa" eventType="touchUpInside" id="1kl-Wv-Vhq"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="fHG-ZX-g4h" firstAttribute="leading" secondItem="OFj-iY-qsG" secondAttribute="leadingMargin" constant="15" id="0tL-Nh-0bW"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="DV0-de-f9D" secondAttribute="trailing" constant="15" id="CF4-er-p4j"/>
-                                    <constraint firstAttribute="height" constant="70" id="Ksd-K7-LBZ"/>
+                                    <constraint firstItem="fHG-ZX-g4h" firstAttribute="top" secondItem="OFj-iY-qsG" secondAttribute="top" constant="28" id="ERP-EZ-ppS"/>
+                                    <constraint firstItem="DV0-de-f9D" firstAttribute="top" secondItem="OFj-iY-qsG" secondAttribute="top" constant="28" id="HeB-fN-NGZ"/>
+                                    <constraint firstAttribute="height" constant="78" id="Ksd-K7-LBZ"/>
                                     <constraint firstItem="XWE-gZ-845" firstAttribute="centerX" secondItem="OFj-iY-qsG" secondAttribute="centerX" id="Zok-Rg-ZVL"/>
+                                    <constraint firstItem="XWE-gZ-845" firstAttribute="top" secondItem="OFj-iY-qsG" secondAttribute="top" constant="28" id="z1s-ZF-uQe"/>
                                 </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XeQ-if-6Vy">
+                                <rect key="frame" x="0.0" y="77" width="600" height="523"/>
+                                <color key="backgroundColor" red="0.46925951090000001" green="0.67498867750000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -241,8 +258,8 @@
                                     <constraints>
                                         <constraint firstItem="7eP-zz-w2V" firstAttribute="centerY" secondItem="5Fm-9K-AwD" secondAttribute="centerY" id="010-nb-ndE"/>
                                         <constraint firstItem="7eP-zz-w2V" firstAttribute="top" secondItem="5Fm-9K-AwD" secondAttribute="topMargin" constant="-1" id="4VW-fz-SrC"/>
+                                        <constraint firstItem="7eP-zz-w2V" firstAttribute="trailing" secondItem="5Fm-9K-AwD" secondAttribute="trailingMargin" id="Nsi-jV-OLN"/>
                                         <constraint firstItem="7eP-zz-w2V" firstAttribute="leading" secondItem="5Fm-9K-AwD" secondAttribute="leadingMargin" constant="40" id="q20-Pc-ai4"/>
-                                        <constraint firstItem="7eP-zz-w2V" firstAttribute="trailing" secondItem="5Fm-9K-AwD" secondAttribute="trailingMargin" id="vWL-NE-EpS"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
