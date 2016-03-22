@@ -12,22 +12,19 @@ class NewSettingsViewController: UIViewController {
     
     @IBOutlet weak var didPickTime: UIDatePicker!
     @IBOutlet weak var dailySwitch: UISwitch!
-    @IBOutlet weak var weekendSwitch: UISwitch!
     @IBOutlet weak var reminderTime: UIDatePicker!
-    @IBOutlet weak var weekendText: UILabel!
     var dailySwitchOn :Bool!
     var weekendSwitchOn :Bool!
     var strDate :String!
     
     let defaults = NSUserDefaults.standardUserDefaults()
     var dailyReminder :Bool = true
-    var weekendReminder :Bool = true
     var reminderSetTime :String = "08 00"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         dailySwitch.addTarget(self, action: Selector("dailyStateChanged:"), forControlEvents: UIControlEvents.ValueChanged)
-        //weekendSwitch.addTarget(self, action: Selector("weekendStateChanged:"), forControlEvents: UIControlEvents.ValueChanged)
+        dailyReminder = NSUserDefaults.standardUserDefaults().boolForKey("dailyReminder")
         // Do any additional setup after loading the view.
     }
 
@@ -38,33 +35,20 @@ class NewSettingsViewController: UIViewController {
     
         override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-            dailyReminder = NSUserDefaults.standardUserDefaults().boolForKey("dailyReminder")
-            //weekendReminder = NSUserDefaults.standardUserDefaults().boolForKey("weekendReminder")
-            
+            print(dailyReminder, "popoppopop")
             if dailyReminder == true {
                 dailySwitch.setOn(true, animated: false)
             } else {
                 dailySwitch.setOn(false, animated: false)
                 disableSubActions()
             }
-            
-//            if weekendReminder == true {
-//                weekendSwitch.setOn(true, animated: false)
-//            } else {
-//                weekendSwitch.setOn(false, animated: false)
-//            }
-            
+
             if dailySwitch.on == true{
             dailySwitchOn = true
             } else {
             dailySwitchOn = false
             }
             
-//            if weekendSwitch.on == true{
-//                weekendSwitchOn = true
-//            } else {
-//                weekendSwitchOn = false
-//            }
             if let reminderSetTime = NSUserDefaults.standardUserDefaults().objectForKey("reminderSetTime"){
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "HH mm"
@@ -75,8 +59,9 @@ class NewSettingsViewController: UIViewController {
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        dailyReminder = NSUserDefaults.standardUserDefaults().boolForKey("dailyReminder")
+        print(dailyReminder, "dsdsdssdsd")
     }
-    
     
     func dailyStateChanged(switchState: UISwitch) {
         if switchState.on {
@@ -87,32 +72,16 @@ class NewSettingsViewController: UIViewController {
             dailySwitchOn = false
         }
     }
-    
-//    func weekendStateChanged(switchState: UISwitch) {
-//        if switchState.on {
-//            weekendSwitchOn = true
-//        } else {
-//            weekendSwitchOn = false
-//        }
-//    }
+
     
     func disableSubActions() {
         reminderTime.alpha = 0.3
         reminderTime.userInteractionEnabled = false
-//        weekendSwitch.alpha = 0.3
-//        weekendSwitch.setOn(false, animated:true)
-//        weekendSwitchOn = false
-//        weekendSwitch.userInteractionEnabled = false
-//        weekendText.alpha = 0.3
     }
     
     func enableSubActions() {
         reminderTime.alpha = 1
         reminderTime.userInteractionEnabled = true
-//        weekendSwitch.alpha = 1
-//        weekendSwitch.userInteractionEnabled = true
-//        weekendText.alpha = 1
-    
     }
     
     @IBAction func timeAction(sender: UIDatePicker) {
@@ -127,11 +96,6 @@ class NewSettingsViewController: UIViewController {
         } else {
             defaults.setBool(false, forKey: "dailyReminder")
         }
-//        if weekendSwitchOn == true {
-//            defaults.setBool(true, forKey: "weekendReminder")
-//        } else {
-//            defaults.setBool(false, forKey: "weekendReminder")
-//        }
         if strDate != nil{
         defaults.setObject(strDate, forKey: "reminderSetTime")
         }
