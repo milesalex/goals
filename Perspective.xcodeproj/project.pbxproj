@@ -225,7 +225,7 @@
 				TargetAttributes = {
 					DA9347801C763A0F00A9FCF3 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = BUML34KQ45;
+						DevelopmentTeam = LK34KW4FCS;
 					};
 					DA9347941C763A0F00A9FCF3 = {
 						CreatedOnToolsVersion = 7.2.1;
