@@ -137,17 +137,20 @@
                                         <rect key="frame" x="531" y="13" width="51" height="31"/>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Notification" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cnU-L0-ptc">
-                                        <rect key="frame" x="20" y="18" width="130" height="21"/>
+                                        <rect key="frame" x="20" y="18.5" width="130" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sfK-Sw-N5Q">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sfK-Sw-N5Q">
                                         <rect key="frame" x="0.0" y="56" width="600" height="1"/>
                                         <color key="backgroundColor" red="0.87655683876811596" green="0.86396059782608692" blue="0.83627717391304346" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FQ-1J-hnN">
-                                        <rect key="frame" x="0.0" y="56" width="600" height="216"/>
+                                    <datePicker contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FQ-1J-hnN">
+                                        <rect key="frame" x="0.0" y="56" width="600" height="217"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="600" id="RiL-po-iHp"/>
+                                        </constraints>
                                         <date key="date" timeIntervalSinceReferenceDate="480178800.00322199">
                                             <!--2016-03-20 15:00:00 +0000-->
                                         </date>
@@ -155,36 +158,14 @@
                                             <action selector="timeAction:" destination="gvF-f3-tnr" eventType="valueChanged" id="d11-tb-EvI"/>
                                         </connections>
                                     </datePicker>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XnX-Jl-zkn">
-                                        <rect key="frame" x="0.0" y="272" width="600" height="1"/>
-                                        <color key="backgroundColor" red="0.87655683880000002" green="0.86396059780000001" blue="0.8362771739" alpha="1" colorSpace="calibratedRGB"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QLj-Ho-eIE">
-                                        <rect key="frame" x="0.0" y="328" width="600" height="1"/>
-                                        <color key="backgroundColor" red="0.87655683880000002" green="0.86396059780000001" blue="0.8362771739" alpha="1" colorSpace="calibratedRGB"/>
-                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="cnU-L0-ptc" firstAttribute="leading" secondItem="dxx-gE-FaU" secondAttribute="leading" constant="20" id="1SW-W7-GPy"/>
-                                    <constraint firstItem="6FQ-1J-hnN" firstAttribute="trailing" secondItem="XnX-Jl-zkn" secondAttribute="trailing" id="4uU-Le-FIn"/>
-                                    <constraint firstItem="6FQ-1J-hnN" firstAttribute="leading" secondItem="QLj-Ho-eIE" secondAttribute="leading" id="7I1-3g-Hz8"/>
                                     <constraint firstAttribute="trailing" secondItem="k3B-Hn-zpe" secondAttribute="trailing" constant="20" id="Bba-ci-dil"/>
-                                    <constraint firstItem="6FQ-1J-hnN" firstAttribute="leading" secondItem="sfK-Sw-N5Q" secondAttribute="leading" id="EFW-9M-IWe"/>
-                                    <constraint firstAttribute="bottom" secondItem="sfK-Sw-N5Q" secondAttribute="bottom" constant="216" id="Fgm-i2-KrR"/>
-                                    <constraint firstItem="QLj-Ho-eIE" firstAttribute="top" secondItem="dxx-gE-FaU" secondAttribute="top" constant="328" id="Ijw-sr-rcM"/>
-                                    <constraint firstItem="6FQ-1J-hnN" firstAttribute="leading" secondItem="XnX-Jl-zkn" secondAttribute="leading" id="LF1-Bf-KMx"/>
-                                    <constraint firstItem="6FQ-1J-hnN" firstAttribute="top" secondItem="k3B-Hn-zpe" secondAttribute="bottom" constant="12" id="NZ5-T1-skr"/>
-                                    <constraint firstItem="6FQ-1J-hnN" firstAttribute="trailing" secondItem="sfK-Sw-N5Q" secondAttribute="trailing" id="b0x-Js-7bh"/>
-                                    <constraint firstItem="6FQ-1J-hnN" firstAttribute="trailing" secondItem="QLj-Ho-eIE" secondAttribute="trailing" id="gvk-Mu-N41"/>
-                                    <constraint firstItem="6FQ-1J-hnN" firstAttribute="top" secondItem="sfK-Sw-N5Q" secondAttribute="top" id="hh7-1m-tmJ"/>
-                                    <constraint firstItem="6FQ-1J-hnN" firstAttribute="leading" secondItem="dxx-gE-FaU" secondAttribute="leading" id="neF-9k-dyK"/>
+                                    <constraint firstItem="6FQ-1J-hnN" firstAttribute="centerX" secondItem="dxx-gE-FaU" secondAttribute="centerX" id="Z8e-4i-2hL"/>
                                     <constraint firstItem="k3B-Hn-zpe" firstAttribute="centerY" secondItem="cnU-L0-ptc" secondAttribute="centerY" id="pTt-mM-1Uk"/>
-                                    <constraint firstItem="QLj-Ho-eIE" firstAttribute="top" secondItem="XnX-Jl-zkn" secondAttribute="bottom" constant="55" id="qWj-pB-IIk"/>
-                                    <constraint firstItem="XnX-Jl-zkn" firstAttribute="top" secondItem="6FQ-1J-hnN" secondAttribute="bottom" id="sBg-uW-gpP"/>
                                     <constraint firstItem="k3B-Hn-zpe" firstAttribute="top" secondItem="dxx-gE-FaU" secondAttribute="top" constant="13" id="vNX-6p-l6i"/>
-                                    <constraint firstAttribute="bottom" secondItem="QLj-Ho-eIE" secondAttribute="bottom" constant="-56" id="xOa-Ez-QZf"/>
-                                    <constraint firstAttribute="trailing" secondItem="6FQ-1J-hnN" secondAttribute="trailing" id="yWF-XD-Uuq"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w32-l6-rAc">
