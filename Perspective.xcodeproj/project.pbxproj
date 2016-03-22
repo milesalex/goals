@@ -449,7 +449,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Goals/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.studiomiles.perspective;
+				PRODUCT_BUNDLE_IDENTIFIER = com.studiomile.perspective;
 				PRODUCT_NAME = Perspective;
 				PROVISIONING_PROFILE = "";
 			};
@@ -463,7 +463,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Goals/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.studiomiles.perspective;
+				PRODUCT_BUNDLE_IDENTIFIER = com.studiomile.perspective;
 				PRODUCT_NAME = Perspective;
 				PROVISIONING_PROFILE = "";
 			};
