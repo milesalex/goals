@@ -48,13 +48,7 @@
 		7C190B561C9A584A00B322D9 /* Bat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Bat.wav; sourceTree = "<group>"; };
 		7C190B581C9A6F2E00B322D9 /* Pong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Pong.wav; sourceTree = "<group>"; };
 		7C190B5A1C9A6F9900B322D9 /* Popped.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Popped.wav; sourceTree = "<group>"; };
-<<<<<<< HEAD:Goals.xcodeproj/project.pbxproj
-		7C190B5C1C9A705100B322D9 /* Flick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Flick.wav; sourceTree = "<group>"; };
-		7C190B5E1C9E02BA00B322D9 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		7C191A5A1C9F4E7A006DB843 /* NewSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewSettingsViewController.swift; sourceTree = "<group>"; };
-=======
 		7C190B5C1C9A705100B322D9 /* Flick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Flick.wav; path = ../Flick.wav; sourceTree = "<group>"; };
->>>>>>> master:Perspective.xcodeproj/project.pbxproj
 		7C5FFD3D1C8E8C2B002599A0 /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
 		DA6E4B101C7D414500F74CD4 /* NSDate+Goals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Goals.swift"; sourceTree = "<group>"; };
 		DA6E4B121C7D453700F74CD4 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
