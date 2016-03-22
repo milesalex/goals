@@ -21,6 +21,8 @@ class CustomTabBarViewController: UIViewController {
     var selectedIndex: Int = 0
     var keyboardShowing: Bool! = true
     
+    var dataModel : DataModel!
+
     let todayDataModel = DataModel(aType: .Today)
     let yearDataModel = DataModel(aType: .Year)
     let lifeDataModel = DataModel(aType: .Life)

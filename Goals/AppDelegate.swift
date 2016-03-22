@@ -28,9 +28,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        let tabBarController = UITabBarController()
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let nuxViewController = storyboard.instantiateViewControllerWithIdentifier("NuxStepViewController") as! NuxStepViewController
+        
+        nuxViewController.steps = [
+            NuxStep(text: "Today", description: "Write down some things you want to do today, or don't. You can always do this tomorrow.", model: todayDataModel)!,
+            NuxStep(text: "Year", description: "Write down a couple of things you'de like to accomplish this year, you can always add more later.", model: yearDataModel)!,
+            NuxStep(text: "Life", description: "Write down some stuff you want to do in this lifetime, you can always add more later.", model: lifeDataModel)!];
+
+        let prefs = NSUserDefaults.standardUserDefaults()
+        if (!prefs.boolForKey("hasOpened")) {
+            
+            // NuxStepViewController
+            
+            // PROTOCOL:
+            // type (TODAY, YEAR, LIFE)
+            // message "stuff i wanna do today/year/life")
+            
+            
+            
+            self.window?.rootViewController = nuxViewController
+        } else {
+            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("CustomTabBarViewController") as! CustomTabBarViewController
+
+            //let step = self.steps[0]
+            
+           // initialViewController.todayDataModel = todayDataModel
+
+            self.window?.rootViewController = initialViewController
+        }
+        
+        
+        // check if user is in nux if so then load today view
+        
+        // else do this shit
+        
+        
+        let tabBarController = UITabBarController()
         let todayNavigationController = storyboard.instantiateViewControllerWithIdentifier("TodosNavigationController") as! UINavigationController
         let yearNavigationController = storyboard.instantiateViewControllerWithIdentifier("TodosNavigationController") as! UINavigationController
         let lifeNavigationController = storyboard.instantiateViewControllerWithIdentifier("TodosNavigationController") as! UINavigationController

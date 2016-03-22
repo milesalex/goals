@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DataModel {
+public class DataModel {
     init(aType: ToDoType) {
         self.type = aType
     }

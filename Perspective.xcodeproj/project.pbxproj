@@ -14,7 +14,9 @@
 		7C190B5F1C9E02BA00B322D9 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		7C191A5B1C9F4E7A006DB843 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		7C5FFD3E1C8E8C2B002599A0 /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5FFD3D1C8E8C2B002599A0 /* CustomTabBarViewController.swift */; };
-		7C6076601CA0E51B00ED6F66 /* NewSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C60765F1CA0E51B00ED6F66 /* NewSettingsViewController.swift */; };
+		AAABBD841C9A46A20058B947 /* NuxStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAABBD831C9A46A20058B947 /* NuxStepViewController.swift */; };
+		AAABBD861C9A50650058B947 /* NuxStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAABBD851C9A50650058B947 /* NuxStep.swift */; };
+		AAABBD8A1CA0EBD10058B947 /* initialNuxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAABBD891CA0EBD10058B947 /* initialNuxViewController.swift */; };
 		DA6E4B111C7D414500F74CD4 /* NSDate+Goals.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6E4B101C7D414500F74CD4 /* NSDate+Goals.swift */; };
 		DA6E4B131C7D453700F74CD4 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6E4B121C7D453700F74CD4 /* DataModel.swift */; };
 		DA9347851C763A0F00A9FCF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9347841C763A0F00A9FCF3 /* AppDelegate.swift */; };
@@ -51,7 +53,9 @@
 		7C190B5A1C9A6F9900B322D9 /* Popped.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Popped.wav; sourceTree = "<group>"; };
 		7C190B5C1C9A705100B322D9 /* Flick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Flick.wav; path = ../Flick.wav; sourceTree = "<group>"; };
 		7C5FFD3D1C8E8C2B002599A0 /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
-		7C60765F1CA0E51B00ED6F66 /* NewSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewSettingsViewController.swift; sourceTree = "<group>"; };
+		AAABBD831C9A46A20058B947 /* NuxStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NuxStepViewController.swift; sourceTree = "<group>"; };
+		AAABBD851C9A50650058B947 /* NuxStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NuxStep.swift; sourceTree = "<group>"; };
+		AAABBD891CA0EBD10058B947 /* initialNuxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = initialNuxViewController.swift; path = ../initialNuxViewController.swift; sourceTree = "<group>"; };
 		DA6E4B101C7D414500F74CD4 /* NSDate+Goals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Goals.swift"; sourceTree = "<group>"; };
 		DA6E4B121C7D453700F74CD4 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		DA9347811C763A0F00A9FCF3 /* Perspective.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Perspective.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,13 +123,16 @@
 		DA9347831C763A0F00A9FCF3 /* Goals */ = {
 			isa = PBXGroup;
 			children = (
+				AAABBD891CA0EBD10058B947 /* initialNuxViewController.swift */,
 				DA9347841C763A0F00A9FCF3 /* AppDelegate.swift */,
 				DA9347881C763A0F00A9FCF3 /* Main.storyboard */,
+				AAABBD831C9A46A20058B947 /* NuxStepViewController.swift */,
 				7C5FFD3D1C8E8C2B002599A0 /* CustomTabBarViewController.swift */,
 				DA9347B21C763C9500A9FCF3 /* TodosViewController.swift */,
 				DA6E4B101C7D414500F74CD4 /* NSDate+Goals.swift */,
 				DAB9E6FF1C7903FD00FF321A /* TableViewCell.swift */,
 				DA9347B41C763D0600A9FCF3 /* ToDoItem.swift */,
+				AAABBD851C9A50650058B947 /* NuxStep.swift */,
 				7C60765F1CA0E51B00ED6F66 /* NewSettingsViewController.swift */,
 				DA93478B1C763A0F00A9FCF3 /* Assets.xcassets */,
 				DA93478D1C763A0F00A9FCF3 /* LaunchScreen.storyboard */,
@@ -298,7 +305,10 @@
 				DA6E4B111C7D414500F74CD4 /* NSDate+Goals.swift in Sources */,
 				DAB9E7001C7903FD00FF321A /* TableViewCell.swift in Sources */,
 				DA9347851C763A0F00A9FCF3 /* AppDelegate.swift in Sources */,
+				AAABBD8A1CA0EBD10058B947 /* initialNuxViewController.swift in Sources */,
 				DA9347B51C763D0600A9FCF3 /* ToDoItem.swift in Sources */,
+				AAABBD841C9A46A20058B947 /* NuxStepViewController.swift in Sources */,
+				AAABBD861C9A50650058B947 /* NuxStep.swift in Sources */,
 				7C6076601CA0E51B00ED6F66 /* NewSettingsViewController.swift in Sources */,
 				7C5FFD3E1C8E8C2B002599A0 /* CustomTabBarViewController.swift in Sources */,
 				DA9347B31C763C9500A9FCF3 /* TodosViewController.swift in Sources */,
