@@ -112,6 +112,7 @@
                         <outletCollection property="buttons" destination="fHG-ZX-g4h" collectionClass="NSMutableArray" id="C4q-9b-QLj"/>
                         <outletCollection property="buttons" destination="XWE-gZ-845" collectionClass="NSMutableArray" id="JqA-Hi-evU"/>
                         <outletCollection property="buttons" destination="DV0-de-f9D" collectionClass="NSMutableArray" id="78S-Tl-3Qp"/>
+                        <outletCollection property="buttons" destination="DV0-de-f9D" collectionClass="NSMutableArray" id="7w4-ga-Mz3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H9y-ln-XuC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -142,15 +143,12 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sfK-Sw-N5Q">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sfK-Sw-N5Q">
                                         <rect key="frame" x="0.0" y="56" width="600" height="1"/>
                                         <color key="backgroundColor" red="0.87655683876811596" green="0.86396059782608692" blue="0.83627717391304346" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
-                                    <datePicker contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FQ-1J-hnN">
-                                        <rect key="frame" x="0.0" y="56" width="600" height="217"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="600" id="RiL-po-iHp"/>
-                                        </constraints>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FQ-1J-hnN">
+                                        <rect key="frame" x="0.0" y="57" width="600" height="216"/>
                                         <date key="date" timeIntervalSinceReferenceDate="480178800.00322199">
                                             <!--2016-03-20 15:00:00 +0000-->
                                         </date>
@@ -162,9 +160,16 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="cnU-L0-ptc" firstAttribute="leading" secondItem="dxx-gE-FaU" secondAttribute="leading" constant="20" id="1SW-W7-GPy"/>
+                                    <constraint firstItem="sfK-Sw-N5Q" firstAttribute="trailing" secondItem="6FQ-1J-hnN" secondAttribute="trailing" id="34e-B6-2jq"/>
                                     <constraint firstAttribute="trailing" secondItem="k3B-Hn-zpe" secondAttribute="trailing" constant="20" id="Bba-ci-dil"/>
+                                    <constraint firstItem="sfK-Sw-N5Q" firstAttribute="leading" secondItem="6FQ-1J-hnN" secondAttribute="leading" id="Oau-pM-WP5"/>
+                                    <constraint firstItem="6FQ-1J-hnN" firstAttribute="top" secondItem="sfK-Sw-N5Q" secondAttribute="bottom" id="U5G-SF-gX0"/>
                                     <constraint firstItem="6FQ-1J-hnN" firstAttribute="centerX" secondItem="dxx-gE-FaU" secondAttribute="centerX" id="Z8e-4i-2hL"/>
+                                    <constraint firstItem="sfK-Sw-N5Q" firstAttribute="top" secondItem="k3B-Hn-zpe" secondAttribute="bottom" constant="12" id="j4m-gg-bqT"/>
+                                    <constraint firstAttribute="bottom" secondItem="6FQ-1J-hnN" secondAttribute="bottom" id="jk1-Ah-L4G"/>
                                     <constraint firstItem="k3B-Hn-zpe" firstAttribute="centerY" secondItem="cnU-L0-ptc" secondAttribute="centerY" id="pTt-mM-1Uk"/>
+                                    <constraint firstItem="6FQ-1J-hnN" firstAttribute="top" secondItem="k3B-Hn-zpe" secondAttribute="bottom" constant="13" id="qXM-Lv-WyH"/>
+                                    <constraint firstItem="sfK-Sw-N5Q" firstAttribute="leading" secondItem="dxx-gE-FaU" secondAttribute="leading" id="tNF-RG-UW5"/>
                                     <constraint firstItem="k3B-Hn-zpe" firstAttribute="top" secondItem="dxx-gE-FaU" secondAttribute="top" constant="13" id="vNX-6p-l6i"/>
                                 </constraints>
                             </view>
@@ -196,7 +201,6 @@
                             <constraint firstItem="dxx-gE-FaU" firstAttribute="top" secondItem="enk-jB-sDl" secondAttribute="bottom" id="UiP-Th-Qah"/>
                             <constraint firstAttribute="trailingMargin" secondItem="enk-jB-sDl" secondAttribute="trailing" constant="-20" id="aJg-5B-8wT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dxx-gE-FaU" secondAttribute="trailing" constant="-20" id="aqZ-6W-dlx"/>
-                            <constraint firstItem="7h6-Cm-iQl" firstAttribute="top" secondItem="dxx-gE-FaU" secondAttribute="bottom" constant="263" id="iqn-Mb-dsT"/>
                             <constraint firstItem="enk-jB-sDl" firstAttribute="leading" secondItem="j8Z-s8-7zm" secondAttribute="leadingMargin" constant="-20" id="k3M-9q-41u"/>
                             <constraint firstItem="dxx-gE-FaU" firstAttribute="top" secondItem="j8Z-s8-7zm" secondAttribute="top" constant="64" id="vNJ-7r-GuO"/>
                         </constraints>
