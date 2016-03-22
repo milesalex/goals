@@ -164,7 +164,9 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
         strikeThruLine.backgroundColor = UIColor(white: 0.7, alpha: 0.7)
         todoTextField.addSubview(strikeThruLine)
         UIView.animateWithDuration(0.3, delay: 0, options: [.CurveEaseInOut], animations: {
-            self.strikeThruLine.frame.size.width = todoTextSize.width
+            if self.strikeThruLine != nil {
+                self.strikeThruLine.frame.size.width = todoTextSize.width
+            }
             self.todoTextField.textColor = UIColor(white: 0.7, alpha: 0.7)
             }, completion: nil)
     }
@@ -287,7 +289,9 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
         loadingImageView.startAnimating()
         todoCheckBox.addSubview(loadingImageView)
         UIView.animateWithDuration(0.3, delay: 0, options: [.CurveEaseInOut], animations: {
-            self.strikeThruLine.frame.size.width = 0
+                if self.strikeThruLine != nil {
+                    self.strikeThruLine.frame.size.width = 0
+                }
             }, completion: { finished in
                 
                 UIView.animateWithDuration(0.7, animations: {
