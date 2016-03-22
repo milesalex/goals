@@ -30,7 +30,7 @@ extension NSDate {
         
         // Add +1 day to existing date
         let addComponents = NSDateComponents()
-        addComponents.day = 1
+        addComponents.day = 0
         let newDate = calendar.dateByAddingComponents(addComponents, toDate: date, options: [])
         
         // Set the time of the new date to 8

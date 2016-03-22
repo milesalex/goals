@@ -114,7 +114,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if dailyReminder == true{
             UIApplication.sharedApplication().scheduleLocalNotification(notification)
         }else{
-            UIApplication.sharedApplication().cancelLocalNotification(notification)
+            UIApplication.sharedApplication().cancelAllLocalNotifications()
         }
         
         return true
@@ -147,7 +147,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if dailyReminder == true{
             UIApplication.sharedApplication().scheduleLocalNotification(notification)
         }else{
-            UIApplication.sharedApplication().cancelLocalNotification(notification)
+            UIApplication.sharedApplication().cancelAllLocalNotifications()
         }
     
     }
