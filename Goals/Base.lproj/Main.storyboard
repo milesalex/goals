@@ -28,11 +28,7 @@
         <!--Custom Tab Bar View Controller-->
         <scene sceneID="bik-bw-J0w">
             <objects>
-<<<<<<< HEAD
-                <viewController storyboardIdentifier="CustomTabBarViewController" id="saZ-T6-oBa" customClass="CustomTabBarViewController" customModule="Goals" customModuleProvider="target" sceneMemberID="viewController">
-=======
                 <viewController id="saZ-T6-oBa" customClass="CustomTabBarViewController" customModule="Perspective" customModuleProvider="target" sceneMemberID="viewController">
->>>>>>> master
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vWj-8T-JKM"/>
                         <viewControllerLayoutGuide type="bottom" id="rCV-vb-0qS"/>
@@ -238,23 +234,14 @@
         <!--Today-->
         <scene sceneID="xun-Dj-AHb">
             <objects>
-<<<<<<< HEAD
-                <tableViewController storyboardIdentifier="TodosViewController" id="FCW-2h-hNE" customClass="TodosViewController" customModule="Goals" customModuleProvider="target" sceneMemberID="viewController">
-=======
                 <tableViewController id="FCW-2h-hNE" customClass="TodosViewController" customModule="Perspective" customModuleProvider="target" sceneMemberID="viewController">
->>>>>>> master
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="hIB-zk-8eX">
                         <rect key="frame" x="0.0" y="0.0" width="431" height="359"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-<<<<<<< HEAD
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextInputCell" id="jdv-Rv-5vf" customClass="TableViewCell" customModule="Goals" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="431" height="44"/>
-=======
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextInputCell" id="jdv-Rv-5vf" customClass="TableViewCell" customModule="Perspective" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
->>>>>>> master
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jdv-Rv-5vf" id="5Fm-9K-AwD">
                                     <rect key="frame" x="0.0" y="0.0" width="431" height="44"/>
@@ -427,14 +414,11 @@
     <resources>
         <image name="check1" width="30" height="30"/>
         <image name="check20" width="30" height="30"/>
-<<<<<<< HEAD
         <image name="nextbuttongreen" width="210" height="47"/>
         <image name="perspectiveIcon" width="38" height="38"/>
-=======
         <image name="disabledcheck" width="30" height="30"/>
         <image name="settings" width="50" height="49"/>
         <image name="settingsDark" width="50" height="49"/>
->>>>>>> master
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="QFn-j3-hH5"/>
