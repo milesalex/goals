@@ -26,9 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let nuxViewController = storyboard.instantiateViewControllerWithIdentifier("NuxStepViewController") as! NuxStepViewController
         
         nuxViewController.steps = [
-            NuxStep(text: "Today", description: "test", model: todayDataModel)!,
-            NuxStep(text: "Year", description: "test2", model: yearDataModel)!,
-            NuxStep(text: "Life", description: "test3", model: lifeDataModel)!];
+            NuxStep(text: "Today", description: "Write down some things you want to do today, or don't. You can always do this tomorrow.", model: todayDataModel)!,
+            NuxStep(text: "Year", description: "Write down a couple of things you'de like to accomplish this year, you can always add more later.", model: yearDataModel)!,
+            NuxStep(text: "Life", description: "Write down some stuff you want to do in this lifetime, you can always add more later.", model: lifeDataModel)!];
 
         let prefs = NSUserDefaults.standardUserDefaults()
         if (!prefs.boolForKey("hasOpened")) {

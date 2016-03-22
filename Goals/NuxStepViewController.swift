@@ -25,10 +25,11 @@ public class NuxStepViewController: UIViewController {
         if (!self.steps.isEmpty) {
             self.currentStep = self.steps[0];
             self.steps.removeFirst()
+            setTextColor()
             
             if let label = self.currentStep?.titleText{
                 
-                //this is where the bug is :/
+                
                 self.header.text = label
             }
 
@@ -39,8 +40,43 @@ public class NuxStepViewController: UIViewController {
     }
     
 
+    func setTextColor (){
+    
+    
+        if header.text == "Today"{
+            
+            header.textColor = UIColor.blueColor()
+            
+            
+        }
+            
+        else if header.text == "Year"{
+            
+            header.textColor = UIColor.redColor()
+            
+            
+        }
+            
+        else {
+            
+            header.textColor = UIColor.greenColor()
+            
+            
+        }
+        
+    
+    
+    
+    }
+    
+    
+    
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
+        
+       nuxButton.layer.cornerRadius = 5
+        
     }
 
     public override func didReceiveMemoryWarning() {
