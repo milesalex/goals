@@ -66,6 +66,9 @@
                                         <state key="normal" title="Life">
                                             <color key="titleColor" red="0.41568627450980389" green="0.44705882352941173" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didPressTab:" destination="saZ-T6-oBa" eventType="touchUpInside" id="8HR-p4-aCp"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -96,14 +99,14 @@
                         <constraints>
                             <constraint firstItem="rCV-vb-0qS" firstAttribute="top" secondItem="XeQ-if-6Vy" secondAttribute="bottom" id="7VA-LP-4ny"/>
                             <constraint firstAttribute="trailing" secondItem="OFj-iY-qsG" secondAttribute="trailing" id="8NS-e6-4Sd"/>
+                            <constraint firstItem="Obb-JR-LMU" firstAttribute="trailing" secondItem="OFj-iY-qsG" secondAttribute="trailing" id="9B7-sd-OVS"/>
                             <constraint firstItem="XeQ-if-6Vy" firstAttribute="top" secondItem="OFj-iY-qsG" secondAttribute="bottom" constant="7" id="A7u-G4-07C"/>
+                            <constraint firstItem="Obb-JR-LMU" firstAttribute="trailing" secondItem="XeQ-if-6Vy" secondAttribute="trailing" id="Hzv-QI-PMS"/>
                             <constraint firstItem="XeQ-if-6Vy" firstAttribute="top" secondItem="TRj-Ps-rgm" secondAttribute="topMargin" constant="77" id="MAY-uw-kuA"/>
-                            <constraint firstItem="rCV-vb-0qS" firstAttribute="top" secondItem="Obb-JR-LMU" secondAttribute="bottom" id="N1C-m7-zdk"/>
                             <constraint firstItem="XeQ-if-6Vy" firstAttribute="leading" secondItem="OFj-iY-qsG" secondAttribute="leading" id="Qdi-kf-RFm"/>
                             <constraint firstItem="OFj-iY-qsG" firstAttribute="leading" secondItem="TRj-Ps-rgm" secondAttribute="leadingMargin" constant="-20" id="Sgz-Ra-63v"/>
+                            <constraint firstItem="Obb-JR-LMU" firstAttribute="bottom" secondItem="rCV-vb-0qS" secondAttribute="top" id="StY-k8-vyq"/>
                             <constraint firstItem="OFj-iY-qsG" firstAttribute="leading" secondItem="TRj-Ps-rgm" secondAttribute="leading" id="ZEI-EJ-4We"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Obb-JR-LMU" secondAttribute="trailing" constant="-20" id="mee-SE-Dyp"/>
-                            <constraint firstItem="XeQ-if-6Vy" firstAttribute="trailing" secondItem="Obb-JR-LMU" secondAttribute="trailing" id="zHo-Ef-SPP"/>
                         </constraints>
                     </view>
                     <connections>
@@ -113,6 +116,7 @@
                         <outletCollection property="buttons" destination="XWE-gZ-845" collectionClass="NSMutableArray" id="JqA-Hi-evU"/>
                         <outletCollection property="buttons" destination="DV0-de-f9D" collectionClass="NSMutableArray" id="78S-Tl-3Qp"/>
                         <outletCollection property="buttons" destination="DV0-de-f9D" collectionClass="NSMutableArray" id="7w4-ga-Mz3"/>
+                        <outletCollection property="buttons" destination="DV0-de-f9D" collectionClass="NSMutableArray" id="06q-AK-u9m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H9y-ln-XuC" userLabel="First Responder" sceneMemberID="firstResponder"/>
