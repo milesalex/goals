@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="saZ-T6-oBa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="saZ-T6-oBa">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -66,6 +66,9 @@
                                         <state key="normal" title="Life">
                                             <color key="titleColor" red="0.41568627450980389" green="0.44705882352941173" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didPressTab:" destination="saZ-T6-oBa" eventType="touchUpInside" id="8HR-p4-aCp"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -111,7 +114,7 @@
                         <outlet property="customTabBar" destination="OFj-iY-qsG" id="zmf-S2-n3w"/>
                         <outletCollection property="buttons" destination="fHG-ZX-g4h" collectionClass="NSMutableArray" id="C4q-9b-QLj"/>
                         <outletCollection property="buttons" destination="XWE-gZ-845" collectionClass="NSMutableArray" id="JqA-Hi-evU"/>
-                        <outletCollection property="buttons" destination="DV0-de-f9D" collectionClass="NSMutableArray" id="78S-Tl-3Qp"/>
+                        <outletCollection property="buttons" destination="DV0-de-f9D" collectionClass="NSMutableArray" id="06q-AK-u9m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H9y-ln-XuC" userLabel="First Responder" sceneMemberID="firstResponder"/>
