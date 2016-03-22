@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let yearDataModel = DataModel(aType: .Year)
     let lifeDataModel = DataModel(aType: .Life)
     var dailyReminder :Bool = true
-    //var weekendReminder :Bool = true
     var reminderSetTime :String = "8"
     var setHour :String = "08"
     var setMinute :String = "00"
@@ -60,6 +59,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         prefs.setValue(whenUserLastClosedApp, forKey: "whenUserLastClosedApp")
         prefs.synchronize()
         
+        
+        
     }
 
     func applicationDidEnterBackground(application: UIApplication) {
@@ -86,13 +87,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, willFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: .Badge, categories: nil))
-        
         //Use nsuserdefaults to get info from settings screen
-        let defaults = NSUserDefaults.standardUserDefaults()
-        //defaults.setObject("06:00", forKey: "reminderSetTime")
         
+        let defaults = NSUserDefaults.standardUserDefaults()
         dailyReminder = NSUserDefaults.standardUserDefaults().boolForKey("dailyReminder")
-        //weekendReminder = NSUserDefaults.standardUserDefaults().boolForKey("weekendReminder")
         if let reminderSetTime = NSUserDefaults.standardUserDefaults().objectForKey("reminderSetTime"){
             var reminderTimeString:String = reminderSetTime as! String
             var timeSplit = reminderTimeString.componentsSeparatedByString(" ")
@@ -129,11 +127,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let setHourInt: Int? = Int(setHour)
         let setMinuteInt: Int? = Int(setMinute)
-        
-        print("hhhhhh", setHourInt)
-        print("mmmmmm", setMinuteInt)
-        print("daily", dailyReminder)
-        
         let fireTime = NSDate.nextDayAtHour(setHourInt!, minute: setMinuteInt!)
         let notification = UILocalNotification()
         notification.alertBody = "What are you doing today?"
