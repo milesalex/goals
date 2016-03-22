@@ -45,16 +45,21 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
     
     weak var viewController: TodosViewController?
     
-    func configure(text text: String?, placeholder: String) {
+    func configure(text text: String?, placeholder: String, completed: Bool) {
         self.todoTextField.delegate = self
         
         todoTextField.text = text
         todoTextField.placeholder = placeholder
+        todoCheckBox.selected = completed
         
         todoTextField.accessibilityValue = text
         todoTextField.accessibilityLabel = placeholder
         
         todoTextField.autocapitalizationType = UITextAutocapitalizationType.Sentences
+        
+        if completed {
+            setCheckboxImage(false)
+        }
         
     }
     
@@ -72,37 +77,46 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
     
     
     @IBAction func didFocusTextField(sender: AnyObject) {
-        if todoTextField.text != "" && strikeThruLine != nil{
-        unDoCheckBox()
-        todoCheckBox.selected = false
+        if todoTextField.text != "" && strikeThruLine != nil {
+            unDoCheckBox()
+            todoCheckBox.selected = false
         }
-        
-        
-        
     }
     @IBAction func didCheck(sender: UIButton) {
         if todoTextField.text != ""{
-        if (sender.selected == true)
-        {
-            unDoCheckBox()
-            playUncheckMySound()
-            sender.selected = false
-        }else{
-            if tabTitle == "Today"{
-                animateTodayCheckBox()
-                todoCheckBox.setImage(todayChecked, forState: .Selected)
-            }else if tabTitle == "Year"{
-                animateYearCheckBox()
-                todoCheckBox.setImage(yearChecked, forState: .Selected)
-            }else if tabTitle == "Life"{
-                animateLifeCheckBox()
-                todoCheckBox.setImage(lifeChecked, forState: .Selected)
-
+            if (sender.selected == true) {
+                unDoCheckBox()
+                playUncheckMySound()
+                sender.selected = false
+            } else {
+                setCheckboxImage(true)
+                sender.selected = true
+                playCheckMySound()
+                todoTextField.resignFirstResponder()
             }
-            sender.selected = true
-            playCheckMySound()
-            todoTextField.resignFirstResponder()
-            }}
+            viewController?.updateTask(todoTextField.text!, completed: sender.selected, cell: self)
+        }
+    }
+    
+    func setCheckboxImage(animated: Bool) {
+        if tabTitle == "Today" {
+            if animated {
+               animateTodayCheckBox()
+            }
+            
+            todoCheckBox.setImage(todayChecked, forState: .Selected)
+        } else if tabTitle == "Year" {
+            if animated {
+                animateYearCheckBox()
+            }
+            
+            todoCheckBox.setImage(yearChecked, forState: .Selected)
+        } else if tabTitle == "Life" {
+            if animated {
+                animateLifeCheckBox()
+            }
+            todoCheckBox.setImage(lifeChecked, forState: .Selected)
+        }
     }
     
     func animateTodayCheckBox(){
@@ -150,7 +164,9 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
         strikeThruLine.backgroundColor = UIColor(white: 0.7, alpha: 0.7)
         todoTextField.addSubview(strikeThruLine)
         UIView.animateWithDuration(0.3, delay: 0, options: [.CurveEaseInOut], animations: {
-            self.strikeThruLine.frame.size.width = todoTextSize.width
+            if self.strikeThruLine != nil {
+                self.strikeThruLine.frame.size.width = todoTextSize.width
+            }
             self.todoTextField.textColor = UIColor(white: 0.7, alpha: 0.7)
             }, completion: nil)
     }
@@ -273,7 +289,9 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
         loadingImageView.startAnimating()
         todoCheckBox.addSubview(loadingImageView)
         UIView.animateWithDuration(0.3, delay: 0, options: [.CurveEaseInOut], animations: {
-            self.strikeThruLine.frame.size.width = 0
+                if self.strikeThruLine != nil {
+                    self.strikeThruLine.frame.size.width = 0
+                }
             }, completion: { finished in
                 
                 UIView.animateWithDuration(0.7, animations: {
@@ -295,8 +313,6 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
         
 //        toDoItems.append(ToDoItem(text: todoTextField.text!))
 //        print(toDoItems)
-        
-        
         
         
     }

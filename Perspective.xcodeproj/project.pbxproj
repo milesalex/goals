@@ -48,22 +48,26 @@
 		7C190B561C9A584A00B322D9 /* Bat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Bat.wav; sourceTree = "<group>"; };
 		7C190B581C9A6F2E00B322D9 /* Pong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Pong.wav; sourceTree = "<group>"; };
 		7C190B5A1C9A6F9900B322D9 /* Popped.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Popped.wav; sourceTree = "<group>"; };
+<<<<<<< HEAD:Goals.xcodeproj/project.pbxproj
 		7C190B5C1C9A705100B322D9 /* Flick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Flick.wav; sourceTree = "<group>"; };
 		7C190B5E1C9E02BA00B322D9 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		7C191A5A1C9F4E7A006DB843 /* NewSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewSettingsViewController.swift; sourceTree = "<group>"; };
+=======
+		7C190B5C1C9A705100B322D9 /* Flick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Flick.wav; path = ../Flick.wav; sourceTree = "<group>"; };
+>>>>>>> master:Perspective.xcodeproj/project.pbxproj
 		7C5FFD3D1C8E8C2B002599A0 /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
 		DA6E4B101C7D414500F74CD4 /* NSDate+Goals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Goals.swift"; sourceTree = "<group>"; };
 		DA6E4B121C7D453700F74CD4 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		DA9347811C763A0F00A9FCF3 /* Goals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goals.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA9347811C763A0F00A9FCF3 /* Perspective.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Perspective.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA9347841C763A0F00A9FCF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA9347891C763A0F00A9FCF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DA93478B1C763A0F00A9FCF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA93478E1C763A0F00A9FCF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA9347901C763A0F00A9FCF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DA9347951C763A0F00A9FCF3 /* GoalsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoalsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA9347951C763A0F00A9FCF3 /* PerspectiveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PerspectiveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA9347991C763A0F00A9FCF3 /* GoalsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsTests.swift; sourceTree = "<group>"; };
 		DA93479B1C763A0F00A9FCF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DA9347A01C763A0F00A9FCF3 /* GoalsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoalsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA9347A01C763A0F00A9FCF3 /* PerspectiveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PerspectiveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA9347A41C763A0F00A9FCF3 /* GoalsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsUITests.swift; sourceTree = "<group>"; };
 		DA9347A61C763A0F00A9FCF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA9347B21C763C9500A9FCF3 /* TodosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodosViewController.swift; sourceTree = "<group>"; };
@@ -103,16 +107,15 @@
 				DA9347981C763A0F00A9FCF3 /* GoalsTests */,
 				DA9347A31C763A0F00A9FCF3 /* GoalsUITests */,
 				DA9347821C763A0F00A9FCF3 /* Products */,
-				7C190B5C1C9A705100B322D9 /* Flick.wav */,
 			);
 			sourceTree = "<group>";
 		};
 		DA9347821C763A0F00A9FCF3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DA9347811C763A0F00A9FCF3 /* Goals.app */,
-				DA9347951C763A0F00A9FCF3 /* GoalsTests.xctest */,
-				DA9347A01C763A0F00A9FCF3 /* GoalsUITests.xctest */,
+				DA9347811C763A0F00A9FCF3 /* Perspective.app */,
+				DA9347951C763A0F00A9FCF3 /* PerspectiveTests.xctest */,
+				DA9347A01C763A0F00A9FCF3 /* PerspectiveTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,6 +135,7 @@
 				DA93478B1C763A0F00A9FCF3 /* Assets.xcassets */,
 				DA93478D1C763A0F00A9FCF3 /* LaunchScreen.storyboard */,
 				7C190B581C9A6F2E00B322D9 /* Pong.wav */,
+				7C190B5C1C9A705100B322D9 /* Flick.wav */,
 				7C190B561C9A584A00B322D9 /* Bat.wav */,
 				7C190B5A1C9A6F9900B322D9 /* Popped.wav */,
 				DA9347901C763A0F00A9FCF3 /* Info.plist */,
@@ -161,9 +165,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DA9347801C763A0F00A9FCF3 /* Goals */ = {
+		DA9347801C763A0F00A9FCF3 /* Perspective */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DA9347A91C763A0F00A9FCF3 /* Build configuration list for PBXNativeTarget "Goals" */;
+			buildConfigurationList = DA9347A91C763A0F00A9FCF3 /* Build configuration list for PBXNativeTarget "Perspective" */;
 			buildPhases = (
 				DA93477D1C763A0F00A9FCF3 /* Sources */,
 				DA93477E1C763A0F00A9FCF3 /* Frameworks */,
@@ -173,14 +177,14 @@
 			);
 			dependencies = (
 			);
-			name = Goals;
+			name = Perspective;
 			productName = Goals;
-			productReference = DA9347811C763A0F00A9FCF3 /* Goals.app */;
+			productReference = DA9347811C763A0F00A9FCF3 /* Perspective.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DA9347941C763A0F00A9FCF3 /* GoalsTests */ = {
+		DA9347941C763A0F00A9FCF3 /* PerspectiveTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DA9347AC1C763A0F00A9FCF3 /* Build configuration list for PBXNativeTarget "GoalsTests" */;
+			buildConfigurationList = DA9347AC1C763A0F00A9FCF3 /* Build configuration list for PBXNativeTarget "PerspectiveTests" */;
 			buildPhases = (
 				DA9347911C763A0F00A9FCF3 /* Sources */,
 				DA9347921C763A0F00A9FCF3 /* Frameworks */,
@@ -191,14 +195,14 @@
 			dependencies = (
 				DA9347971C763A0F00A9FCF3 /* PBXTargetDependency */,
 			);
-			name = GoalsTests;
+			name = PerspectiveTests;
 			productName = GoalsTests;
-			productReference = DA9347951C763A0F00A9FCF3 /* GoalsTests.xctest */;
+			productReference = DA9347951C763A0F00A9FCF3 /* PerspectiveTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		DA93479F1C763A0F00A9FCF3 /* GoalsUITests */ = {
+		DA93479F1C763A0F00A9FCF3 /* PerspectiveUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DA9347AF1C763A0F00A9FCF3 /* Build configuration list for PBXNativeTarget "GoalsUITests" */;
+			buildConfigurationList = DA9347AF1C763A0F00A9FCF3 /* Build configuration list for PBXNativeTarget "PerspectiveUITests" */;
 			buildPhases = (
 				DA93479C1C763A0F00A9FCF3 /* Sources */,
 				DA93479D1C763A0F00A9FCF3 /* Frameworks */,
@@ -209,9 +213,9 @@
 			dependencies = (
 				DA9347A21C763A0F00A9FCF3 /* PBXTargetDependency */,
 			);
-			name = GoalsUITests;
+			name = PerspectiveUITests;
 			productName = GoalsUITests;
-			productReference = DA9347A01C763A0F00A9FCF3 /* GoalsUITests.xctest */;
+			productReference = DA9347A01C763A0F00A9FCF3 /* PerspectiveTests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -226,7 +230,7 @@
 				TargetAttributes = {
 					DA9347801C763A0F00A9FCF3 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = BUML34KQ45;
+						DevelopmentTeam = LK34KW4FCS;
 					};
 					DA9347941C763A0F00A9FCF3 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -240,7 +244,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DA93477C1C763A0F00A9FCF3 /* Build configuration list for PBXProject "Goals" */;
+			buildConfigurationList = DA93477C1C763A0F00A9FCF3 /* Build configuration list for PBXProject "Perspective" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -253,9 +257,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DA9347801C763A0F00A9FCF3 /* Goals */,
-				DA9347941C763A0F00A9FCF3 /* GoalsTests */,
-				DA93479F1C763A0F00A9FCF3 /* GoalsUITests */,
+				DA9347801C763A0F00A9FCF3 /* Perspective */,
+				DA9347941C763A0F00A9FCF3 /* PerspectiveTests */,
+				DA93479F1C763A0F00A9FCF3 /* PerspectiveUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -329,12 +333,12 @@
 /* Begin PBXTargetDependency section */
 		DA9347971C763A0F00A9FCF3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DA9347801C763A0F00A9FCF3 /* Goals */;
+			target = DA9347801C763A0F00A9FCF3 /* Perspective */;
 			targetProxy = DA9347961C763A0F00A9FCF3 /* PBXContainerItemProxy */;
 		};
 		DA9347A21C763A0F00A9FCF3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DA9347801C763A0F00A9FCF3 /* Goals */;
+			target = DA9347801C763A0F00A9FCF3 /* Perspective */;
 			targetProxy = DA9347A11C763A0F00A9FCF3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -420,7 +424,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -435,6 +439,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -448,8 +453,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Goals/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Kevin.Goals;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.studiomile.perspective;
+				PRODUCT_NAME = Perspective;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -458,12 +463,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Goals/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Kevin.Goals;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.studiomile.perspective;
+				PRODUCT_NAME = Perspective;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -475,8 +480,8 @@
 				INFOPLIST_FILE = GoalsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Alex-Miles-Design.GoalsTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Goals.app/Goals";
+				PRODUCT_NAME = PerspectiveTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Perspective.app/Perspective";
 			};
 			name = Debug;
 		};
@@ -487,8 +492,8 @@
 				INFOPLIST_FILE = GoalsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Alex-Miles-Design.GoalsTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Goals.app/Goals";
+				PRODUCT_NAME = PerspectiveTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Perspective.app/Perspective";
 			};
 			name = Release;
 		};
@@ -498,7 +503,7 @@
 				INFOPLIST_FILE = GoalsUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Alex-Miles-Design.GoalsUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PerspectiveTests;
 				TEST_TARGET_NAME = Goals;
 				USES_XCTRUNNER = YES;
 			};
@@ -510,7 +515,7 @@
 				INFOPLIST_FILE = GoalsUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Alex-Miles-Design.GoalsUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PerspectiveTests;
 				TEST_TARGET_NAME = Goals;
 				USES_XCTRUNNER = YES;
 			};
@@ -519,7 +524,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DA93477C1C763A0F00A9FCF3 /* Build configuration list for PBXProject "Goals" */ = {
+		DA93477C1C763A0F00A9FCF3 /* Build configuration list for PBXProject "Perspective" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DA9347A71C763A0F00A9FCF3 /* Debug */,
@@ -528,7 +533,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DA9347A91C763A0F00A9FCF3 /* Build configuration list for PBXNativeTarget "Goals" */ = {
+		DA9347A91C763A0F00A9FCF3 /* Build configuration list for PBXNativeTarget "Perspective" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DA9347AA1C763A0F00A9FCF3 /* Debug */,
@@ -537,7 +542,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DA9347AC1C763A0F00A9FCF3 /* Build configuration list for PBXNativeTarget "GoalsTests" */ = {
+		DA9347AC1C763A0F00A9FCF3 /* Build configuration list for PBXNativeTarget "PerspectiveTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DA9347AD1C763A0F00A9FCF3 /* Debug */,
@@ -546,7 +551,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DA9347AF1C763A0F00A9FCF3 /* Build configuration list for PBXNativeTarget "GoalsUITests" */ = {
+		DA9347AF1C763A0F00A9FCF3 /* Build configuration list for PBXNativeTarget "PerspectiveUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DA9347B01C763A0F00A9FCF3 /* Debug */,

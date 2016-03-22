@@ -12,7 +12,7 @@ class ToDoItem: NSObject, NSCoding {
 
     // MARK: Properties
     var text: String
-    var completed: Bool?
+    var completed: Bool = false
     
     // MARK: Archiving Paths
     
@@ -24,9 +24,9 @@ class ToDoItem: NSObject, NSCoding {
     }
     
     // MARK: Initialization
-    init?(text: String, completed: Bool?){
+    init?(text: String, completed: Bool){
         self.text = text
-        self.completed = false
+        self.completed = completed
         
         super.init()
         
@@ -38,12 +38,12 @@ class ToDoItem: NSObject, NSCoding {
     // MARK: NSCoding
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(text, forKey: PropertyKey.textKey)
-        aCoder.encodeObject(completed, forKey: PropertyKey.completedKey)
+        aCoder.encodeBool(completed, forKey: PropertyKey.completedKey)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
         let text = aDecoder.decodeObjectForKey(PropertyKey.textKey) as! String
-        let completed = aDecoder.decodeObjectForKey(PropertyKey.completedKey) as? Bool
+        let completed = aDecoder.decodeBoolForKey(PropertyKey.completedKey)
         
         self.init(text: text, completed: completed)
     }
