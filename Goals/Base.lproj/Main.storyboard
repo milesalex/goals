@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="saZ-T6-oBa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="saZ-T6-oBa">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -28,7 +28,7 @@
         <!--Custom Tab Bar View Controller-->
         <scene sceneID="bik-bw-J0w">
             <objects>
-                <viewController id="saZ-T6-oBa" customClass="CustomTabBarViewController" customModule="Goals" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="saZ-T6-oBa" customClass="CustomTabBarViewController" customModule="Perspective" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vWj-8T-JKM"/>
                         <viewControllerLayoutGuide type="bottom" id="rCV-vb-0qS"/>
@@ -41,11 +41,19 @@
                                 <rect key="frame" x="0.0" y="77" width="600" height="523"/>
                                 <color key="backgroundColor" red="0.46925951090000001" green="0.67498867750000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OFj-iY-qsG" userLabel="Custom Tab Bar">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Obb-JR-LMU">
+                                <rect key="frame" x="550" y="551" width="50" height="49"/>
+                                <state key="normal" image="settings"/>
+                                <state key="highlighted" image="settingsDark"/>
+                                <connections>
+                                    <segue destination="gvF-f3-tnr" kind="presentation" id="2Sv-sw-abY"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OFj-iY-qsG" userLabel="Custom Tab Bar">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
                                 <subviews>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="1000" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DV0-de-f9D">
-                                        <rect key="frame" x="510" y="28" width="30" height="30"/>
+                                        <rect key="frame" x="514" y="28" width="28" height="30"/>
                                         <color key="tintColor" red="0.94509803920000002" green="0.34901960780000002" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Life">
                                             <color key="titleColor" red="0.41568627450980389" green="0.44705882352941173" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
@@ -54,24 +62,24 @@
                                             <action selector="didPressTab:" destination="saZ-T6-oBa" eventType="touchUpInside" id="1kl-Wv-Vhq"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XWE-gZ-845">
-                                        <rect key="frame" x="285" y="28" width="31" height="30"/>
-                                        <color key="tintColor" red="0.2901960784" green="0.72941176470000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Year">
-                                            <color key="titleColor" red="0.41568627450980389" green="0.44705882352941173" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="didPressTab:" destination="saZ-T6-oBa" eventType="touchUpInside" id="p83-F1-cl9"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHG-ZX-g4h">
-                                        <rect key="frame" x="60" y="28" width="42" height="30"/>
+                                        <rect key="frame" x="60" y="28" width="43" height="30"/>
                                         <color key="tintColor" red="0.43529411759999997" green="0.82352941180000006" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Today">
                                             <color key="titleColor" red="0.41568627450980389" green="0.44705882352941173" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="didPressTab:" destination="saZ-T6-oBa" eventType="touchUpInside" id="3v9-1P-D4v"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XWE-gZ-845">
+                                        <rect key="frame" x="284" y="28" width="33" height="30"/>
+                                        <color key="tintColor" red="0.2901960784" green="0.72941176470000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Year">
+                                            <color key="titleColor" red="0.41568627450980389" green="0.44705882352941173" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didPressTab:" destination="saZ-T6-oBa" eventType="touchUpInside" id="p83-F1-cl9"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -86,12 +94,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="OFj-iY-qsG" secondAttribute="trailing" constant="-20" id="2XN-5A-rJU"/>
                             <constraint firstItem="rCV-vb-0qS" firstAttribute="top" secondItem="XeQ-if-6Vy" secondAttribute="bottom" id="7VA-LP-4ny"/>
                             <constraint firstAttribute="trailing" secondItem="OFj-iY-qsG" secondAttribute="trailing" id="8NS-e6-4Sd"/>
                             <constraint firstItem="XeQ-if-6Vy" firstAttribute="top" secondItem="TRj-Ps-rgm" secondAttribute="topMargin" constant="40" id="MAY-uw-kuA"/>
+                            <constraint firstItem="rCV-vb-0qS" firstAttribute="top" secondItem="Obb-JR-LMU" secondAttribute="bottom" id="N1C-m7-zdk"/>
                             <constraint firstItem="OFj-iY-qsG" firstAttribute="leading" secondItem="TRj-Ps-rgm" secondAttribute="leadingMargin" constant="-20" id="Sgz-Ra-63v"/>
                             <constraint firstItem="OFj-iY-qsG" firstAttribute="leading" secondItem="TRj-Ps-rgm" secondAttribute="leading" id="ZEI-EJ-4We"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Obb-JR-LMU" secondAttribute="trailing" constant="-20" id="mee-SE-Dyp"/>
                         </constraints>
                     </view>
                     <connections>
@@ -106,16 +115,104 @@
             </objects>
             <point key="canvasLocation" x="1045" y="1652"/>
         </scene>
+        <!--New Settings View Controller-->
+        <scene sceneID="FR8-Fb-Gw8">
+            <objects>
+                <viewController id="gvF-f3-tnr" customClass="NewSettingsViewController" customModule="Perspective" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="asV-EA-gfg"/>
+                        <viewControllerLayoutGuide type="bottom" id="7h6-Cm-iQl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="j8Z-s8-7zm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dxx-gE-FaU">
+                                <rect key="frame" x="0.0" y="64" width="600" height="273"/>
+                                <subviews>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k3B-Hn-zpe">
+                                        <rect key="frame" x="531" y="13" width="51" height="31"/>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Daily Notification" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cnU-L0-ptc">
+                                        <rect key="frame" x="20" y="18" width="130" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sfK-Sw-N5Q">
+                                        <rect key="frame" x="0.0" y="56" width="600" height="1"/>
+                                        <color key="backgroundColor" red="0.87655683876811596" green="0.86396059782608692" blue="0.83627717391304346" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <datePicker contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FQ-1J-hnN">
+                                        <rect key="frame" x="0.0" y="56" width="600" height="216"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="480178800.00322199">
+                                            <!--2016-03-20 15:00:00 +0000-->
+                                        </date>
+                                        <connections>
+                                            <action selector="timeAction:" destination="gvF-f3-tnr" eventType="valueChanged" id="d11-tb-EvI"/>
+                                        </connections>
+                                    </datePicker>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XnX-Jl-zkn">
+                                        <rect key="frame" x="0.0" y="272" width="600" height="1"/>
+                                        <color key="backgroundColor" red="0.87655683880000002" green="0.86396059780000001" blue="0.8362771739" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QLj-Ho-eIE">
+                                        <rect key="frame" x="0.0" y="328" width="600" height="1"/>
+                                        <color key="backgroundColor" red="0.87655683880000002" green="0.86396059780000001" blue="0.8362771739" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="k3B-Hn-zpe" secondAttribute="trailing" constant="20" id="Bba-ci-dil"/>
+                                    <constraint firstAttribute="trailing" secondItem="6FQ-1J-hnN" secondAttribute="trailing" id="HqS-eo-BJk"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w32-l6-rAc">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="enk-jB-sDl">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Settings" id="dgn-Cl-fQg">
+                                        <barButtonItem key="rightBarButtonItem" title="Done  " style="done" id="hYf-Ml-26Z">
+                                            <inset key="imageInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
+                                            <connections>
+                                                <action selector="didPressDone:" destination="gvF-f3-tnr" id="5eo-51-E2B"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="dxx-gE-FaU" firstAttribute="leading" secondItem="j8Z-s8-7zm" secondAttribute="leadingMargin" constant="-20" id="O9I-PS-X6F"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="enk-jB-sDl" secondAttribute="trailing" constant="-20" id="aJg-5B-8wT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dxx-gE-FaU" secondAttribute="trailing" constant="-20" id="aqZ-6W-dlx"/>
+                            <constraint firstItem="enk-jB-sDl" firstAttribute="leading" secondItem="j8Z-s8-7zm" secondAttribute="leadingMargin" constant="-20" id="k3M-9q-41u"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dailySwitch" destination="k3B-Hn-zpe" id="5wi-DW-MhR"/>
+                        <outlet property="didPickTime" destination="6FQ-1J-hnN" id="5yr-9T-R9H"/>
+                        <outlet property="reminderTime" destination="6FQ-1J-hnN" id="tCV-zi-4y0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cf3-ma-1iJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1779" y="1834"/>
+        </scene>
         <!--Today-->
         <scene sceneID="xun-Dj-AHb">
             <objects>
-                <tableViewController id="FCW-2h-hNE" customClass="TodosViewController" customModule="Goals" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="FCW-2h-hNE" customClass="TodosViewController" customModule="Perspective" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="hIB-zk-8eX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextInputCell" id="jdv-Rv-5vf" customClass="TableViewCell" customModule="Goals" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextInputCell" id="jdv-Rv-5vf" customClass="TableViewCell" customModule="Perspective" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jdv-Rv-5vf" id="5Fm-9K-AwD">
@@ -135,6 +232,7 @@
                                             <state key="normal" image="check1"/>
                                             <state key="disabled" image="disabledcheck"/>
                                             <state key="selected" image="check20"/>
+                                            <state key="highlighted" image="check1"/>
                                             <connections>
                                                 <action selector="didCheck:" destination="jdv-Rv-5vf" eventType="touchUpInside" id="gb0-Hb-w6Z"/>
                                             </connections>
@@ -171,5 +269,7 @@
         <image name="check1" width="30" height="30"/>
         <image name="check20" width="30" height="30"/>
         <image name="disabledcheck" width="30" height="30"/>
+        <image name="settings" width="50" height="49"/>
+        <image name="settingsDark" width="50" height="49"/>
     </resources>
 </document>
