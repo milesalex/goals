@@ -45,21 +45,22 @@ public class NuxStepViewController: UIViewController {
     
         if header.text == "Today"{
             
-            header.textColor = UIColor.blueColor()
-            
+            header.textColor = UIColorFromRGB(0x1DA1F2)
+            nuxButton.backgroundColor = UIColorFromRGB(0x1DA1F2)
             
         }
             
         else if header.text == "Year"{
             
-            header.textColor = UIColor.redColor()
-            
+            header.textColor = UIColorFromRGB(0xF1596B)
+            nuxButton.backgroundColor = UIColorFromRGB(0xF1596B)
             
         }
             
         else {
             
-            header.textColor = UIColor.greenColor()
+            header.textColor = UIColorFromRGB(0x19CF86)
+            nuxButton.backgroundColor = UIColorFromRGB(0x19CF86)
             
             
         }
@@ -136,5 +137,17 @@ public class NuxStepViewController: UIViewController {
         
         
     }
+    
+    
+    func UIColorFromRGB(rgbValue: UInt) -> UIColor {
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
 
 }
+
+
