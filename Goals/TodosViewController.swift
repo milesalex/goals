@@ -48,6 +48,7 @@ class TodosViewController: UITableViewController/*, TableViewCellDelegate*/ {
     var beepPlayer:AVAudioPlayer = AVAudioPlayer()
     func playUncheckMySound(){
         let beepSoundURL =  NSBundle.mainBundle().URLForResource("Flick", withExtension: "wav")!
+        try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
         beepPlayer = try! AVAudioPlayer(contentsOfURL: beepSoundURL)
         beepPlayer.prepareToPlay()
         beepPlayer.play()

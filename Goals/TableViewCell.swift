@@ -31,12 +31,14 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
     var beepPlayer:AVAudioPlayer = AVAudioPlayer()
     func playCheckMySound(){
         let beepSoundURL =  NSBundle.mainBundle().URLForResource("Pong", withExtension: "wav")!
+        try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
         beepPlayer = try! AVAudioPlayer(contentsOfURL: beepSoundURL)
         beepPlayer.prepareToPlay()
         beepPlayer.play()
     }
     func playUncheckMySound(){
         let beepSoundURL =  NSBundle.mainBundle().URLForResource("Flick", withExtension: "wav")!
+        try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
         beepPlayer = try! AVAudioPlayer(contentsOfURL: beepSoundURL)
         beepPlayer.prepareToPlay()
         beepPlayer.play()
