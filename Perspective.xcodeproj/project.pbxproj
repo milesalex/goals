@@ -15,6 +15,7 @@
 		7C191A5B1C9F4E7A006DB843 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		7C5FFD3E1C8E8C2B002599A0 /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5FFD3D1C8E8C2B002599A0 /* CustomTabBarViewController.swift */; };
 		7C6076601CA0E51B00ED6F66 /* NewSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C60765F1CA0E51B00ED6F66 /* NewSettingsViewController.swift */; };
+		DA22D1011CA3422E0086A9A3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA22D1001CA3422E0086A9A3 /* AVFoundation.framework */; };
 		DA6E4B111C7D414500F74CD4 /* NSDate+Goals.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6E4B101C7D414500F74CD4 /* NSDate+Goals.swift */; };
 		DA6E4B131C7D453700F74CD4 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6E4B121C7D453700F74CD4 /* DataModel.swift */; };
 		DA9347851C763A0F00A9FCF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9347841C763A0F00A9FCF3 /* AppDelegate.swift */; };
@@ -52,6 +53,7 @@
 		7C190B5C1C9A705100B322D9 /* Flick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Flick.wav; path = ../Flick.wav; sourceTree = "<group>"; };
 		7C5FFD3D1C8E8C2B002599A0 /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
 		7C60765F1CA0E51B00ED6F66 /* NewSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewSettingsViewController.swift; sourceTree = "<group>"; };
+		DA22D1001CA3422E0086A9A3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		DA6E4B101C7D414500F74CD4 /* NSDate+Goals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Goals.swift"; sourceTree = "<group>"; };
 		DA6E4B121C7D453700F74CD4 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		DA9347811C763A0F00A9FCF3 /* Perspective.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Perspective.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA22D1011CA3422E0086A9A3 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +102,7 @@
 		DA9347781C763A0F00A9FCF3 = {
 			isa = PBXGroup;
 			children = (
+				DA22D1001CA3422E0086A9A3 /* AVFoundation.framework */,
 				DA9347831C763A0F00A9FCF3 /* Goals */,
 				DA9347981C763A0F00A9FCF3 /* GoalsTests */,
 				DA9347A31C763A0F00A9FCF3 /* GoalsUITests */,
@@ -225,7 +229,7 @@
 				TargetAttributes = {
 					DA9347801C763A0F00A9FCF3 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = BUML34KQ45;
+						DevelopmentTeam = LK34KW4FCS;
 					};
 					DA9347941C763A0F00A9FCF3 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -376,7 +380,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -398,6 +403,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "81e2447e-8d85-474d-b2b7-7b0cde7376f3";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -449,7 +455,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Goals/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kevingrennan.perspective;
+				PRODUCT_BUNDLE_IDENTIFIER = com.studiomile.perspective;
 				PRODUCT_NAME = Perspective;
 				PROVISIONING_PROFILE = "";
 			};
@@ -463,7 +469,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Goals/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kevingrennan.perspective;
+				PRODUCT_BUNDLE_IDENTIFIER = com.studiomile.perspective;
 				PRODUCT_NAME = Perspective;
 				PROVISIONING_PROFILE = "";
 			};

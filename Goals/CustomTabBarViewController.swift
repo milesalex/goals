@@ -25,6 +25,9 @@ class CustomTabBarViewController: UIViewController {
     let yearDataModel = DataModel(aType: .Year)
     let lifeDataModel = DataModel(aType: .Life)
     
+    var todayViewController: TodosViewController!
+    var yearViewController: TodosViewController!
+    var lifeViewController: TodosViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +36,9 @@ class CustomTabBarViewController: UIViewController {
         let yearNavigationController = storyboard.instantiateViewControllerWithIdentifier("TodosNavigationController") as! UINavigationController
         let lifeNavigationController = storyboard.instantiateViewControllerWithIdentifier("TodosNavigationController") as! UINavigationController
         
-        let todayViewController = todayNavigationController.topViewController as! TodosViewController
-        let yearViewController = yearNavigationController.topViewController as! TodosViewController
-        let lifeViewController = lifeNavigationController.topViewController as! TodosViewController
+        todayViewController = todayNavigationController.topViewController as! TodosViewController
+        yearViewController = yearNavigationController.topViewController as! TodosViewController
+        lifeViewController = lifeNavigationController.topViewController as! TodosViewController
         
         tabs = [todayViewController, yearViewController, lifeViewController]
         
@@ -51,6 +54,13 @@ class CustomTabBarViewController: UIViewController {
 //        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardHidden:", name: UIKeyboardWillHideNotification, object: nil)
         
         // Do any additional setup after loading the view.
+    }
+    
+    func deleteAllPastTodods() {
+        self.todayDataModel.deleteAllPastTodosForCurrentDate()
+        self.todayViewController.tableView.reloadData()
+        self.yearViewController.tableView.reloadData()
+        self.lifeViewController.tableView.reloadData()
     }
 
 

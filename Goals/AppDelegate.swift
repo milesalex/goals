@@ -13,39 +13,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    let todayDataModel = DataModel(aType: .Today)
-    let yearDataModel = DataModel(aType: .Year)
-    let lifeDataModel = DataModel(aType: .Life)
     var dailyReminder :Bool = true
     var reminderSetTime :String = "8"
     var setHour :String = "08"
     var setMinute :String = "00"
 
+    
+    var customTabBarController: CustomTabBarViewController?
 
     
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        let tabBarController = UITabBarController()
+        if let window = self.window {
+            if let vc = window.rootViewController as? CustomTabBarViewController {
+                customTabBarController = vc
+            }
+        }
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let todayNavigationController = storyboard.instantiateViewControllerWithIdentifier("TodosNavigationController") as! UINavigationController
-        let yearNavigationController = storyboard.instantiateViewControllerWithIdentifier("TodosNavigationController") as! UINavigationController
-        let lifeNavigationController = storyboard.instantiateViewControllerWithIdentifier("TodosNavigationController") as! UINavigationController
-        
-        
-        tabBarController.viewControllers = [todayNavigationController, yearNavigationController, lifeNavigationController]
-        
-        //window!.rootViewController = tabBarController
-        
-        let todayViewController = todayNavigationController.topViewController as! TodosViewController
-        let yearViewController = yearNavigationController.topViewController as! TodosViewController
-        let lifeViewController = lifeNavigationController.topViewController as! TodosViewController
-        
-        todayViewController.dataModel = todayDataModel
-        yearViewController.dataModel = yearDataModel
-        lifeViewController.dataModel = lifeDataModel
         
         return true
     }
@@ -56,11 +42,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let prefs = NSUserDefaults.standardUserDefaults()
         
         let whenUserLastClosedApp = NSDate()
+        // let newDate = whenUserLastClosedApp.dateByAddingTimeInterval(60*60*24*(-1))
         prefs.setValue(whenUserLastClosedApp, forKey: "whenUserLastClosedApp")
         prefs.synchronize()
-        
-        
-        
     }
 
     func applicationDidEnterBackground(application: UIApplication) {
@@ -70,7 +54,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+        
+        // Reset application badge number
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
+        
+        if let tbc = self.customTabBarController {
+            tbc.deleteAllPastTodods()
+        }
     }
+    
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
@@ -78,10 +70,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Reference time when the user last closed the app
         
         
-        // Reset application badge number
-        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
         
-        self.todayDataModel.deleteAllPastTodosForCurrentDate()
+        
         
     }
     
@@ -146,12 +136,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    
-    // Alex added this from master
-    // Kevin added this to tabbar
-    
-    
-
 
 }
 

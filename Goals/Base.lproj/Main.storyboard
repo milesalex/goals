@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="saZ-T6-oBa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="saZ-T6-oBa">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -107,7 +107,22 @@
                             <constraint firstItem="OFj-iY-qsG" firstAttribute="leading" secondItem="TRj-Ps-rgm" secondAttribute="leadingMargin" constant="-20" id="Sgz-Ra-63v"/>
                             <constraint firstItem="Obb-JR-LMU" firstAttribute="bottom" secondItem="rCV-vb-0qS" secondAttribute="top" id="StY-k8-vyq"/>
                             <constraint firstItem="OFj-iY-qsG" firstAttribute="leading" secondItem="TRj-Ps-rgm" secondAttribute="leading" id="ZEI-EJ-4We"/>
+                            <constraint firstAttribute="trailing" secondItem="Obb-JR-LMU" secondAttribute="trailing" id="atr-ei-t86"/>
+                            <constraint firstAttribute="trailing" secondItem="XeQ-if-6Vy" secondAttribute="trailing" id="cbV-YE-bEH"/>
+                            <constraint firstItem="rCV-vb-0qS" firstAttribute="top" secondItem="XeQ-if-6Vy" secondAttribute="bottom" id="hMo-5z-kdb"/>
+                            <constraint firstItem="XeQ-if-6Vy" firstAttribute="leading" secondItem="TRj-Ps-rgm" secondAttribute="leading" id="rwl-g9-b65"/>
+                            <constraint firstItem="OFj-iY-qsG" firstAttribute="top" secondItem="TRj-Ps-rgm" secondAttribute="top" id="xSd-LK-oHH"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Sgz-Ra-63v"/>
+                                <exclude reference="MAY-uw-kuA"/>
+                                <exclude reference="Qdi-kf-RFm"/>
+                                <exclude reference="7VA-LP-4ny"/>
+                                <exclude reference="9B7-sd-OVS"/>
+                                <exclude reference="Hzv-QI-PMS"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="contentView" destination="XeQ-if-6Vy" id="uC5-cc-UkT"/>
@@ -236,7 +251,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Todo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7eP-zz-w2V">
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Todo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7eP-zz-w2V">
                                             <rect key="frame" x="48" y="7" width="544" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <textInputTraits key="textInputTraits"/>
@@ -261,6 +276,11 @@
                                         <constraint firstItem="7eP-zz-w2V" firstAttribute="trailing" secondItem="5Fm-9K-AwD" secondAttribute="trailingMargin" id="Nsi-jV-OLN"/>
                                         <constraint firstItem="7eP-zz-w2V" firstAttribute="leading" secondItem="5Fm-9K-AwD" secondAttribute="leadingMargin" constant="40" id="q20-Pc-ai4"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="4VW-fz-SrC"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="contentView" destination="5Fm-9K-AwD" id="iIF-O3-9VO"/>

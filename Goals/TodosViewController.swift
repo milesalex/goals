@@ -22,7 +22,7 @@ class TodosViewController: UITableViewController/*, TableViewCellDelegate*/ {
             if let dataModel = self.dataModel {
                 self.tabBarItem.title = dataModel.tabName()
                 self.title = dataModel.tabName()
-
+                
                 dataModel.loadTodos()
             }
             self.tableView.reloadData()
