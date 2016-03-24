@@ -53,8 +53,6 @@ class DataModel {
         
         whenUserLastClosedApp = prefs.objectForKey("whenUserLastClosedApp") as? NSDate
         
-        print(whenUserLastClosedApp)
-        
         if self.type == .Today {
             if let date = whenUserLastClosedApp {
                 if date.isYesterday() {
