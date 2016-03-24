@@ -214,7 +214,7 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
         strikeThruLine.frame.size.width = 0
         strikeThruLine.frame.size.height = 1.5
         strikeThruLine.frame.origin.x = 0
-        strikeThruLine.frame.origin.y = 15
+        strikeThruLine.frame.origin.y = 10
         strikeThruLine.backgroundColor = UIColor(white: 0.7, alpha: 0.7)
         todoTextField.addSubview(strikeThruLine)
         UIView.animateWithDuration(0.3, delay: 0, options: [.CurveEaseInOut], animations: {
@@ -264,7 +264,7 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
         strikeThruLine.frame.size.width = 0
         strikeThruLine.frame.size.height = 1.5
         strikeThruLine.frame.origin.x = 0
-        strikeThruLine.frame.origin.y = 15
+        strikeThruLine.frame.origin.y = 10
         strikeThruLine.backgroundColor = UIColor(white: 0.7, alpha: 0.7)
         todoTextField.addSubview(strikeThruLine)
         UIView.animateWithDuration(0.3, delay: 0, options: [.CurveEaseInOut], animations: {
