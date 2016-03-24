@@ -124,6 +124,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         notification.fireDate = fireTime
         notification.soundName = UILocalNotificationDefaultSoundName
         notification.applicationIconBadgeNumber = 1
+        notification.repeatInterval = NSCalendarUnit.Day
         
         if dailyReminder == true{
             UIApplication.sharedApplication().scheduleLocalNotification(notification)
