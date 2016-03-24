@@ -229,7 +229,7 @@
 				TargetAttributes = {
 					DA9347801C763A0F00A9FCF3 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = BUML34KQ45;
+						DevelopmentTeam = LK34KW4FCS;
 					};
 					DA9347941C763A0F00A9FCF3 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -455,7 +455,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Goals/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kevingrennan.perspective;
+				PRODUCT_BUNDLE_IDENTIFIER = com.studiomile.perspective;
 				PRODUCT_NAME = Perspective;
 				PROVISIONING_PROFILE = "";
 			};
@@ -469,7 +469,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Goals/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kevingrennan.perspective;
+				PRODUCT_BUNDLE_IDENTIFIER = com.studiomile.perspective;
 				PRODUCT_NAME = Perspective;
 				PROVISIONING_PROFILE = "";
 			};
