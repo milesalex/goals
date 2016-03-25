@@ -28,7 +28,10 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
     let yearChecked = UIImage(named: "bluecheck20") as UIImage?
     let lifeChecked = UIImage(named: "redcheck20") as UIImage?
     
+    weak var viewController: TodosViewController?
+    
     var beepPlayer:AVAudioPlayer = AVAudioPlayer()
+    
     func playCheckMySound(){
         let beepSoundURL =  NSBundle.mainBundle().URLForResource("Pong", withExtension: "wav")!
         try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
@@ -36,6 +39,7 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
         beepPlayer.prepareToPlay()
         beepPlayer.play()
     }
+    
     func playUncheckMySound(){
         let beepSoundURL =  NSBundle.mainBundle().URLForResource("Flick", withExtension: "wav")!
         try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
@@ -43,9 +47,6 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
         beepPlayer.prepareToPlay()
         beepPlayer.play()
     }
-    
-    
-    weak var viewController: TodosViewController?
     
     func configure(text text: String?, placeholder: String, completed: Bool) {
         self.todoTextField.delegate = self
@@ -79,7 +80,9 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
 
     @IBAction func didEditTextField(sender: UITextField) {
         if todoTextField.text == ""{
-        todoCheckBox.enabled = false
+            todoCheckBox.enabled = false
+        } else {
+            viewController?.updateTask(todoTextField.text!, completed: sender.selected, cell: self)
         }
     }
     
@@ -89,6 +92,7 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
             todoCheckBox.selected = false
         }
     }
+    
     @IBAction func didCheck(sender: UIButton) {
         if todoTextField.text != ""{
             if (sender.selected == true) {
@@ -175,7 +179,7 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
                 strikeThruLine.frame.size.width = todoTextSize.width
             }
             self.todoTextField.textColor = UIColor(white: 0.7, alpha: 0.7)
-            }, completion: nil)
+        }, completion: nil)
     }
     
     func animateYearCheckBox(){
@@ -210,7 +214,6 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
         loadingImageView.startAnimating()
         todoCheckBox.addSubview(loadingImageView)
         
-        
         let toDoString: String = todoTextField.text!
         let toDoStringChanged: NSString = toDoString as NSString
         let todoTextSize: CGSize = toDoStringChanged.sizeWithAttributes([NSFontAttributeName: UIFont.systemFontOfSize(17.0)])
@@ -225,7 +228,7 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
         UIView.animateWithDuration(0.3, delay: 0, options: [.CurveEaseInOut], animations: {
             strikeThruLine.frame.size.width = todoTextSize.width
             self.todoTextField.textColor = UIColor(white: 0.7, alpha: 0.7)
-            }, completion: nil)
+        }, completion: nil)
     }
     
     func animateLifeCheckBox(){
@@ -260,7 +263,6 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
         loadingImageView.startAnimating()
         todoCheckBox.addSubview(loadingImageView)
         
-        
         let toDoString: String = todoTextField.text!
         let toDoStringChanged: NSString = toDoString as NSString
         let todoTextSize: CGSize = toDoStringChanged.sizeWithAttributes([NSFontAttributeName: UIFont.systemFontOfSize(17.0)])
@@ -275,7 +277,7 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
         UIView.animateWithDuration(0.3, delay: 0, options: [.CurveEaseInOut], animations: {
             strikeThruLine.frame.size.width = todoTextSize.width
             self.todoTextField.textColor = UIColor(white: 0.7, alpha: 0.7)
-            }, completion: nil)
+        }, completion: nil)
     }
 
 
@@ -296,33 +298,26 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
         loadingImageView.startAnimating()
         todoCheckBox.addSubview(loadingImageView)
         UIView.animateWithDuration(0.3, delay: 0, options: [.CurveEaseInOut], animations: {
-                if strikeThruLine != nil {
-                    strikeThruLine.frame.size.width = 0
-                }
-            }, completion: { finished in
+            if strikeThruLine != nil {
+                strikeThruLine.frame.size.width = 0
+            }
+        }, completion: { finished in
                 
-                UIView.animateWithDuration(0.7, animations: {
-                    self.todoTextField.textColor = UIColor(white: 0, alpha: 1)
-                })
-        })    }
+            UIView.animateWithDuration(0.7, animations: {
+                self.todoTextField.textColor = UIColor(white: 0, alpha: 1)
+            })
+        })
+    }
 
-
-    
-    
-    
     func performAction() {
         viewController?.saveTaskWithTitle(self.todoTextField.text!)
         todoCheckBox.enabled = true
 //        self.todoTextField.text = ""
 //        self.todoTextField.becomeFirstResponder()
-        
-        //delegate?.tableViewCell(self, didEnterString: self.todoTextField.text!)
-        
+//        delegate?.tableViewCell(self, didEnterString: self.todoTextField.text!)
 //        toDoItems.append(ToDoItem(text: todoTextField.text!))
 //        print(toDoItems)
         
         
     }
-    
-    
 }
