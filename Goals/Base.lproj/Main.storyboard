@@ -251,14 +251,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Todo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7eP-zz-w2V">
-                                            <rect key="frame" x="48" y="7" width="544" height="30"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                            <connections>
-                                                <action selector="didFocusTextField:" destination="jdv-Rv-5vf" eventType="editingDidBegin" id="11D-0a-n9T"/>
-                                            </connections>
-                                        </textField>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYL-zA-LTk">
                                             <rect key="frame" x="12" y="7" width="30" height="30"/>
                                             <state key="normal" image="check1"/>
@@ -269,6 +261,15 @@
                                                 <action selector="didCheck:" destination="jdv-Rv-5vf" eventType="touchUpInside" id="gb0-Hb-w6Z"/>
                                             </connections>
                                         </button>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Todo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7eP-zz-w2V">
+                                            <rect key="frame" x="48" y="7" width="544" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <action selector="didEditTextField:" destination="jdv-Rv-5vf" eventType="editingChanged" id="Wnf-iF-W5o"/>
+                                                <action selector="didFocusTextField:" destination="jdv-Rv-5vf" eventType="editingDidBegin" id="11D-0a-n9T"/>
+                                            </connections>
+                                        </textField>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="7eP-zz-w2V" firstAttribute="centerY" secondItem="5Fm-9K-AwD" secondAttribute="centerY" id="010-nb-ndE"/>
