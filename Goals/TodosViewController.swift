@@ -82,7 +82,19 @@ class TodosViewController: UITableViewController/*, TableViewCellDelegate*/ {
                 // Populate cell with text and placeholder
                 cell.configure(text: todoItem.text, placeholder: dataModel.placeholder(), completed: todoItem.completed)
                 cell.todoCheckBox.enabled = true
-
+//                let toDoString: String = todoItem.text
+//                let toDoStringChanged: NSString = toDoString as NSString
+//                let todoTextSize: CGSize = toDoStringChanged.sizeWithAttributes([NSFontAttributeName: UIFont.systemFontOfSize(17.0)])
+//                
+//                strikeThruLine = UIView()
+//                strikeThruLine.frame.size.width = 0
+//                strikeThruLine.frame.size.height = 1.5
+//                strikeThruLine.frame.origin.x = 0
+//                strikeThruLine.frame.origin.y = 10
+//                strikeThruLine.backgroundColor = UIColor(white: 0.7, alpha: 0.7)
+//                cell.todoTextField.addSubview(strikeThruLine)
+//                strikeThruLine.frame.size.width = todoTextSize.width
+//                cell.todoTextField.textColor = UIColor(white: 0.7, alpha: 0.7)
                 
             } else {
                 
@@ -112,7 +124,11 @@ class TodosViewController: UITableViewController/*, TableViewCellDelegate*/ {
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
             self.tableView.endUpdates()
             dataModel.saveTodos()
+            if strikeThruLine != nil {
+                strikeThruLine.frame.size.width = 0
+            }
         }
+        
     }
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
