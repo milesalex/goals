@@ -13,18 +13,20 @@ class NewSettingsViewController: UIViewController {
     @IBOutlet weak var didPickTime: UIDatePicker!
     @IBOutlet weak var dailySwitch: UISwitch!
     @IBOutlet weak var reminderTime: UIDatePicker!
-    var dailySwitchOn :Bool!
-    var weekendSwitchOn :Bool!
-    var strDate :String!
+    var dailySwitchOn: Bool!
+    var weekendSwitchOn: Bool!
+    var strDate: String!
     
     let defaults = NSUserDefaults.standardUserDefaults()
-    var dailyReminder :Bool = true
-    var reminderSetTime :String = "08 00"
+    var dailyReminder: Bool!
+    var reminderSetTime: String = "08 00"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         dailySwitch.addTarget(self, action: Selector("dailyStateChanged:"), forControlEvents: UIControlEvents.ValueChanged)
         dailyReminder = NSUserDefaults.standardUserDefaults().boolForKey("dailyReminder")
+        
+        
         // Do any additional setup after loading the view.
     }
 
@@ -33,30 +35,34 @@ class NewSettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-        override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-            print(dailyReminder, "popoppopop")
-            if dailyReminder == true {
-                dailySwitch.setOn(true, animated: false)
-            } else {
-                dailySwitch.setOn(false, animated: false)
-                disableSubActions()
-            }
+        
+        print(dailyReminder, "popoppopop")
+        
+        if dailyReminder == true {
+            dailySwitch.setOn(true, animated: false)
+        } else {
+            dailySwitch.setOn(false, animated: false)
+            disableSubActions()
+        }
 
-            if dailySwitch.on == true{
+        if dailySwitch.on == true{
             dailySwitchOn = true
-            } else {
+        } else {
             dailySwitchOn = false
-            }
-            
-            if let reminderSetTime = NSUserDefaults.standardUserDefaults().objectForKey("reminderSetTime"){
+        }
+        
+        if let reminderSetTime = NSUserDefaults.standardUserDefaults().objectForKey("reminderSetTime"){
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "HH mm"
+            
             if let date = dateFormatter.dateFromString(reminderSetTime as! String) {
                 didPickTime.date = date
-                }}
-
+            }
+        }
     }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         dailyReminder = NSUserDefaults.standardUserDefaults().boolForKey("dailyReminder")

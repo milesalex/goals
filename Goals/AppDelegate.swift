@@ -13,33 +13,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    var dailyReminder :Bool = true
+    var dailyReminder: Bool!
+    
     var reminderSetTime :String = "8"
     var setHour :String = "08"
     var setMinute :String = "00"
-
     
     var customTabBarController: CustomTabBarViewController?
-
     
+    let prefs = NSUserDefaults.standardUserDefaults()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        NSUserDefaults.standardUserDefaults().registerDefaults([
+            "dailyReminder": true
+        ])
         
         if let window = self.window {
             if let vc = window.rootViewController as? CustomTabBarViewController {
                 customTabBarController = vc
             }
         }
-        
-        
+
         return true
     }
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-        let prefs = NSUserDefaults.standardUserDefaults()
+        
         
         let whenUserLastClosedApp = NSDate()
         // let newDate = whenUserLastClosedApp.dateByAddingTimeInterval(60*60*24*(-1))
@@ -109,6 +112,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func updateNotificationTime() {
         dailyReminder = NSUserDefaults.standardUserDefaults().boolForKey("dailyReminder")
+        
         if let reminderSetTime = NSUserDefaults.standardUserDefaults().objectForKey("reminderSetTime"){
             var reminderTimeString:String = reminderSetTime as! String
             var timeSplit = reminderTimeString.componentsSeparatedByString(" ")
