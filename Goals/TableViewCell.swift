@@ -82,7 +82,9 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
         if todoTextField.text == ""{
             todoCheckBox.enabled = false
         } else {
-            viewController?.updateTask(todoTextField.text!, completed: sender.selected, cell: self)
+            if viewController?.dataModel?.toDoItems.count > 0 {
+                viewController?.updateTask(todoTextField.text!, completed: sender.selected, cell: self)
+            }
         }
     }
     
