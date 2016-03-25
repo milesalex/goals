@@ -102,6 +102,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         notification.applicationIconBadgeNumber = 1
         notification.repeatInterval = NSCalendarUnit.Day
         if dailyReminder == true{
+            UIApplication.sharedApplication().cancelAllLocalNotifications()
             UIApplication.sharedApplication().scheduleLocalNotification(notification)
         }else{
             UIApplication.sharedApplication().cancelAllLocalNotifications()
@@ -132,6 +133,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         notification.repeatInterval = NSCalendarUnit.Day
         
         if dailyReminder == true{
+            UIApplication.sharedApplication().cancelAllLocalNotifications()
             UIApplication.sharedApplication().scheduleLocalNotification(notification)
         }else{
             UIApplication.sharedApplication().cancelAllLocalNotifications()
