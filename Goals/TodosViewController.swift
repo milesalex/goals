@@ -171,6 +171,10 @@ class TodosViewController: UITableViewController/*, TableViewCellDelegate*/ {
             return
         }
         
+        if indexPath.row >= dataModel.toDoItems.count - 1 {
+            return
+        }
+        
         self.tableView.beginUpdates()
         let task = dataModel.toDoItems[indexPath.row]
         task.completed = completed
@@ -178,8 +182,5 @@ class TodosViewController: UITableViewController/*, TableViewCellDelegate*/ {
         dataModel.toDoItems[indexPath.row] = task
         self.tableView.endUpdates()
         dataModel.saveTodos()
-        
-        
-        
     }
 }

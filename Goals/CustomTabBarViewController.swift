@@ -58,9 +58,10 @@ class CustomTabBarViewController: UIViewController {
     
     func deleteAllPastTodods() {
         self.todayDataModel.deleteAllPastTodosForCurrentDate()
-        self.todayViewController.tableView.reloadData()
-        self.yearViewController.tableView.reloadData()
-        self.lifeViewController.tableView.reloadData()
+        
+        if let viewController = self.todayViewController {
+            viewController.tableView.reloadData()
+        }
     }
 
 
