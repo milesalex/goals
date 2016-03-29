@@ -12,7 +12,7 @@ import AVFoundation
 /*protocol TableViewCellDelegate {
     func tableViewCell(tableViewCell: TableViewCell, didEnterString string: String)
 }*/
-var strikeThruLine: UIView!
+//var strikeThruLine: UIView!
 
 
 class TableViewCell: UITableViewCell, UITextFieldDelegate {
@@ -163,22 +163,22 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
             todoCheckBox.addSubview(loadingImageView)
         
         
-        let toDoString: String = todoTextField.text!
-        let toDoStringChanged: NSString = toDoString as NSString
-        let todoTextSize: CGSize = toDoStringChanged.sizeWithAttributes([NSFontAttributeName: UIFont.systemFontOfSize(17.0)])
+//        let toDoString: String = todoTextField.text!
+//        let toDoStringChanged: NSString = toDoString as NSString
+//        let todoTextSize: CGSize = toDoStringChanged.sizeWithAttributes([NSFontAttributeName: UIFont.systemFontOfSize(17.0)])
         
-        strikeThruLine = UIView()
-        strikeThruLine.frame.size.width = 0
-        strikeThruLine.frame.size.height = 1.5
-        strikeThruLine.frame.origin.x = 0
-        strikeThruLine.frame.origin.y = 10
-        strikeThruLine.backgroundColor = UIColor(white: 0.7, alpha: 0.7)
-        todoTextField.addSubview(strikeThruLine)
+//        strikeThruLine = UIView()
+//        strikeThruLine.frame.size.width = 0
+//        strikeThruLine.frame.size.height = 1.5
+//        strikeThruLine.frame.origin.x = 0
+//        strikeThruLine.frame.origin.y = 10
+//        strikeThruLine.backgroundColor = UIColor(white: 0.7, alpha: 0.7)
+//        todoTextField.addSubview(strikeThruLine)
         UIView.animateWithDuration(0.3, delay: 0, options: [.CurveEaseInOut], animations: {
-            if strikeThruLine != nil {
-                strikeThruLine.frame.size.width = todoTextSize.width
-            }
-            self.todoTextField.textColor = UIColor(white: 0.7, alpha: 0.7)
+//            if strikeThruLine != nil {
+//                strikeThruLine.frame.size.width = todoTextSize.width
+//            }
+//            self.todoTextField.textColor = UIColor(white: 0.7, al pha: 0.7)
         }, completion: nil)
     }
     
@@ -214,20 +214,20 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
         loadingImageView.startAnimating()
         todoCheckBox.addSubview(loadingImageView)
         
-        let toDoString: String = todoTextField.text!
-        let toDoStringChanged: NSString = toDoString as NSString
-        let todoTextSize: CGSize = toDoStringChanged.sizeWithAttributes([NSFontAttributeName: UIFont.systemFontOfSize(17.0)])
+//        let toDoString: String = todoTextField.text!
+//        let toDoStringChanged: NSString = toDoString as NSString
+//        let todoTextSize: CGSize = toDoStringChanged.sizeWithAttributes([NSFontAttributeName: UIFont.systemFontOfSize(17.0)])
         
-        strikeThruLine = UIView()
-        strikeThruLine.frame.size.width = 0
-        strikeThruLine.frame.size.height = 1.5
-        strikeThruLine.frame.origin.x = 0
-        strikeThruLine.frame.origin.y = 10
-        strikeThruLine.backgroundColor = UIColor(white: 0.7, alpha: 0.7)
-        todoTextField.addSubview(strikeThruLine)
+//        strikeThruLine = UIView()
+//        strikeThruLine.frame.size.width = 0
+//        strikeThruLine.frame.size.height = 1.5
+//        strikeThruLine.frame.origin.x = 0
+//        strikeThruLine.frame.origin.y = 10
+//        strikeThruLine.backgroundColor = UIColor(white: 0.7, alpha: 0.7)
+//        todoTextField.addSubview(strikeThruLine)
         UIView.animateWithDuration(0.3, delay: 0, options: [.CurveEaseInOut], animations: {
-            strikeThruLine.frame.size.width = todoTextSize.width
-            self.todoTextField.textColor = UIColor(white: 0.7, alpha: 0.7)
+//            strikeThruLine.frame.size.width = todoTextSize.width
+//            self.todoTextField.textColor = UIColor(white: 0.7, alpha: 0.7)
         }, completion: nil)
     }
     
@@ -263,20 +263,20 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
         loadingImageView.startAnimating()
         todoCheckBox.addSubview(loadingImageView)
         
-        let toDoString: String = todoTextField.text!
-        let toDoStringChanged: NSString = toDoString as NSString
-        let todoTextSize: CGSize = toDoStringChanged.sizeWithAttributes([NSFontAttributeName: UIFont.systemFontOfSize(17.0)])
+//        let toDoString: String = todoTextField.text!
+//        let toDoStringChanged: NSString = toDoString as NSString
+//        let todoTextSize: CGSize = toDoStringChanged.sizeWithAttributes([NSFontAttributeName: UIFont.systemFontOfSize(17.0)])
         
-        strikeThruLine = UIView()
-        strikeThruLine.frame.size.width = 0
-        strikeThruLine.frame.size.height = 1.5
-        strikeThruLine.frame.origin.x = 0
-        strikeThruLine.frame.origin.y = 10
-        strikeThruLine.backgroundColor = UIColor(white: 0.7, alpha: 0.7)
-        todoTextField.addSubview(strikeThruLine)
+//        strikeThruLine = UIView()
+//        strikeThruLine.frame.size.width = 0
+//        strikeThruLine.frame.size.height = 1.5
+//        strikeThruLine.frame.origin.x = 0
+//        strikeThruLine.frame.origin.y = 10
+//        strikeThruLine.backgroundColor = UIColor(white: 0.7, alpha: 0.7)
+//        todoTextField.addSubview(strikeThruLine)
         UIView.animateWithDuration(0.3, delay: 0, options: [.CurveEaseInOut], animations: {
-            strikeThruLine.frame.size.width = todoTextSize.width
-            self.todoTextField.textColor = UIColor(white: 0.7, alpha: 0.7)
+//            strikeThruLine.frame.size.width = todoTextSize.width
+//            self.todoTextField.textColor = UIColor(white: 0.7, alpha: 0.7)
         }, completion: nil)
     }
 
@@ -298,13 +298,13 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
         loadingImageView.startAnimating()
         todoCheckBox.addSubview(loadingImageView)
         UIView.animateWithDuration(0.3, delay: 0, options: [.CurveEaseInOut], animations: {
-            if strikeThruLine != nil {
-                strikeThruLine.frame.size.width = 0
-            }
+//            if strikeThruLine != nil {
+//                strikeThruLine.frame.size.width = 0
+//            }
         }, completion: { finished in
                 
             UIView.animateWithDuration(0.7, animations: {
-                self.todoTextField.textColor = UIColor(white: 0, alpha: 1)
+//                self.todoTextField.textColor = UIColor(white: 0, alpha: 1)
             })
         })
     }

@@ -124,9 +124,9 @@ class TodosViewController: UITableViewController/*, TableViewCellDelegate*/ {
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
             self.tableView.endUpdates()
             dataModel.saveTodos()
-            if strikeThruLine != nil {
-                strikeThruLine.frame.size.width = 0
-            }
+//            if strikeThruLine != nil {
+//                strikeThruLine.frame.size.width = 0
+//            }
         }
         
     }

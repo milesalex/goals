@@ -23,7 +23,7 @@ class NewSettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dailySwitch.addTarget(self, action: Selector("dailyStateChanged:"), forControlEvents: UIControlEvents.ValueChanged)
+        dailySwitch.addTarget(self, action: #selector(NewSettingsViewController.dailyStateChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
         dailyReminder = NSUserDefaults.standardUserDefaults().boolForKey("dailyReminder")
         
         
