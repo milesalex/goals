@@ -171,7 +171,7 @@ class TodosViewController: UITableViewController/*, TableViewCellDelegate*/ {
             return
         }
         
-        if indexPath.row >= dataModel.toDoItems.count - 1 {
+        if indexPath.row >= dataModel.toDoItems.count {
             return
         }
         
