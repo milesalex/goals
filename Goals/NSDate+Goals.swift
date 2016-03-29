@@ -50,12 +50,23 @@ extension NSDate {
     
     func isEqualToDateWithoutTime(date: NSDate) -> Bool {
         let calendar = NSCalendar.currentCalendar()
-        let todayComponents = calendar.components([.Year, .Month, .Day], fromDate: NSDate())
-        let dateComponents = calendar.components([.Year, .Month, .Day], fromDate: self)
-        return todayComponents.year == dateComponents.year && todayComponents.month == dateComponents.month && todayComponents.day == dateComponents.day
+        let dateComponents = calendar.components([.Year, .Month, .Day], fromDate: date)
+        let selfComponents = calendar.components([.Year, .Month, .Day], fromDate: self)
+        return selfComponents.year == dateComponents.year && selfComponents.month == dateComponents.month && selfComponents.day == dateComponents.day
+    }
+    
+    func isEqualOrSmallerThanDateWithoutTime(date: NSDate) -> Bool {
+        let calendar = NSCalendar.currentCalendar()
+        let dateComponents = calendar.components([.Year, .Month, .Day], fromDate: date)
+        let selfComponents = calendar.components([.Year, .Month, .Day], fromDate: self)
+        return selfComponents.year <= dateComponents.year && selfComponents.month <= dateComponents.month && selfComponents.day <= dateComponents.day
     }
     
     func isYesterday() -> Bool {
         return self.isEqualToDateWithoutTime(NSDate().yesterday())
+    }
+    
+    func isYesterdayOrEarlier() -> Bool {
+        return self.isEqualOrSmallerThanDateWithoutTime(NSDate().yesterday())
     }
 }

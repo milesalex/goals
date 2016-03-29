@@ -79,8 +79,13 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
 
     @IBAction func didEditTextField(sender: UITextField) {
         if todoTextField.text == ""{
-        todoCheckBox.enabled = false
+            todoCheckBox.enabled = false
         }
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        viewController?.updateTask(todoTextField.text!, completed: todoCheckBox.selected, cell: self)
+        return true
     }
     
     @IBAction func didFocusTextField(sender: AnyObject) {

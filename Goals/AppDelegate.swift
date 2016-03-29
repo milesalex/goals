@@ -35,6 +35,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 customTabBarController = vc
             }
         }
+        
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
+        if let tbc = self.customTabBarController {
+            tbc.deleteAllPastTodods()
+        }
 
         return true
     }
