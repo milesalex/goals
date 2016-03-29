@@ -90,10 +90,7 @@ class TableViewCell: UITableViewCell, UITextFieldDelegate {
     }
     
     @IBAction func didFocusTextField(sender: AnyObject) {
-        if todoTextField.text != "" && strikeThruLine != nil {
-            unDoCheckBox()
-            todoCheckBox.selected = false
-        }
+        
     }
     
     @IBAction func didCheck(sender: UIButton) {
